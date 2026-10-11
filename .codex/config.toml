@@ -1,0 +1,9 @@
+default_permissions = "kiua2003"
+
+[permissions.kiua2003]
+extends = ":workspace"
+
+[permissions.kiua2003.filesystem.":workspace_roots"]
+".env" = "deny"
+".env.local" = "deny"
+".env.example" = "read"
