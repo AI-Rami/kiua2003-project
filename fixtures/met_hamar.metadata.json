@@ -1,0 +1,12 @@
+{
+  "source_url": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60.7945&lon=11.0680",
+  "retrieved_at": "2026-10-12T16:25:20.599938+00:00",
+  "checked_at": "2026-10-12T16:25:20.599938+00:00",
+  "expires": "Mon, 12 Oct 2026 16:37:52 GMT",
+  "last_modified": "Mon, 12 Oct 2026 16:06:00 GMT",
+  "attribution": "Weather data from MET Norway (Norwegian Meteorological Institute).",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "terms_url": "https://api.met.no/doc/TermsOfService",
+  "changes": "Original response preserved; output selects timestamps and air temperatures."
+}
