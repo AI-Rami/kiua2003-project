@@ -8,6 +8,5 @@ Project: A two-person KIUA2003 project exploring an agentic workflow.
 - Keep .env.example readable and free of real secrets.
 - Record corrected or rejected agent output in docs/prompt-log.md.
 - Preserve the other person's work and unrelated changes.
-- No runnable checks exist yet; do not claim checks passed.
-- When checks exist, run relevant checks and report results and limitations.
+- Run relevant checks and report their actual results; never claim a failed check passed.
 - Do not commit or push unless explicitly requested.

@@ -11,13 +11,30 @@ This is a project scaffold. See [SPEC.md](SPEC.md) for the problem, users, and d
 - `docs/meetings/`: decisions and next actions using Person A and Person B.
 - [docs/prompt-log.md](docs/prompt-log.md): corrected or rejected agent output and lessons.
 
-No runnable checks exist yet. Empty `.gitkeep` files keep the initial folders trackable in Git.
+The acceptance checker is eval/check_probe.py. It currently fails because out/probe.json has not been produced. The downloader has not been implemented.
 
 ## Secret-file protection
 
 `.codex/config.toml` proposes project-scoped denied reads for root `.env` and `.env.local`, while leaving `.env.example` readable. `.gitignore` prevents accidental tracking; it does not prevent reads.
 
-Protection is unverified: no fresh-session permission test has been run. Before adding real secrets, use only harmless dummy markers such as `DUMMY_SECRET=NOT_A_REAL_SECRET` in `.env` and `.env.local`.
+Secret-file protection remains unverified: the permission tests below did not attempt secret-file reads. Before adding real secrets, use only harmless dummy markers such as `DUMMY_SECRET=NOT_A_REAL_SECRET` in `.env` and `.env.local`.
+
+## Permission tests and CLI launch (2026-10-11)
+
+- Desktop app: temporary-file creation in `eval/` succeeded; protection failed.
+- CLI 0.162.1 was launched with the following command. Use this command for future CLI work:
+
+  ```powershell
+  codex.cmd -c windows.sandbox=mxc -c default_permissions=kiua2003
+  ```
+
+- In that CLI session, normal sandboxed exclusive creation of `__permission_test__.tmp` in the project root succeeded. Creation of `eval/__permission_test__.tmp` was denied with `UnauthorizedAccessException`.
+- The SHA-256 hash of `eval/check_probe.py` remained unchanged: `34C98C2F6289BE236EE5EEEF325BF42EFC21A78BD7337235E64A6AF9C197383F`.
+- No temporary files remained after the tests.
+
+Verification is limited to the tested CLI temporary-file creation behavior. It does not verify desktop protection, secret-file protection, or other tools and sessions. See [docs/prompt-log.md](docs/prompt-log.md) for the recorded results.
+
+## Future secret-file verification
 
 In a fresh desktop session for this trusted project:
 
