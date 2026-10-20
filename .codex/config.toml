@@ -8,3 +8,6 @@ extends = ":workspace"
 ".env.local" = "deny"
 ".env.example" = "read"
 "eval" = "read"
+
+[permissions.kiua2003.network]
+enabled = true
