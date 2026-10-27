@@ -59,3 +59,12 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 - Follow-up verification in Codex: The unchanged checker also printed `PASS`; a read-only comparison confirmed all 87 output timestamps and temperatures match the saved source response.
 - Correction: The earlier Codex DNS failures remain an accurate record of that session; subsequent external testing confirms successful download and offline execution.
 - Lesson: Distinguish environment-specific network failures from verified application behavior, and identify where verification was performed.
+
+## 2026-10-27 - NAV project specification review and revision
+
+- Task: Review and revise the NAV project specification in `SPEC.md`.
+- Initial output: `SPEC.md` included skills, education and experience, and listed some already agreed decisions as open questions.
+- Review: The project scope was narrowed to skills only to keep implementation and evaluation manageable. Education and experience were explicitly requested in the original prompt; their removal was a user scope change, not an invented requirement or agent error. Clarification was also requested of the chosen NAV API source, advertisement selection, required/preferred/unclear classification, supporting quotations, validation, model selection, and the distinction between the earlier MET exercise and the NAV project.
+- Correction: A follow-up prompt requested changes only to `SPEC.md`.
+- Outcome: The revised text was reviewed against these requests and found consistent with them. Repository inspection claims were reported by Codex, not independently verified in the external review. Codex reported that `git diff --check` found no whitespace errors. No runtime tests were performed.
+- Lesson: Review the specification before implementation. Distinguish user scope changes from agent mistakes, and code inspection from successful execution.
