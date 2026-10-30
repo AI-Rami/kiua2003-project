@@ -68,3 +68,11 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 - Correction: A follow-up prompt requested changes only to `SPEC.md`.
 - Outcome: The revised text was reviewed against these requests and found consistent with them. Repository inspection claims were reported by Codex, not independently verified in the external review. Codex reported that `git diff --check` found no whitespace errors. No runtime tests were performed.
 - Lesson: Review the specification before implementation. Distinguish user scope changes from agent mistakes, and code inspection from successful execution.
+
+## 2026-10-30 - NAV advertisement fixture download
+
+- Task: Download one NAV advertisement as a JSON fixture.
+- Failure: The public-token endpoint returned explanatory text and a JWT. Codex incorrectly used the entire multiline response as the Bearer value. PowerShell rejected the header before sending the advertisement request. Error output exposed the public token, contrary to the instruction not to display it.
+- Correction: Extract and validate only the JWT, keep it in memory, and handle errors without displaying the token or Authorization header.
+- Outcome: Codex reported that the retry returned HTTP 200 inside the sandbox and saved `fixtures/nav_ad_01.json` as UTF-8. It reported reading the file back and successfully parsing JSON. External review confirmed valid JSON, found named employees and biographies in the description's “Om oss” section, and compared the revised JSON with the original. The review confirmed that only the agreed “Om oss” section was removed and all other values and job requirements were unchanged. The revised file parsed as UTF-8 JSON without a BOM.
+- Lesson: Inspect response formats before constructing authentication headers, and ensure error reporting does not expose tokens.
