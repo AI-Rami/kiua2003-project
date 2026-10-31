@@ -2,16 +2,33 @@
 
 A two-person KIUA2003 project exploring an agentic workflow.
 
-This is a project scaffold. See [SPEC.md](SPEC.md) for the problem, users, and definition of success, and [AGENTS.md](AGENTS.md) for working instructions.
+This project includes a scaffold and an implemented NAV saved-input walking skeleton. See [SPEC.md](SPEC.md) for the problem, users, and definition of success, and [AGENTS.md](AGENTS.md) for working instructions.
 
 - `tasks/`: task briefs with owner, reviewer, acceptance criteria, and status. The two people can alternate roles.
-- `harness/`: the future workflow's stages, prompts, tools, and execution code.
+- `harness/`: workflow stages, prompts, tools, and execution code.
 - `eval/`: evaluation cases, expected outcomes, and scoring criteria; changes require permission.
 - `fixtures/`: saved real public inputs without personal data for reproducible offline runs. Record source, retrieval date, and permission/license alongside future inputs.
 - `docs/meetings/`: decisions and next actions using Person A and Person B.
 - [docs/prompt-log.md](docs/prompt-log.md): corrected or rejected agent output and lessons.
 
-The acceptance checker is eval/check_probe.py. It currently fails because out/probe.json has not been produced. The downloader has not been implemented.
+The earlier MET Norway exercise is in `harness/probe.py`; its checker is `eval/check_probe.py`. The NAV walking skeleton is separate.
+
+## NAV saved-input walking skeleton
+
+Requires Python 3 and internet access with OpenAI API credits. Set the process environment variable `KIUA2003_API` to your API key before the saved-input run; do not put a real key in project files. The program never writes the key or Authorization header. In PowerShell, set it privately for the current process, then run:
+
+```powershell
+python harness/nav_skeleton.py --mode dry-run
+python harness/nav_skeleton.py --mode saved-input
+```
+
+Use `--input path/to/ad.json` with either command for another compatible saved advertisement. The default is the edited fixture `fixtures/nav_ad_01.json`. Dry run only prints the plan and limits; it does not read or validate the input, require a key, make a network call, or change files. Saved-input mode automatically (1) reads the saved advertisement and prepares its entire HTML description as readable text, (2) calls `gpt-6-luna` through OpenAI's Responses API to extract technical skills, and (3) validates the response before creating the JSON result and Markdown report.
+
+Each extracted item is `required` for an applicant qualification, `preferred` for an explicitly optional advantage, or `unclear` when the advertisement mentions a skill without establishing either. A `single` item contains exactly one skill. An `any_of` item preserves at least two explicit alternatives, such as “A or B”, without choosing between them. Validation checks JSON structure and that each supporting quotation occurs exactly in the prepared text. It does not establish extraction accuracy or completeness.
+
+Each run has its own `out/nav_runs/<run-id>/` directory. New run IDs use the UTC date, time, and validated advertisement UUID, for example `2026-10-31_08-23-49_UTC_ad-8119dbb1-530f-4307-9ee0-e030c2b8e581`; the run ID matches the folder name. A run fails without overwriting anything if that folder already exists. Read `report.md` alongside the saved advertisement and its notes; `result.json` holds structured items. `prepared_ad.txt`, `request.json` without credentials, `response.json`, and `validation.json` aid inspection. A failed run has no successful result or report. The fixture's saved `ACTIVE` status is not a live status check.
+
+Extraction accuracy and completeness remain to be evaluated against a human-reviewed reference. Planned extensions include live NAV collection and Python-calculated statistics across advertisements, with explicit rules for skill naming, alternative groups, and duplicates.
 
 ## Secret-file protection
 

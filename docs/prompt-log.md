@@ -76,3 +76,28 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 - Correction: Extract and validate only the JWT, keep it in memory, and handle errors without displaying the token or Authorization header.
 - Outcome: Codex reported that the retry returned HTTP 200 inside the sandbox and saved `fixtures/nav_ad_01.json` as UTF-8. It reported reading the file back and successfully parsing JSON. External review confirmed valid JSON, found named employees and biographies in the description's “Om oss” section, and compared the revised JSON with the original. The review confirmed that only the agreed “Om oss” section was removed and all other values and job requirements were unchanged. The revised file parsed as UTF-8 JSON without a BOM.
 - Lesson: Inspect response formats before constructing authentication headers, and ensure error reporting does not expose tokens.
+
+## 2026-10-31 - NAV saved-input extraction output format
+
+- Task: `tasks/002-nav-skeleton.md`; run the saved advertisement through `gpt-6-luna`.
+- Rejected output: The first run returned two items with multiple skills but `relationship: "single"`.
+- Reason: The agreed schema requires exactly one skill for `single`; validation failed for items 4 and 5. No result or report was produced for that run.
+- Correction: The general extraction prompt now states the `single` and `any_of` rules, separates skills joined by “and” into single items, and permits separate items to share exact evidence. The validator and failed run artifacts were left unchanged.
+- Outcome: Focused model-free checks passed. One new saved-input API request returned a completed response; structural and exact-quotation validation passed, and a result and report were produced. Extraction accuracy and completeness have not been evaluated.
+- Lesson: A strict JSON shape does not ensure that relationship labels match the number and meaning of skills; make grouping rules explicit and validate them independently.
+
+## 2026-10-31 - NAV skeleton diagnostics and run naming cleanup
+
+- Task: Clean up `harness/nav_skeleton.py` and the README for saved-input runs.
+- Corrected output: The main error handler could overwrite detailed `validation.json` diagnostics after validation failed; new run folders used a compact timestamp.
+- Correction: Preserve an existing validation file, write fallback diagnostics only when absent, and format new UTC run IDs as `YYYY-MM-DD_HH-MM-SS_UTC-xxxxxxxx`. Clarify the implemented stages, classifications, grouping rules, validation limits, and dry-run behavior in the README.
+- Checks: Syntax passed. Temporary model-free checks confirmed detailed diagnostics survive validation failure, earlier failures receive fallback diagnostics, and new folder names follow the specified pattern. No API request was made.
+- Lesson: Keep detailed failure evidence when reporting an error, and make run artifact names readable without changing earlier runs.
+
+## 2026-10-31 - NAV run folder identification
+
+- Task: Use UTC time and the saved advertisement UUID in future run folder names.
+- Requested improvement: The earlier folder format used an eight-character random suffix and did not identify the advertisement.
+- Correction: Validate and normalize the advertisement UUID before creating a folder; use `YYYY-MM-DD_HH-MM-SS_UTC_ad-<uuid>` for both folder name and run ID. Refuse to overwrite an existing folder.
+- Checks: Syntax passed. Temporary model-free checks accepted a valid UUID, rejected an invalid UUID before folder creation, verified the new name and matching run ID, and verified that a folder collision left existing contents unchanged. No API request was made and existing run folders were not changed.
+- Lesson: Identify the saved source in the run path and fail safely when the same source and UTC second collide.
