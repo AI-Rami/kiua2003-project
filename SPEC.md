@@ -2,11 +2,11 @@
 
 ## Purpose
 
-The project is a job advertisement analyser using NAV's job vacancy API as the chosen data source, initially focused on IT roles in Innlandet. Its planned purpose is to make skill requirements across job advertisements easier to compare by extracting skills and classifying them as required, preferred, or unclear.
+The project is a planned web dashboard showing skill statistics from relevant NAV job advertisements, initially focused on IT roles in Innlandet. Its purpose is to make skill requirements across advertisements easier to compare by extracting skills and classifying them as required, preferred, or unclear.
 
 Education and experience extraction are possible future extensions and are outside the current scope.
 
-The project will begin with a small end-to-end walking skeleton. Later capabilities will be added through separate, narrowly scoped tasks. The detailed scope and acceptance criteria for the walking skeleton will be defined in the next task brief.
+A saved-input walking skeleton and separate NAV collection and cleaning commands are implemented. Integrating collected text with extraction, calculating skill statistics, and building the web dashboard remain planned.
 
 ## Users
 
@@ -16,20 +16,19 @@ The intended user need has not yet been demonstrated or validated. The project c
 
 ## Intended workflow
 
-The following workflow is planned:
+The following end-to-end product workflow is planned; collection, cleaning, and saved-input extraction currently run as separate commands:
 
-1. Collect advertisement updates from NAV's job vacancy API, after verifying the relevant endpoints, access requirements, and usage terms.
-2. Select active IT advertisements for Innlandet using NAV's IT categories and Innlandet location filtering where supported by the API. Verify the available API fields and filters before implementation; do not assume website filters are exposed through the API. Use deadline and source status, where available, to exclude expired or withdrawn advertisements. Handling of remote jobs and multiple locations remains open.
-3. Remove duplicate versions of the same advertisement.
-4. Use an AI agent to extract skills. Each extracted skill must have a skill name, a classification of required, preferred, or unclear, and an exact supporting quotation from the advertisement. Preserve a link to the source advertisement. Flag ambiguous wording as unclear without forcing a required or preferred classification.
-5. Validate output structure and check with code that each quotation occurs in the source text. Use reviewed reference examples to evaluate skill extraction, classification, omissions, and invented skills. A matching quotation alone does not prove that the interpretation is correct. Flag uncertain results without numerical confidence scores.
-6. Calculate totals using ordinary code rather than the AI agent.
-7. Produce structured JSON and a readable report with links to the source advertisements.
-8. Eventually run the workflow automatically each week.
+1. The user clicks “Run update” in the web dashboard. Users do not paste advertisement links.
+2. Collect relevant advertisements through NAV's job vacancy API, after verifying endpoints, access requirements, usage terms, and how the selected NAV search filters for IT roles in Innlandet can be implemented. Do not assume website filters are exposed through the API. Use deadline and source status where available to identify expiry or withdrawal; retain expired advertisements in historical statistics. Handling of remote jobs and multiple locations remains open.
+3. Identify new or changed advertisements by NAV advertisement UUID. The same UUID updates an existing stored record without adding another advertisement. A new UUID counts as a new advertisement, including when a job is republished under a new UUID. Preserve the original source link and publication date with the record.
+4. Extract skills from relevant new or changed advertisements. Each extracted skill must have a skill name, a classification of required, preferred, or unclear, and an exact supporting quotation from the advertisement. Preserve the source link so users can inspect the advertisement behind a statistic. Flag ambiguous wording as unclear without forcing a required or preferred classification.
+5. Validate output structure and check with code that each quotation occurs in the source text. Use reviewed reference examples to evaluate skill extraction, classification, omissions, and invented skills. A matching quotation alone does not prove that the interpretation is correct. Flag uncertain results without numerical confidence scores. Store validated results.
+6. Calculate statistics using ordinary code rather than the AI agent. Count advertisements by UUID, not unique jobs or vacancies. Plan weekly, monthly, and yearly views using advertisement publication dates. Show the period and coverage of collected data; do not imply historical completeness before collection began.
+7. Update the web dashboard with skill statistics and links and quotations supporting the underlying advertisements. Produce structured JSON and a readable report as additional outputs.
 
-JSON and a readable report with source links are agreed outputs. The final JSON schema has not yet been defined.
+The dashboard, JSON, and a readable report with source links are agreed outputs. The final JSON schema and dashboard presentation have not yet been defined.
 
-The AI model remains undecided until candidate models have been tested. Model selection will consider extraction accuracy, cost, speed, and access through the project's setup. The model must remain configurable.
+The saved-input skeleton currently uses configurable `gpt-6-luna`. The model for the integrated product remains undecided until candidates have been evaluated for extraction accuracy, cost, speed, and access through the project's setup.
 
 ## Definition of success
 
@@ -37,8 +36,10 @@ Success means that the project:
 
 - extracts skills accurately, distinguishes required from preferred skills, and marks ambiguous wording as unclear, with omissions and invented skills assessed against reviewed reference examples;
 - makes each extracted skill traceable to an exact supporting quotation and a source link, while evaluating interpretation separately from quotation matching;
-- supports reproducible execution from documented inputs and steps; and
-- reports failures and uncertain results clearly rather than presenting them as reliable output.
+- supports reproducible execution from documented inputs and steps;
+- reports failures and uncertain results clearly rather than presenting them as reliable output;
+- counts advertisements consistently by UUID, retains expired advertisements in historical views, and shows publication-date periods with data coverage; and
+- lets users inspect the source links and quotations behind displayed statistics.
 
 Numerical success thresholds have not yet been defined. Appropriate evaluation cases, scoring methods, and acceptance thresholds must be established in later task briefs.
 
@@ -47,12 +48,14 @@ Numerical success thresholds have not yet been defined. Appropriate evaluation c
 - Which endpoints, access requirements, and usage terms apply to NAV's job vacancy API?
 - Which API fields and filters support NAV's IT categories, Innlandet locations, deadlines, and source status, and how should selection work when these are unavailable?
 - How should remote jobs and advertisements with multiple locations be handled?
-- How should different versions of the same advertisement be detected and deduplicated?
+- Which source fields reliably indicate that an existing UUID has changed, and how should an updated record's extraction and publication date be handled?
+- Which NAV publication-date field and time zone should define weekly, monthly, and yearly periods, and how should data coverage be displayed?
+- How should alternative skill groups and repeated skills within one advertisement contribute to advertisement counts?
 - Which candidate AI models should be tested, and which best meets the extraction accuracy, cost, speed, and access needs of the project?
 - Which prompting approach and final JSON schema should be used for extraction?
 - How should advertisement text be prepared so exact supporting quotations can be reliably checked against the source?
 - Which reviewed reference examples and review process should evaluate extraction, classification, omissions, invented skills, and ambiguous wording?
-- What mechanism should schedule and monitor eventual weekly runs?
+- How should the dashboard show update progress, partial failures, and the last successful collection period after a user clicks “Run update”?
 
 ## Current implementation status
 
@@ -60,6 +63,8 @@ The repository contains an earlier MET Norway weather exercise, separate from th
 
 Code inspection for this specification update confirmed that `harness/probe.py` contains MET forecast retrieval, caching, offline reading, transformation, and JSON output code. `harness/test_probe.py` contains synthetic tests for the weather exercise, and `eval/check_probe.py` checks weather output rather than NAV advertisements or extracted skills. The saved weather fixture and metadata are present, and `out/probe.json` exists.
 
-The README still states that the downloader is unimplemented and the output is missing; those documentation statements do not reflect the files inspected. The weather code and tests were inspected but not executed for this update, and the existing output's correctness was not tested. No runtime success is claimed here.
+The earlier README statements that the MET downloader was unimplemented and its output missing were outdated; the README now identifies the earlier MET exercise separately. The weather code and tests described above were inspected but not executed for that specification update, and the existing weather output's correctness was not tested there. No new MET runtime claim is made here.
 
-The NAV collection, advertisement selection, deduplication, AI skill extraction, validation, aggregation, reporting, and weekly automation described above remain planned behaviour. No implementation of these NAV capabilities was found in the inspected repository files, and no NAV workflow was executed or tested.
+The NAV saved-input walking skeleton is implemented in `harness/nav_skeleton.py` with an edited advertisement fixture. It prepares the saved description, calls `gpt-6-luna`, validates output structure and exact quotations, and writes JSON and Markdown run artifacts. One saved-input run passed those structural checks; this does not establish extraction accuracy or completeness.
+
+`harness/nav_collect.py` implements a bounded metadata preview. `harness/nav_discover.py` implements a separate resumable NAV feed scan, SQLite metadata storage, detail discovery, and edited text capture for selected IT ads. `harness/nav_text.py` provides deterministic contact cleaning, which flags uncertain text and does not establish that saved captures are free of personal information. The discovery scan is a data-availability investigation, not complete NAV search-filter implementation or market coverage. Collected captures are not yet passed to the saved-input extraction skeleton. Skill statistics across advertisements and the web dashboard remain planned.

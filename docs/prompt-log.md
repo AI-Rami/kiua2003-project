@@ -101,3 +101,64 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 - Correction: Validate and normalize the advertisement UUID before creating a folder; use `YYYY-MM-DD_HH-MM-SS_UTC_ad-<uuid>` for both folder name and run ID. Refuse to overwrite an existing folder.
 - Checks: Syntax passed. Temporary model-free checks accepted a valid UUID, rejected an invalid UUID before folder creation, verified the new name and matching run ID, and verified that a folder collision left existing contents unchanged. No API request was made and existing run folders were not changed.
 - Lesson: Identify the saved source in the run path and fail safely when the same source and UTC second collide.
+
+## 2026-10-31 - NAV collector syntax correction
+
+- Task: Implement the requested bounded NAV metadata collector in `harness/nav_collect.py`.
+- Requested feature: Collect a limited change-feed preview and save only qualifying advertisement metadata and a run summary. This request was new functionality, not a correction to the earlier saved-input skeleton.
+- Corrected output: The initial version of the new collector had an unmatched closing parenthesis; its first syntax check failed. Post-preview review also found that a mid-page failure could undercount unprocessed detail candidates. An initial new-file whitespace check falsely flagged lines because its trim expression included a literal `t` character.
+- Correction: Remove the extra parenthesis before running any live preview. Count remaining candidates in a failure summary if a later detail request fails mid-page. Replace the whitespace check with an explicit space-or-tab suffix check.
+- Checks: The subsequent syntax check passed. Focused synthetic selection, UUID deduplication, limit, URL, pagination, failure-handling, and dry-run checks passed. The actual dry-run exited successfully without creating the output directory. `git diff --check` passed before the live preview. After the live preview, a further synthetic mid-page HTTP failure check passed; the corrected new-file whitespace check passed; no second live run was made.
+- Live outcome: One bounded preview fetched one page and made 50 detail requests. It recorded zero matches, two nonmatches, 48 inactive details, zero unknown relevance, and no failures; the detail limit stopped the run with 94 active candidates on the fetched page uninspected.
+- Lesson: Run syntax and model-free checks before live requests, and report a bounded zero-match result without implying complete coverage.
+
+## 2026-10-31 - NAV feed duplicate selection correction
+
+- Task: Improve candidate selection in the bounded NAV metadata collector.
+- Corrected output: The collector could request a detail for an older ACTIVE feed entry even when a newer entry for the same UUID on that page was INACTIVE.
+- Correction: Group entries by UUID within each fetched page and compare the documented `date_modified` timestamps before selecting ACTIVE details. Skip UUIDs when recency cannot be determined safely; report valid time bounds and missing or invalid timestamps per page. Keep the current detail-status check and one-detail-request-per-UUID rule.
+- Checks: Syntax passed. Synthetic model-free cases passed for both status transitions in both array orders, duplicate UUIDs, timestamp diagnostics, timezone comparison, and a collection run with a one-detail limit. No live request was made or existing output changed.
+- Lesson: Use the feed's change timestamp to resolve duplicates on a fetched page; this does not establish the latest state across unread pages.
+
+## 2026-10-31 - NAV relevance reason correction
+
+- Task: Add aggregate reasons for unknown and nonmatching details in the bounded collector.
+- Corrected output: The previous relevance logic returned unknown whenever either selection condition was unknown, even if the other was definitely false. The saved summary counted outcomes but did not identify their reasons.
+- Correction: Treat either definitely false condition as a nonmatch, both true as a match, and all remaining active cases as unknown. Keep inactive and invalid status explicit. Record one exclusive reason for each unknown or nonmatching detail, including false-plus-unknown combinations.
+- Checks: Synthetic model-free checks passed for all nine true/false/unknown condition pairs, inactive and invalid status, missing content, and aggregate reason counts in a mocked collection run. No network or model request was made; existing run outputs were not changed.
+- Lesson: Report both condition states so a false-plus-unknown case is not mistaken for a single known exclusion reason.
+
+## 2026-11-01 - Resumable NAV availability investigation
+
+- Task: Add a separate resumable feed scan and metadata-only detail discovery command.
+- Requested change: The bounded preview did not retain a cursor or reconcile changes across pages. The new investigation saves feed progress in SQLite and waits for the current feed end before detail discovery.
+- Checks: Temporary mocked cases passed for page and detail resume, overlapping pages, status changes with regressing or equal timestamps, final-page polling, phase separation, overlapping occupation counts, unsafe URLs, rate-limit progress, unavailable content, and the existing preview relevance function. No advertisement body was saved by these checks.
+- Correction: A review of the new summary found that a detail saved before a later feed change could still contribute to counts. The summary now counts a detail only when its saved feed order matches the UUID's latest reconciled order; a synthetic stale-detail check passed.
+- Limitation: The scan and any later detail availability describe observed API data, not complete market coverage or historical text recovery.
+- Live outcome: One session from `2026-08-01T00:00:00Z` reached the current feed end after 181 pages and stopped at the 2,000-detail limit. It left 7,133 detail candidates pending; the saved partial summary counted 69 IT ads with usable text, including 3 explicitly listing Innlandet.
+
+## 2026-11-01 - NAV edited text capture and queue completion
+
+- Task: Continue the existing discovery database, backfill previously processed IT text, and save edited text captures for later extraction.
+- Requested change: Add a SQLite-backed capture state, conservative contact cleaning, separate confirmed Innlandet and remote-review sets, and an offline JSON export. This was new work rather than a correction to the saved-input skeleton.
+- Correction: A temporary whitespace-check command used an incorrect trim expression and failed; the corrected space-or-tab check passed. A synthetic review-flag assertion initially compared a SQLite row object directly with a tuple; comparing its values passed.
+- Checks: Synthetic migration, backup, cursor, cleaning, review blocking, deduplication, resume, inactive preservation, backfill, export, and credential/body exclusion checks passed. Syntax, the prior collector dry-run, and `git diff --check` passed before live execution.
+- Live outcome: Four bounded resume batches made 7,202 detail requests, including 69 IT backfills, without rescanning feed pages. The queue completed with zero pending work and zero request failures. It saved 167 distinct cleaned IT captures: 10 confirmed Innlandet and 157 remote-review candidates. Another 114 IT records were review blocked without saved text.
+- Limitation: The latest feed end checked remains the earlier observed `2026-11-01T10:47:55.775278Z`; these captures do not reconstruct removed historical descriptions or establish complete market coverage. All saved text still needs human review for personal information.
+
+## 2026-11-01 - Targeted Innlandet contact-cleaning correction
+
+- Task: Correct contact cleaning and reprocess only the 11 previously detailed IT ads explicitly listing Innlandet.
+- Corrected output: The earlier cleaner could leave a named contact sentence, discard a qualification sharing a paragraph with contact text, and miss contact headings marked as bold paragraphs.
+- Correction: Version 2 separates recognizable contact passages, uses `contactList` hints only in memory, recognizes bold headings, and blocks ambiguous separation. Earlier captures remain unchanged; revised outcomes are stored separately.
+- Checks: Twelve synthetic cleaner cases passed, including Norwegian and English contact wording, mixed paragraphs, headings, company wording, and ambiguity. A mocked 11-target run verified backup, remote exclusion, one request per UUID, review blocking, prior-capture retention, and offline export. Syntax and `git diff --check` passed before live requests.
+- Live outcome: A SQLite backup preceded 11 sequential detail requests. Ten revised captures were saved with `pending_human_review` status; one was review blocked for an uncertain section boundary. The separate export contains 11 JSON files and an index. Earlier 167 captures and discovery progress remained intact.
+- Limitation: Automated cleaning does not guarantee removal of all personal information; revised captures still need human review.
+
+## 2026-11-01 - NAV collection review before commit
+
+- Task: Review the remaining NAV collection and cleaning code after the one-off reprocessing script and earlier output folders were removed.
+- Corrected output: The README still gave commands for the removed script, and the specification still said live NAV collection and persistent storage were only planned. The discovery command's module description also said it never stored advertisement text, although it saves edited IT text captures.
+- Correction: Remove the obsolete commands, distinguish implemented collection and cleaning from saved-fixture extraction and planned integration, statistics, and dashboard work, and identify the reprocessing task as historical. Preserve earlier prompt-log entries.
+- Checks: Syntax and imports passed for the three collection and cleaning modules and the saved-input skeleton. Four synthetic relevance cases and four synthetic cleaner cases passed. Both dry-run commands, discovery command help, and `git diff --check` passed without network or model requests. An initial cleaner assertion incorrectly expected a non-contact heading to be removed; the corrected assertion passed.
+- Limitation: The cleaner's edited captures remain pending human review, and the current collector does not feed them to the extraction skeleton.
