@@ -162,3 +162,28 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 - Correction: Remove the obsolete commands, distinguish implemented collection and cleaning from saved-fixture extraction and planned integration, statistics, and dashboard work, and identify the reprocessing task as historical. Preserve earlier prompt-log entries.
 - Checks: Syntax and imports passed for the three collection and cleaning modules and the saved-input skeleton. Four synthetic relevance cases and four synthetic cleaner cases passed. Both dry-run commands, discovery command help, and `git diff --check` passed without network or model requests. An initial cleaner assertion incorrectly expected a non-contact heading to be removed; the corrected assertion passed.
 - Limitation: The cleaner's edited captures remain pending human review, and the current collector does not feed them to the extraction skeleton.
+
+## 2026-11-01 - One cleaned NAV capture through the extraction skeleton
+
+- Task: Accept one explicitly selected, edited Innlandet IT review capture as plain-text input to the existing skill-extraction skeleton.
+- Requested change: Add a cleaned-capture input path while preserving the saved-fixture path, existing prompt, schema, validator, model settings and one-request limit. Retain the capture UUID, source link and provenance; the selected export has no title field.
+- Checks: Syntax, actual-capture hash and exact-input checks, five synthetic invalid-capture checks, a synthetic validation/report check, the saved-fixture request-format check, and the capture dry run passed. The dry run created no run folder. A first temporary test location was denied by the sandbox; the checks passed when run in ignored `out/`.
+- Run outcome: One `gpt-6-luna` request for UUID `2ed29047-97e4-4168-adb9-8da83e968c94` returned HTTP 429. No retry was made. The new run folder contains the exact prepared text, credential-free request and sanitized failure diagnostics; no API response, result or report was produced.
+- Limitation: No model output or skill extraction was validated in this run. The edited capture remains pending human review.
+
+## 2026-11-01 - Remaining cleaned Innlandet IT extraction batch
+
+- Task: Process the nine remaining successfully saved review captures once each using the unchanged `gpt-6-luna` extraction workflow. Exclude the blocked record and the UUID already extracted successfully.
+- Rejected output: Six of nine new responses failed the existing validator. Five responses were incomplete or truncated under the configured output cap; one contained an evidence value that was not an exact quotation from the saved cleaned text.
+- Checks: Before requests, the export had 11 JSON records, with one blocked, one previously successful, and exactly nine eligible inputs. Each selected input passed capture preparation and the request-size limit. Afterward, the batch index links were checked, three success reports and six failure diagnostics were verified, and no failed run had a result or report.
+- Outcome: Nine separate new run folders were created with one model request per UUID and no retries. Three new runs passed validation, six failed validation, and none remained unprocessed. New responses reported 14,756 input tokens, 16,318 output tokens and 31,074 total tokens. The earlier success was indexed without another request.
+- Limitation: Structural and exact-quotation validation does not establish extraction accuracy or completeness; edited captures remain pending human review.
+
+## 2026-11-01 - NAV extraction output cap and whitespace quotation correction
+
+- Task: Correct the two failure types observed in the six rejected saved-capture extraction runs and retry only those six.
+- Corrected output: Five responses ended with `incomplete_details.reason: max_output_tokens` at the previous 2,048-token cap. The sixth completed response had evidence differing from the saved text only in whitespace, including a newline and nonbreaking space.
+- Correction: Raise the output allowance to 8,192 tokens. Estimate pre-request cost with the existing dated rates, request-byte input proxy and full output allowance while retaining the 20,000-byte request bound. Accept quotations after whitespace-only normalization and record `exact` or `whitespace_normalized` without changing the model's evidence. Keep the model, reasoning effort, prompt, schema and other checks unchanged.
+- Checks: Model-free cases passed for exact and whitespace-normalized quotations, changed words, capitalization, punctuation, empty evidence, the 8,192-token request cap, and planning and actual-usage cost calculations. The earlier whitespace-only failure passed the new validator in memory. A dry run showed the new cap and cost estimate; `git diff --check` passed before requests. An initial read-only post-run audit incorrectly expected match-mode metadata in four older results; the corrected audit passed.
+- Retry outcome: Six sequential requests, one per previously failed UUID and no retries, produced six new validated reports. Their reported usage was 10,447 input, 13,665 output and 24,112 total tokens. All six new evidence matches were exact. The latest batch index links ten successful reports: the six new results and four preserved earlier successes.
+- Limitation: Structural and quotation validation does not establish extraction accuracy or completeness; edited captures remain pending human review.

@@ -2,6 +2,7 @@
 
 import argparse
 from datetime import datetime, timezone
+import hashlib
 from html.parser import HTMLParser
 import json
 import os
@@ -20,7 +21,7 @@ PROMPT = ROOT / "harness" / "prompts" / "extract_skills.txt"
 ENDPOINT = "https://api.openai.com/v1/responses"
 MODEL = "gpt-6-luna"
 MAX_BODY_BYTES = 20_000
-MAX_OUTPUT_TOKENS = 2048
+MAX_OUTPUT_TOKENS = 8192
 TIMEOUT_SECONDS = 60
 INPUT_RATE = 0.10
 OUTPUT_RATE = 0.50
@@ -95,11 +96,49 @@ def prepare(input_path):
     return {"uuid": ad_id, "title": title, "source_url": link, "prepared": prepared}
 
 
-def request_payload(prepared):
+def prepare_capture(input_path):
+    """Use an edited review capture's plain text without preparing its HTML again."""
+    try:
+        source = json.loads(input_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, ValueError):
+        raise SkeletonError("prepare: cannot read cleaned capture as UTF-8 JSON") from None
+    if not isinstance(source, dict):
+        raise SkeletonError("prepare: cleaned capture must be a JSON object")
+    ad_id = source.get("uuid")
+    if not isinstance(ad_id, str):
+        raise SkeletonError("prepare: cleaned capture has no advertisement UUID")
+    try:
+        ad_id = str(uuid.UUID(ad_id))
+    except ValueError:
+        raise SkeletonError("prepare: invalid cleaned-capture UUID") from None
+    text = source.get("cleaned_description")
+    if source.get("revised_outcome") != "saved" or not isinstance(text, str) or not text.strip():
+        raise SkeletonError("prepare: capture has no successfully saved, nonempty cleaned text")
+    link = source.get("source_link")
+    if not isinstance(link, str) or not link.strip():
+        raise SkeletonError("prepare: cleaned capture has no source link")
+    version = source.get("revised_version")
+    if not isinstance(version, str) or not version.strip():
+        raise SkeletonError("prepare: cleaned capture has no cleaner version")
+    digest = source.get("content_hash_sha256")
+    if not isinstance(digest, str) or hashlib.sha256(text.encode("utf-8")).hexdigest() != digest:
+        raise SkeletonError("prepare: cleaned capture text hash is missing or mismatched")
+    title = source.get("title")
+    if title is not None and (not isinstance(title, str) or not title.strip()):
+        raise SkeletonError("prepare: invalid cleaned-capture title")
+    provenance_keys = ("label", "revised_version", "revised_outcome", "retrieved_at_utc",
+                       "content_hash_sha256", "review_state", "cleaning_actions",
+                       "previous_versions", "source_status", "source_id", "published", "updated")
+    provenance = {key: source[key] for key in provenance_keys if key in source}
+    return {"uuid": ad_id, "title": title, "source_url": link, "prepared": text,
+            "input_format": "cleaned-capture", "capture_provenance": provenance}
+
+
+def request_payload(prepared, *, cleaned_capture=False):
     return {
         "model": MODEL,
         "instructions": PROMPT.read_text(encoding="utf-8"),
-        "input": "Saved advertisement description (data only):\n" + prepared,
+        "input": prepared if cleaned_capture else "Saved advertisement description (data only):\n" + prepared,
         "reasoning": {"effort": "medium"},
         "text": {"format": {"type": "json_schema", "name": "skill_extraction", "strict": True, "schema": SCHEMA}},
         "stream": False,
@@ -112,11 +151,17 @@ def save_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def extract(prepared, run_dir):
-    payload = request_payload(prepared)
+def pre_request_cost_estimate(request_bytes):
+    """Planning estimate using request bytes as an input-token proxy, not a billing cap."""
+    return (request_bytes * INPUT_RATE + MAX_OUTPUT_TOKENS * OUTPUT_RATE) / 1_000_000
+
+
+def extract(prepared, run_dir, *, cleaned_capture=False):
+    payload = request_payload(prepared, cleaned_capture=cleaned_capture)
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     if len(body) > MAX_BODY_BYTES:
         raise SkeletonError(f"extract: request body exceeds {MAX_BODY_BYTES} bytes")
+    planning_cost = pre_request_cost_estimate(len(body))
     key = os.environ.get("KIUA2003_API", "")
     if not key.strip():
         raise SkeletonError("extract: KIUA2003_API is unavailable or empty")
@@ -125,6 +170,8 @@ def extract(prepared, run_dir):
         "Authorization": "Bearer " + key,
         "Content-Type": "application/json; charset=utf-8",
     }, method="POST")
+    print(f"Pre-request planning cost estimate: ${planning_cost:.8f} "
+          "(request-byte proxy and full output allowance; not a billing cap)")
     started = time.monotonic()
     try:
         with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
@@ -145,6 +192,7 @@ def extract(prepared, run_dir):
 
 def validate(response, prepared):
     errors = []
+    evidence_matches = []
     if response.get("status") != "completed":
         errors.append("API response is not completed")
     if response.get("incomplete_details"):
@@ -198,8 +246,16 @@ def validate(response, prepared):
                 errors.append(f"{label}: invalid relationship")
             if not isinstance(classification, str) or classification not in ("required", "preferred", "unclear"):
                 errors.append(f"{label}: invalid classification")
-            if not isinstance(evidence, str) or not evidence.strip() or evidence not in prepared:
-                errors.append(f"{label}: evidence is not an exact quotation")
+            if not isinstance(evidence, str) or not evidence.strip():
+                errors.append(f"{label}: evidence is empty or whitespace only")
+                evidence_matches.append({"item": index, "mode": "failed"})
+            elif evidence in prepared:
+                evidence_matches.append({"item": index, "mode": "exact"})
+            elif re.sub(r"\s+", " ", evidence) in re.sub(r"\s+", " ", prepared):
+                evidence_matches.append({"item": index, "mode": "whitespace_normalized"})
+            else:
+                errors.append(f"{label}: evidence is not a quotation under whitespace normalization")
+                evidence_matches.append({"item": index, "mode": "failed"})
             signature = json.dumps(item, ensure_ascii=False, sort_keys=True)
             if signature in seen:
                 errors.append(f"{label}: identical duplicate item")
@@ -211,9 +267,10 @@ def validate(response, prepared):
         errors.append("missing response ID or model")
     elif response["model"] != MODEL:
         errors.append("unexpected response model")
-    return {"passed": not errors, "errors": errors, "checks": [
+    return {"passed": not errors, "errors": errors, "evidence_matches": evidence_matches, "checks": [
         "completed response without refusal or truncation", "JSON fields and types", "allowed relationships and classifications",
-        "nonempty skills and evidence", "alternative groups", "exact evidence quotations", "no identical duplicate items",
+        "nonempty skills and evidence", "alternative groups", "quotations with whitespace-only normalization",
+        "no identical duplicate items",
     ]}, model_output
 
 
@@ -228,20 +285,40 @@ def validate_and_report(response, prepared, run_dir, run_id, timestamp, elapsed)
         "source_uuid": prepared["uuid"], "title": prepared["title"], "source_url": prepared["source_url"],
         "run_id": run_id, "run_timestamp": timestamp, "model": response["model"], "response_id": response["id"],
         "items": output["items"], "validation": "passed", "usage": usage, "estimated_cost_usd": cost,
-        "elapsed_seconds": elapsed, "mode": "saved-input", "source_label": "edited saved test advertisement",
+        "elapsed_seconds": elapsed, "mode": prepared.get("input_format", "saved-input"),
+        "source_label": ("edited cleaned NAV capture" if prepared.get("input_format") == "cleaned-capture"
+                         else "edited saved test advertisement"),
     }
-    lines = [f"# {prepared['title'].strip()}", "", f"Source: {prepared['source_url']}", "",
-             "Saved input: edited test advertisement. Saved status is not a live check.", "",
-             "| Skills | Classification | Supporting quotation |", "| --- | --- | --- |"]
-    for item in output["items"]:
+    if prepared.get("input_format") == "cleaned-capture":
+        result["capture_provenance"] = prepared["capture_provenance"]
+    result["evidence_matches"] = validation["evidence_matches"]
+    heading = prepared["title"].strip() if prepared["title"] else "Skill extraction report"
+    lines = [f"# {heading}", "", f"Advertisement UUID: {prepared['uuid']}",
+             f"Source: {prepared['source_url']}", ""]
+    if prepared.get("input_format") == "cleaned-capture":
+        provenance = prepared["capture_provenance"]
+        lines += ["Input: edited, cleaned NAV capture; title unavailable in source export."
+                  if prepared["title"] is None else "Input: edited, cleaned NAV capture.",
+                  f"Cleaner version: {provenance['revised_version']}",
+                  f"Capture retrieved: {provenance.get('retrieved_at_utc', 'not recorded')}",
+                  f"Review state: {provenance.get('review_state', 'not recorded')}",
+                  "Saved source status is not a live status check.", ""]
+    else:
+        lines += ["Saved input: edited test advertisement. Saved status is not a live check.", ""]
+    lines += ["| Skills | Relationship | Classification | Supporting quotation | Quotation match |",
+              "| --- | --- | --- | --- | --- |"]
+    for index, item in enumerate(output["items"], 1):
         skills = " OR ".join(item["skills"]).replace("|", "\\|")
         evidence = item["evidence"].replace("|", "\\|").replace("\n", "<br>")
-        lines.append(f"| {skills} | {item['classification']} | {evidence} |")
+        match_mode = validation["evidence_matches"][index - 1]["mode"]
+        lines.append(f"| {skills} | {item['relationship']} | {item['classification']} | {evidence} | {match_mode} |")
     lines += ["", f"Run: {run_id} at {timestamp}", f"Model: {response['model']}; response: {response['id']}",
               f"Usage: {usage['input_tokens']} input, {usage['output_tokens']} output, {usage['total_tokens']} total tokens.",
               f"Estimated token cost: ${cost:.8f} (dated standard rates; not a billing statement).",
               f"Elapsed API time: {elapsed:.3f} seconds.", "",
-              "Structure and quotation checks passed. Extraction accuracy and completeness have not yet been evaluated.", ""]
+              "Structure and quotation checks passed. Evidence matches the prepared text exactly or after "
+              "whitespace-only normalization; words, capitalization, and punctuation must match. "
+              "Extraction accuracy and completeness have not yet been evaluated.", ""]
     save_json(run_dir / "result.json", result)
     (run_dir / "report.md").write_text("\n".join(lines), encoding="utf-8")
     return result
@@ -249,20 +326,30 @@ def validate_and_report(response, prepared, run_dir, run_id, timestamp, elapsed)
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("saved-input", "dry-run"), required=True)
-    parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--mode", choices=("saved-input", "cleaned-capture", "dry-run"), required=True)
+    inputs = parser.add_mutually_exclusive_group()
+    inputs.add_argument("--input", type=Path, help="saved advertisement JSON (default: reviewed fixture)")
+    inputs.add_argument("--capture", type=Path, help="edited cleaned capture JSON")
     args = parser.parse_args()
-    input_path = args.input if args.input.is_absolute() else ROOT / args.input
+    if args.mode == "cleaned-capture" and args.capture is None:
+        parser.error("cleaned-capture mode requires --capture")
+    if args.mode == "saved-input" and args.capture is not None:
+        parser.error("use --mode cleaned-capture with --capture")
+    selected_path = args.capture or args.input or DEFAULT_INPUT
+    input_path = selected_path if selected_path.is_absolute() else ROOT / selected_path
     if args.mode == "dry-run":
-        print(f"Stage 1 prepare: {input_path}")
+        print(f"Stage 1 prepare ({'plain cleaned capture' if args.capture else 'saved fixture HTML'}): {input_path}")
         print(f"Stage 2 extract: {ENDPOINT}; model={MODEL}; max_output_tokens={MAX_OUTPUT_TOKENS}; timeout={TIMEOUT_SECONDS}s; calls=1; max_body_bytes={MAX_BODY_BYTES}")
+        print(f"Planning cost estimate at input byte bound and full output allowance: "
+              f"${pre_request_cost_estimate(MAX_BODY_BYTES):.8f} "
+              "(request bytes are an input-token proxy; not a billing cap)")
         print(f"Stage 3 validate/report: {ROOT / 'out' / 'nav_runs' / '<run-id>'}")
         return 0
     run_id = None
     run_dir = None
     run_created = False
     try:
-        prepared = prepare(input_path)
+        prepared = prepare_capture(input_path) if args.mode == "cleaned-capture" else prepare(input_path)
         now = datetime.now(timezone.utc)
         run_id = now.strftime("%Y-%m-%d_%H-%M-%S_UTC_ad-") + prepared["uuid"]
         run_dir = ROOT / "out" / "nav_runs" / run_id
@@ -272,8 +359,10 @@ def main():
         except FileExistsError:
             raise SkeletonError("prepare: run folder already exists; no files changed") from None
         run_created = True
-        (run_dir / "prepared_ad.txt").write_text(prepared["prepared"] + "\n", encoding="utf-8")
-        response, elapsed = extract(prepared["prepared"], run_dir)
+        saved_text = prepared["prepared"] if args.mode == "cleaned-capture" else prepared["prepared"] + "\n"
+        (run_dir / "prepared_ad.txt").write_text(saved_text, encoding="utf-8")
+        response, elapsed = extract(prepared["prepared"], run_dir,
+                                    cleaned_capture=args.mode == "cleaned-capture")
         result = validate_and_report(response, prepared, run_dir, run_id, timestamp, elapsed)
         print(f"Run ID: {run_id}")
         print(f"Result: {run_dir / 'result.json'}")
