@@ -5,27 +5,28 @@ import hashlib
 import re
 
 
-CLEANING_VERSION = "nav-contact-clean-v2"
+CLEANING_VERSION = "nav-contact-clean-v3"
 EMAIL = re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
 PHONE = re.compile(r"(?<!\d)(?:\+\s*47[ -]*)?(?:\d[ -]?){8}(?!\d)")
 INTERNATIONAL_PHONE = re.compile(r"\+\d{1,3}[ -]?(?:\d[ -]?){7,12}")
 CONTACT_START = re.compile(
-    r"(?i)^(?:spør\b|ta kontakt\b|kontaktperson\b|kontakt\s*[:\-]|"
+    r"(?i)^(?:spør\b|ta (?:gjerne )?kontakt\b|kontaktinformasjon\b|kontaktperson\b|kontakt\s*[:\-]|"
     r"kontakt\s+[A-ZÆØÅ][a-zæøå-]+\s+[A-ZÆØÅ][a-zæøå-]+(?=\s+(?:på|om|for)\b|[.!?]|$)|"
-    r"for spørsmål\b|spørsmål om (?:stillingen|rollen)\b|ring\s+(?:oss|meg|[A-ZÆØÅ])|"
+    r"for spørsmål\b|ved spørsmål\b|spørsmål om (?:stillingen|rollen)\b|ring\s+(?:oss|meg|[A-ZÆØÅ])|"
     r"telefon\s*[:\-]|e-?post\s*[:\-]|send (?:din )?søknad til\b|"
-    r"ask\b|please contact\b|contact us\b|contact person\b|"
+    r"ask\b|please contact\b|please reach out\b|reach out to\b|"
+    r"get in touch\b|contact us\b|contact person\b|"
     r"contact\s+[A-Z][a-z-]+\s+[A-Z][a-z-]+(?=\s+(?:about|at|for)\b|[.!?]|$)|"
     r"for questions\b|questions about (?:the role|this position)\b|"
     r"phone\s*[:\-]|email\s*[:\-])"
 )
 CONTACT_ANY = re.compile(
     r"(?i)\b(?:spør\s+.{1,90}\s+om\s+(?:rollen|stillingen)|"
-    r"ta kontakt|kontaktperson|kontakt\s+[A-ZÆØÅ][a-zæøå-]+\s+[A-ZÆØÅ][a-zæøå-]+(?=\s+(?:på|om|for)\b|[.!?]|$)|"
-    r"for spørsmål|spørsmål om (?:stillingen|rollen)|"
+    r"ta (?:gjerne )?kontakt|kontaktinformasjon|kontaktperson|kontakt\s+[A-ZÆØÅ][a-zæøå-]+\s+[A-ZÆØÅ][a-zæøå-]+(?=\s+(?:på|om|for)\b|[.!?]|$)|"
+    r"for spørsmål|ved spørsmål|spørsmål om (?:stillingen|rollen)|"
     r"ring oss|telefon\s*[:\-]|e-?post\s*[:\-]|"
     r"ask\s+.{1,90}\s+about\s+(?:the role|this position)|"
-    r"please contact|contact us|contact person|"
+    r"please contact|please reach out|reach out to|get in touch|contact us|contact person|"
     r"contact\s+[A-Z][a-z-]+\s+[A-Z][a-z-]+(?=\s+(?:about|at|for)\b|[.!?]|$)|for questions|"
     r"questions about (?:the role|this position)|phone\s*[:\-]|email\s*[:\-])\b"
 )
@@ -35,19 +36,20 @@ JOB_CUE = re.compile(
     r"experience with|you will work|you will develop)\b"
 )
 CONTACT_SECTION = re.compile(
-    r"(?i)^(?:kontakt|kontaktperson|kontaktinformasjon|spørsmål|"
+    r"(?i)^(?:kontakt|kontaktperson|kontaktperson for stillingen|kontaktinformasjon|spørsmål|"
     r"contact|contact us|questions)$"
 )
 TEAM_SECTION = re.compile(r"(?i)^(?:våre ansatte|møt teamet|our team|meet the team)$")
 JOB_HEADING = re.compile(
     r"(?i)^(?:kvalifikasjoner|arbeidsoppgaver|hva trenger vi deg til|"
-    r"hvem er du|vi ser etter|vi tilbyr|om rollen|about the role|"
+    r"hvem er du|vi ser etter|vi tilbyr|om rollen|slik søker du|about the role|how to apply|"
     r"requirements|qualifications|responsibilities|what you will do|"
     r"what we offer|who you are)$"
 )
 SENTENCE_BREAK = re.compile(
     r"(?<=[.!?;])\s+|(?<=[,;])\s+(?=(?:spør|ta kontakt|kontakt|for spørsmål|"
-    r"ring|telefon|e-post|epost|ask|please contact|contact us|for questions|"
+    r"ring|telefon|e-post|epost|ved spørsmål|ask|please contact|please reach out|"
+    r"reach out to|get in touch|contact us|for questions|"
     r"phone|email)\b)", re.IGNORECASE
 )
 
@@ -148,7 +150,8 @@ def _hint_found(passage, hints):
 def _contact_signal(passage, hints, link_labels):
     return (bool(EMAIL.search(passage) or PHONE.search(passage)
                  or INTERNATIONAL_PHONE.search(passage) or CONTACT_ANY.search(passage))
-            or _hint_found(passage, hints)
+            or (_hint_found(passage, hints) and bool(re.search(
+                r"(?i)\b(?:kan svare på spørsmål|can answer questions)\b", passage)))
             or any(label and label.casefold() in passage.casefold() for label in link_labels))
 
 
@@ -157,6 +160,17 @@ def _standalone_contact(passage, hints, link_labels):
     return (value.casefold() in hints or value.casefold() in {label.casefold() for label in link_labels}
             or bool(EMAIL.fullmatch(value))
             or bool(PHONE.fullmatch(value)) or bool(INTERNATIONAL_PHONE.fullmatch(value)))
+
+
+def cleaned_input_issue(text):
+    """Return a sanitized reason when edited text fails the automatic contact screen."""
+    if not isinstance(text, str) or not text.strip() or not any(char.isalnum() for char in text):
+        return "empty_cleaned_text"
+    if EMAIL.search(text) or PHONE.search(text) or INTERNATIONAL_PHONE.search(text):
+        return "remaining_email_or_phone"
+    if CONTACT_ANY.search(text):
+        return "remaining_contact_wording"
+    return None
 
 
 def clean_description(html, contact_list=None):
@@ -207,7 +221,10 @@ def clean_description(html, contact_list=None):
                 continue
             if _hint_found(passage, hints):
                 actions["contact_hint_passages"] += 1
-            if (not (CONTACT_START.search(passage.lstrip()) or _standalone_contact(passage, hints, link_labels))
+            hinted_contact_answer = (_hint_found(passage, hints) and bool(re.search(
+                r"(?i)\b(?:kan svare på spørsmål|can answer questions)\b", passage)))
+            if (not (CONTACT_START.search(passage.lstrip()) or _standalone_contact(passage, hints, link_labels)
+                     or hinted_contact_answer)
                     or JOB_CUE.search(passage)):
                 return None, actions, "uncertain_mixed_contact_passage"
             actions["removed_contact_passages"] += 1
@@ -218,7 +235,7 @@ def clean_description(html, contact_list=None):
     text = "\n\n".join(lines).strip()
     if not text or not any(char.isalnum() for char in text):
         return None, actions, "no_safe_readable_text"
-    if any(_contact_signal(passage, hints, ()) for passage in text.splitlines()):
+    if cleaned_input_issue(text):
         return None, actions, "uncertain_remaining_contact"
     return text, actions, None
 

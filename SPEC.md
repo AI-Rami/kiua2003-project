@@ -2,11 +2,11 @@
 
 ## Purpose
 
-The project is a planned web dashboard showing skill statistics from relevant NAV job advertisements, initially focused on IT roles in Innlandet. Its purpose is to make skill requirements across advertisements easier to compare by extracting skills and classifying them as required, preferred, or unclear.
+The project includes a local web dashboard showing prototype skill statistics from collected NAV job advertisements, initially focused on IT roles in Innlandet. Its purpose is to make skill requirements across advertisements easier to compare by extracting skills and classifying them as required, preferred, or unclear.
 
 Education and experience extraction are possible future extensions and are outside the current scope.
 
-A saved-input walking skeleton and separate NAV collection and cleaning commands are implemented. Integrating collected text with extraction, calculating skill statistics, and building the web dashboard remain planned.
+A saved-input walking skeleton, NAV collection and cleaning, a resumable incremental discovery-to-extraction-to-statistics command, and a local dashboard are implemented. A bounded live verification of the update command exercised two feed pages and saved pending work, but did not reach detail retrieval or model extraction. The dashboard has been checked locally with saved results and a mocked update, not with a live button-triggered update. Separate targeted requests cleaned and extracted two previously blocked advertisements. The current index selects eleven validated v2 model extractions and has no blocked UUIDs. Offline code produces small-sample prototype skill counts from that index, distinguishing applicant qualifications from duties, work context and interest-only mentions; the dashboard recalculates these counts over saved publication-date, status and skill-name filters. Historical period aggregates and complete market statistics remain planned.
 
 ## Users
 
@@ -16,7 +16,7 @@ The intended user need has not yet been demonstrated or validated. The project c
 
 ## Intended workflow
 
-The following end-to-end product workflow is planned; collection, cleaning, and saved-input extraction currently run as separate commands:
+The following product workflow combines the implemented command-line update path and local dashboard interaction with longer-term product plans:
 
 1. The user clicks “Run update” in the web dashboard. Users do not paste advertisement links.
 2. Collect relevant advertisements through NAV's job vacancy API, after verifying endpoints, access requirements, usage terms, and how the selected NAV search filters for IT roles in Innlandet can be implemented. Do not assume website filters are exposed through the API. Use deadline and source status where available to identify expiry or withdrawal; retain expired advertisements in historical statistics. Handling of remote jobs and multiple locations remains open.
@@ -26,7 +26,7 @@ The following end-to-end product workflow is planned; collection, cleaning, and 
 6. Calculate statistics using ordinary code rather than the AI agent. Count advertisements by UUID, not unique jobs or vacancies. Plan weekly, monthly, and yearly views using advertisement publication dates. Show the period and coverage of collected data; do not imply historical completeness before collection began.
 7. Update the web dashboard with skill statistics and links and quotations supporting the underlying advertisements. Produce structured JSON and a readable report as additional outputs.
 
-The dashboard, JSON, and a readable report with source links are agreed outputs. The final JSON schema and dashboard presentation have not yet been defined.
+The local dashboard, JSON, and a readable report with source links are implemented prototype outputs. Dashboard presentation may change after user review; the existing v2 extraction schema is implemented and retained.
 
 The saved-input skeleton currently uses configurable `gpt-6-luna`. The model for the integrated product remains undecided until candidates have been evaluated for extraction accuracy, cost, speed, and access through the project's setup.
 
@@ -55,7 +55,7 @@ Numerical success thresholds have not yet been defined. Appropriate evaluation c
 - Which prompting approach and final JSON schema should be used for extraction?
 - How should advertisement text be prepared so exact supporting quotations can be reliably checked against the source?
 - Which reviewed reference examples and review process should evaluate extraction, classification, omissions, invented skills, and ambiguous wording?
-- How should the dashboard show update progress, partial failures, and the last successful collection period after a user clicks “Run update”?
+- How should the dashboard show the last successful collection period? Its current local version shows progress, completion and partial or failed outcomes, but not a verified collection-period history.
 
 ## Current implementation status
 
@@ -67,4 +67,4 @@ The earlier README statements that the MET downloader was unimplemented and its 
 
 The NAV saved-input walking skeleton is implemented in `harness/nav_skeleton.py` with an edited advertisement fixture. It prepares the saved description, calls `gpt-6-luna`, validates output structure and exact quotations, and writes JSON and Markdown run artifacts. One saved-input run passed those structural checks; this does not establish extraction accuracy or completeness.
 
-`harness/nav_collect.py` implements a bounded metadata preview. `harness/nav_discover.py` implements a separate resumable NAV feed scan, SQLite metadata storage, detail discovery, and edited text capture for selected IT ads. `harness/nav_text.py` provides deterministic contact cleaning, which flags uncertain text and does not establish that saved captures are free of personal information. The discovery scan is a data-availability investigation, not complete NAV search-filter implementation or market coverage. Collected captures are not yet passed to the saved-input extraction skeleton. Skill statistics across advertisements and the web dashboard remain planned.
+`harness/nav_collect.py` implements a bounded metadata preview. `harness/nav_discover.py` implements a resumable NAV feed scan, SQLite metadata storage, detail discovery, and edited text capture for selected IT ads. New detail discovery also retains an available job title as display metadata; a targeted title-only lookup recovered four titles for older selected results, while five remained unavailable. `harness/nav_text.py` provides deterministic contact cleaning, which flags uncertain text and does not establish that saved captures are free of personal information. The discovery scan is a data-availability investigation, not complete NAV search-filter implementation or market coverage. Individual cleaned captures can be passed to the extraction skeleton. `harness/nav_update.py` connects saved feed continuation, pending work, extraction and statistics in one bounded command; its complete path has only been checked locally with isolated data. `out/current/index.json` selects at most one validated v2 model extraction per eligible UUID, with blocked, stale and failed entries excluded. `harness/nav_skill_summary.py` counts only these explicit selected results and separates single applicant qualifications, applicant `OR` groups, and other technical mentions. It displays available titles and publication dates without treating their date range as collection coverage. `harness/nav_dashboard.py` serves a local UI over the selected results, saved-data filters and the same update workflow; its button has not been used for a live end-to-end run. The generated statistics remain a small-sample prototype with unresolved interpretation warnings, not established extraction accuracy or complete market coverage. Weekly, monthly and yearly historical aggregates remain planned.

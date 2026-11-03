@@ -20,6 +20,7 @@ DEFAULT_INPUT = ROOT / "fixtures" / "nav_ad_01.json"
 PROMPT = ROOT / "harness" / "prompts" / "extract_skills.txt"
 ENDPOINT = "https://api.openai.com/v1/responses"
 MODEL = "gpt-6-luna"
+FORMAT_VERSION = 2
 MAX_BODY_BYTES = 20_000
 MAX_OUTPUT_TOKENS = 8192
 TIMEOUT_SECONDS = 60
@@ -34,9 +35,12 @@ SCHEMA = {
             "skills": {"type": "array", "items": {"type": "string"}},
             "relationship": {"type": "string", "enum": ["single", "any_of"]},
             "classification": {"type": "string", "enum": ["required", "preferred", "unclear"]},
-            "evidence": {"type": "string"},
+            "mention_type": {"type": "string", "enum": ["candidate_qualification", "work_duty", "work_context", "interest_only"]},
+            "skill_evidence": {"type": "string"},
+            "classification_context": {"type": ["string", "null"]},
         },
-        "required": ["skills", "relationship", "classification", "evidence"],
+        "required": ["skills", "relationship", "classification", "mention_type",
+                     "skill_evidence", "classification_context"],
         "additionalProperties": False,
     }}},
     "required": ["items"],
@@ -140,7 +144,7 @@ def request_payload(prepared, *, cleaned_capture=False):
         "instructions": PROMPT.read_text(encoding="utf-8"),
         "input": prepared if cleaned_capture else "Saved advertisement description (data only):\n" + prepared,
         "reasoning": {"effort": "medium"},
-        "text": {"format": {"type": "json_schema", "name": "skill_extraction", "strict": True, "schema": SCHEMA}},
+        "text": {"format": {"type": "json_schema", "name": "skill_extraction_v2", "strict": True, "schema": SCHEMA}},
         "stream": False,
         "store": False,
         "max_output_tokens": MAX_OUTPUT_TOKENS,
@@ -192,7 +196,7 @@ def extract(prepared, run_dir, *, cleaned_capture=False):
 
 def validate(response, prepared):
     errors = []
-    evidence_matches = []
+    quotation_matches = []
     if response.get("status") != "completed":
         errors.append("API response is not completed")
     if response.get("incomplete_details"):
@@ -230,13 +234,15 @@ def validate(response, prepared):
         seen = set()
         for index, item in enumerate(items, 1):
             label = f"item {index}"
-            if not isinstance(item, dict) or set(item) != {"skills", "relationship", "classification", "evidence"}:
+            if not isinstance(item, dict) or set(item) != {"skills", "relationship", "classification", "mention_type", "skill_evidence", "classification_context"}:
                 errors.append(f"{label}: wrong fields")
                 continue
             skills = item["skills"]
             relationship = item["relationship"]
             classification = item["classification"]
-            evidence = item["evidence"]
+            mention_type = item["mention_type"]
+            skill_quote = item["skill_evidence"]
+            context_quote = item["classification_context"]
             if not isinstance(skills, list) or not skills or any(not isinstance(s, str) or not s.strip() for s in skills):
                 errors.append(f"{label}: invalid skills")
                 continue
@@ -246,16 +252,28 @@ def validate(response, prepared):
                 errors.append(f"{label}: invalid relationship")
             if not isinstance(classification, str) or classification not in ("required", "preferred", "unclear"):
                 errors.append(f"{label}: invalid classification")
-            if not isinstance(evidence, str) or not evidence.strip():
-                errors.append(f"{label}: evidence is empty or whitespace only")
-                evidence_matches.append({"item": index, "mode": "failed"})
-            elif evidence in prepared:
-                evidence_matches.append({"item": index, "mode": "exact"})
-            elif re.sub(r"\s+", " ", evidence) in re.sub(r"\s+", " ", prepared):
-                evidence_matches.append({"item": index, "mode": "whitespace_normalized"})
+            if mention_type not in ("candidate_qualification", "work_duty", "work_context", "interest_only"):
+                errors.append(f"{label}: invalid mention type")
+            elif mention_type != "candidate_qualification" and classification != "unclear":
+                errors.append(f"{label}: non-qualification mention must be unclear")
+            matches = {"item": index, "skill_evidence": "failed", "classification_context": "not_provided"}
+            if not isinstance(skill_quote, str) or not skill_quote.strip():
+                errors.append(f"{label}: skill quotation is empty or invalid")
+            elif skill_quote not in prepared:
+                errors.append(f"{label}: skill quotation is not an exact continuous passage")
             else:
-                errors.append(f"{label}: evidence is not a quotation under whitespace normalization")
-                evidence_matches.append({"item": index, "mode": "failed"})
+                matches["skill_evidence"] = "exact"
+            if context_quote is None:
+                pass
+            elif not isinstance(context_quote, str) or not context_quote.strip():
+                matches["classification_context"] = "failed"
+                errors.append(f"{label}: context quotation is empty or invalid")
+            elif context_quote not in prepared:
+                matches["classification_context"] = "failed"
+                errors.append(f"{label}: context quotation is not an exact continuous passage")
+            else:
+                matches["classification_context"] = "exact"
+            quotation_matches.append(matches)
             signature = json.dumps(item, ensure_ascii=False, sort_keys=True)
             if signature in seen:
                 errors.append(f"{label}: identical duplicate item")
@@ -267,9 +285,11 @@ def validate(response, prepared):
         errors.append("missing response ID or model")
     elif response["model"] != MODEL:
         errors.append("unexpected response model")
-    return {"passed": not errors, "errors": errors, "evidence_matches": evidence_matches, "checks": [
+    return {"format_version": FORMAT_VERSION, "passed": not errors, "errors": errors,
+            "quotation_matches": quotation_matches, "checks": [
         "completed response without refusal or truncation", "JSON fields and types", "allowed relationships and classifications",
-        "nonempty skills and evidence", "alternative groups", "quotations with whitespace-only normalization",
+        "allowed mention types and non-qualification labels", "nonempty skills and skill quotation",
+        "alternative groups", "independent exact continuous quotations (governing relationship requires review)",
         "no identical duplicate items",
     ]}, model_output
 
@@ -282,6 +302,7 @@ def validate_and_report(response, prepared, run_dir, run_id, timestamp, elapsed)
     usage = response["usage"]
     cost = (usage["input_tokens"] * INPUT_RATE + usage["output_tokens"] * OUTPUT_RATE) / 1_000_000
     result = {
+        "format_version": FORMAT_VERSION,
         "source_uuid": prepared["uuid"], "title": prepared["title"], "source_url": prepared["source_url"],
         "run_id": run_id, "run_timestamp": timestamp, "model": response["model"], "response_id": response["id"],
         "items": output["items"], "validation": "passed", "usage": usage, "estimated_cost_usd": cost,
@@ -291,9 +312,10 @@ def validate_and_report(response, prepared, run_dir, run_id, timestamp, elapsed)
     }
     if prepared.get("input_format") == "cleaned-capture":
         result["capture_provenance"] = prepared["capture_provenance"]
-    result["evidence_matches"] = validation["evidence_matches"]
+    result["quotation_matches"] = validation["quotation_matches"]
     heading = prepared["title"].strip() if prepared["title"] else "Skill extraction report"
-    lines = [f"# {heading}", "", f"Advertisement UUID: {prepared['uuid']}",
+    lines = [f"# {heading}", "", f"Extraction format: v{FORMAT_VERSION} (separate skill and context quotations).", "",
+             f"Advertisement UUID: {prepared['uuid']}",
              f"Source: {prepared['source_url']}", ""]
     if prepared.get("input_format") == "cleaned-capture":
         provenance = prepared["capture_provenance"]
@@ -305,20 +327,24 @@ def validate_and_report(response, prepared, run_dir, run_id, timestamp, elapsed)
                   "Saved source status is not a live status check.", ""]
     else:
         lines += ["Saved input: edited test advertisement. Saved status is not a live check.", ""]
-    lines += ["| Skills | Relationship | Classification | Supporting quotation | Quotation match |",
-              "| --- | --- | --- | --- | --- |"]
+    lines += ["| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |",
+              "| --- | --- | --- | --- | --- | --- | --- |"]
     for index, item in enumerate(output["items"], 1):
         skills = " OR ".join(item["skills"]).replace("|", "\\|")
-        evidence = item["evidence"].replace("|", "\\|").replace("\n", "<br>")
-        match_mode = validation["evidence_matches"][index - 1]["mode"]
-        lines.append(f"| {skills} | {item['relationship']} | {item['classification']} | {evidence} | {match_mode} |")
+        skill_quote = item["skill_evidence"].replace("|", "\\|").replace("\n", "<br>")
+        context_quote = (item["classification_context"].replace("|", "\\|").replace("\n", "<br>")
+                         if item["classification_context"] is not None else "—")
+        matches = validation["quotation_matches"][index - 1]
+        match_text = f"skill: {matches['skill_evidence']}; context: {matches['classification_context']}"
+        lines.append(f"| {skills} | {item['relationship']} | {item['mention_type']} | "
+                     f"{item['classification']} | {skill_quote} | {context_quote} | {match_text} |")
     lines += ["", f"Run: {run_id} at {timestamp}", f"Model: {response['model']}; response: {response['id']}",
               f"Usage: {usage['input_tokens']} input, {usage['output_tokens']} output, {usage['total_tokens']} total tokens.",
               f"Estimated token cost: ${cost:.8f} (dated standard rates; not a billing statement).",
               f"Elapsed API time: {elapsed:.3f} seconds.", "",
-              "Structure and quotation checks passed. Evidence matches the prepared text exactly or after "
-              "whitespace-only normalization; words, capitalization, and punctuation must match. "
-              "Extraction accuracy and completeness have not yet been evaluated.", ""]
+              "Structure and quotation checks passed. Each quotation is an exact continuous passage "
+              "from the prepared text. These checks do not establish that a context quotation governs "
+              "its skill quotation. Extraction accuracy and completeness have not yet been evaluated.", ""]
     save_json(run_dir / "result.json", result)
     (run_dir / "report.md").write_text("\n".join(lines), encoding="utf-8")
     return result
@@ -371,7 +397,8 @@ def main():
         return 0
     except SkeletonError as exc:
         if run_created and not (run_dir / "validation.json").exists():
-            save_json(run_dir / "validation.json", {"passed": False, "errors": [str(exc)]})
+            save_json(run_dir / "validation.json", {"format_version": FORMAT_VERSION,
+                                                    "passed": False, "errors": [str(exc)]})
         if run_id is not None:
             print(f"Run ID: {run_id}", file=sys.stderr)
         print(f"Failure: {exc}", file=sys.stderr)

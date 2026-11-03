@@ -16,7 +16,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener
 
 import nav_collect as nav
-from nav_text import CLEANING_VERSION, clean_description, content_hash
+from nav_text import CLEANING_VERSION, clean_description, cleaned_input_issue, content_hash
 
 
 ROOT = nav.ROOT / "out" / "nav_discovery"
@@ -103,8 +103,19 @@ def connect(path):
             locations_json TEXT NOT NULL, occupations_json TEXT NOT NULL,
             published TEXT, updated TEXT, source_link TEXT, source_id TEXT,
             content_available INTEGER NOT NULL, has_text INTEGER NOT NULL);
+        CREATE TABLE IF NOT EXISTS ad_titles(
+            uuid TEXT PRIMARY KEY, last_order INTEGER NOT NULL, title TEXT,
+            checked_at TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS failures(
             uuid TEXT NOT NULL, feed_order INTEGER NOT NULL, kind TEXT NOT NULL,
+            PRIMARY KEY(uuid,feed_order));
+        CREATE TABLE IF NOT EXISTS processing_queue(
+            uuid TEXT PRIMARY KEY, feed_order INTEGER NOT NULL, feed_status TEXT NOT NULL,
+            state TEXT NOT NULL, content_hash TEXT, attempts INTEGER NOT NULL DEFAULT 0,
+            error_kind TEXT, updated_at TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS processing_blocks(
+            uuid TEXT NOT NULL, feed_order INTEGER NOT NULL, reason TEXT NOT NULL,
+            content_hash TEXT, blocked_at TEXT NOT NULL,
             PRIMARY KEY(uuid,feed_order));
     """)
     return db
@@ -238,6 +249,11 @@ def fingerprint(entry):
 def save_page(db, page, page_url, response_headers):
     expected = state(db, "expected_next_id")
     page_id, entries, next_url, next_id = checked_page(page, expected)
+    if next_url == page_url:
+        raise DiscoveryError("feed: non-advancing next cursor")
+    if expected is not None and db.execute(
+            "SELECT 1 FROM events WHERE page_id=? LIMIT 1", (page_id,)).fetchone():
+        raise DiscoveryError("feed: repeated page cursor")
     if expected is not None and fingerprint(entries[0]) != state(db, "last_fingerprint"):
         raise DiscoveryError("feed: overlapping page boundary differs")
     start_index = 1 if expected is not None else 0
@@ -265,6 +281,11 @@ def save_page(db, page, page_url, response_headers):
                        "last_order=excluded.last_order,change_at=excluded.change_at,"
                        "status=excluded.status,detail_url=excluded.detail_url",
                        (ad_id, order, changed, status, detail_url))
+            db.execute("INSERT INTO processing_queue VALUES(?,?,?,'pending',NULL,0,NULL,?) "
+                       "ON CONFLICT(uuid) DO UPDATE SET feed_order=excluded.feed_order,"
+                       "feed_status=excluded.feed_status,state='pending',content_hash=NULL,"
+                       "attempts=0,error_kind=NULL,updated_at=excluded.updated_at",
+                       (ad_id, order, status, nav.iso_utc(datetime.now(timezone.utc))))
             order += 1
         put(db, "next_order", order)
         put(db, "pages_done", state(db, "pages_done") + 1)
@@ -283,7 +304,9 @@ def save_page(db, page, page_url, response_headers):
 
 PENDING_SQL = """SELECT a.uuid,a.last_order,a.detail_url FROM ads a
         LEFT JOIN details d ON d.uuid=a.uuid
-        WHERE a.status='ACTIVE' AND (d.uuid IS NULL OR d.last_order<a.last_order)"""
+        WHERE a.status='ACTIVE' AND (d.uuid IS NULL OR d.last_order<a.last_order)
+        AND NOT EXISTS (SELECT 1 FROM failures f WHERE f.uuid=a.uuid
+        AND f.feed_order=a.last_order AND f.kind='detail_404')"""
 
 
 def pending_count(db):
@@ -300,7 +323,9 @@ def backfill_candidates(db):
                       "c.feed_order AS captured_order,c.outcome FROM ads a "
                       "JOIN details d ON d.uuid=a.uuid AND d.last_order=a.last_order "
                       "LEFT JOIN capture_state c ON c.uuid=a.uuid "
-                      "WHERE a.status='ACTIVE' ORDER BY a.last_order").fetchall()
+                      "WHERE a.status='ACTIVE' AND NOT EXISTS (SELECT 1 FROM failures f "
+                      "WHERE f.uuid=a.uuid AND f.feed_order=a.last_order AND f.kind='detail_404') "
+                      "ORDER BY a.last_order").fetchall()
     for row in rows:
         if row["captured_order"] == row["last_order"] and row["outcome"] != "failed":
             continue
@@ -356,14 +381,19 @@ def store_capture(db, detail, record, *, backfill=False):
         outcome = "unavailable" if reason in ("missing_description", "no_safe_readable_text") else "review_blocked"
         capture_outcome(db, ad_id, order, status, outcome, reason)
         return outcome
+    screen_issue = cleaned_input_issue(cleaned)
+    if screen_issue:
+        capture_outcome(db, ad_id, order, status, "review_blocked", screen_issue)
+        return "review_blocked"
     digest = content_hash(cleaned)
     now = nav.iso_utc(datetime.now(timezone.utc))
-    db.execute("INSERT OR IGNORE INTO captures VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    db.execute("INSERT INTO captures VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) "
+               "ON CONFLICT(uuid,content_hash) DO UPDATE SET last_seen_at=excluded.last_seen_at,"
+               "cleaning_version=excluded.cleaning_version,"
+               "cleaning_actions_json=excluded.cleaning_actions_json,review_state=excluded.review_state",
                (ad_id, digest, cleaned, now, now, status, record[5], record[6],
                 record[7], record[8], record[3], record[4], basis, CLEANING_VERSION,
-                json.dumps(actions), "pending_human_review"))
-    db.execute("UPDATE captures SET last_seen_at=? WHERE uuid=? AND content_hash=?",
-               (now, ad_id, digest))
+                json.dumps(actions), "auto_contact_checked"))
     capture_outcome(db, ad_id, order, status, "saved", None, digest)
     return "saved"
 
@@ -489,6 +519,8 @@ def write_summary(folder, summary):
 def save_detail_success(db, body, ad_id, order, *, backfill):
     detail = nav.parse_json(body, "detail")
     record = detail_record(detail, ad_id, order)
+    ad = detail.get("ad_content")
+    title = safe_text(ad.get("title")) if isinstance(ad, dict) else None
     with db:
         db.execute("INSERT INTO details VALUES(?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(uuid) DO UPDATE SET "
                    "last_order=excluded.last_order,status=excluded.status,"
@@ -496,6 +528,9 @@ def save_detail_success(db, body, ad_id, order, *, backfill):
                    "published=excluded.published,updated=excluded.updated,source_link=excluded.source_link,"
                    "source_id=excluded.source_id,content_available=excluded.content_available,"
                    "has_text=excluded.has_text", record)
+        db.execute("INSERT INTO ad_titles VALUES(?,?,?,?) ON CONFLICT(uuid) DO UPDATE SET "
+                   "last_order=excluded.last_order,title=excluded.title,checked_at=excluded.checked_at",
+                   (ad_id, order, title, nav.iso_utc(datetime.now(timezone.utc))))
         store_capture(db, detail, record, backfill=backfill)
         db.execute("DELETE FROM failures WHERE uuid=? AND feed_order=?", (ad_id, order))
 
@@ -544,7 +579,7 @@ def export_captures(db, folder):
     return output, count
 
 
-def run(db, folder, max_pages, max_details, max_seconds, opener=None):
+def run(db, folder, max_pages, max_details, max_seconds, opener=None, progress=None):
     opener = opener or build_opener(nav.NoRedirect())
     deadline = time.monotonic() + max_seconds
     page_requests = detail_requests = backfill_requests = 0
@@ -597,7 +632,10 @@ def run(db, folder, max_pages, max_details, max_seconds, opener=None):
                 except (nav.CollectionError, DiscoveryError) as exc:
                     stop = str(exc)
                     break
-                if page_requests % 25 == 0 or at_end:
+                if progress is not None:
+                    progress({"stage": "feed_page", "pages": page_requests,
+                              "total_pages": state(db, "pages_done"), "at_end": at_end})
+                elif page_requests % 25 == 0 or at_end:
                     print(f"Feed progress: pages this session={page_requests}, saved={state(db, 'pages_done')}, "
                           f"entries={db.execute('SELECT count(*) FROM events').fetchone()[0]}, "
                           f"current end={at_end}", flush=True)
@@ -626,6 +664,12 @@ def run(db, folder, max_pages, max_details, max_seconds, opener=None):
                     break
                 detail_requests += 1
                 backfill_requests += backfill
+                if code == 404:
+                    record_request_failure(db, ad_id, order, "detail_404", backfill=backfill)
+                    if progress is not None:
+                        progress({"stage": "detail_unavailable", "uuid": ad_id,
+                                  "details": detail_requests})
+                    continue
                 if code != 200:
                     record_request_failure(db, ad_id, order, f"detail_{code}", backfill=backfill)
                     stop = f"detail: HTTP {code}" if isinstance(code, int) else f"detail: {code}"
@@ -637,7 +681,9 @@ def run(db, folder, max_pages, max_details, max_seconds, opener=None):
                         record_request_failure(db, ad_id, order, "invalid_detail", backfill=backfill)
                         stop = "detail: invalid response"
                         break
-                if detail_requests % 100 == 0:
+                if progress is not None:
+                    progress({"stage": "detail", "details": detail_requests, "backfill": backfill})
+                elif detail_requests % 100 == 0:
                     print(f"Detail progress: requests this session={detail_requests}, "
                           f"backfill={backfill_requests}, pending={pending_count(db)}, "
                           f"backfill pending={backfill_count(db)}", flush=True)
