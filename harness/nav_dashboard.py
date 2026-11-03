@@ -211,7 +211,9 @@ class UpdateManager:
         with self.lock:
             if self.running and self.frozen is not None:
                 return self.frozen
-        return statistics.load_current_records(self.index_path, self.current_root)
+        records, counts = statistics.load_current_records(self.index_path, self.current_root)
+        revised, review_info = statistics.apply_selected_review(records)
+        return revised, counts, review_info
 
     def _progress(self, event):
         stage = event.get("stage")
@@ -234,7 +236,7 @@ class UpdateManager:
             if self.running:
                 return False
         # Validate and freeze visible tables before the worker can change the index.
-        frozen = statistics.load_current_records(self.index_path, self.current_root)
+        frozen = self.records()
         with self.lock:
             if self.running:
                 return False
@@ -300,9 +302,11 @@ class DashboardHandler(BaseHTTPRequestHandler):
         if route.path == "/api/data":
             try:
                 params = {key: values[-1] for key, values in parse_qs(route.query, keep_blank_values=True).items()}
-                records, counts = self.manager.records()
+                records, counts, review_info = self.manager.records()
+                quality = quality_state(self.manager.index_path, self.manager.db_path)
+                quality["skill_review"] = review_info
                 value = dashboard_data(records, counts, params,
-                                       quality=quality_state(self.manager.index_path, self.manager.db_path))
+                                       quality=quality)
             except DashboardError as exc:
                 self.send_json(400, {"error": str(exc)})
                 return

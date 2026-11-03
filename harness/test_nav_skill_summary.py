@@ -63,6 +63,46 @@ class SkillSummaryTests(unittest.TestCase):
         with self.assertRaisesRegex(summary.SummaryError, "duplicate advertisement UUID"):
             summary.aggregate(self.records + [record(self.a, [])])
 
+    def test_selected_review_preserves_original_and_checks_versions(self):
+        with tempfile.TemporaryDirectory(dir=summary.ROOT / "out") as folder:
+            root = Path(folder)
+            (root / "prepared_ad.txt").write_text("Use Python or R. Build tables and reports.", encoding="utf-8")
+            original = {"skills": ["Python"], "relationship": "single", "classification": "required",
+                        "mention_type": "candidate_qualification", "skill_evidence": "Use Python or R.",
+                        "classification_context": None}
+            duty = {**original, "skills": ["Tables and reports"], "classification": "unclear",
+                    "mention_type": "work_duty", "skill_evidence": "Build tables and reports."}
+            records = [{"uuid": self.a, "content_sha256": "a" * 64,
+                        "report": root / "report.md", "items": [original, duty]}]
+            review = {"schema_version": 1, "advertisements": [{"uuid": self.a,
+                      "content_sha256": "a" * 64, "decisions": [
+                          {"item_number": 1, "item_sha256": summary.item_digest(original),
+                           "expected_skills": ["Python"],
+                           "action": "replace", "changes": {"skills": ["Python", "R"], "relationship": "any_of"}},
+                          {"item_number": 2, "item_sha256": summary.item_digest(duty),
+                           "expected_skills": ["Tables and reports"],
+                           "action": "split", "changes": [{"skills": ["Tables"]}, {"skills": ["Reports"]}]}]}]}
+            path = root / "review.json"
+            path.write_text(json.dumps(review), encoding="utf-8")
+            revised, info = summary.apply_selected_review(records, path)
+            self.assertEqual(info["decision_count"], 2)
+            self.assertEqual([item["skills"] for item in revised[0]["items"]],
+                             [["Python", "R"], ["Tables"], ["Reports"]])
+            self.assertEqual(records[0]["items"], [original, duty])
+            newer = [{**records[0], "content_sha256": "b" * 64}]
+            unchanged, info = summary.apply_selected_review(newer, path)
+            self.assertEqual(unchanged[0]["items"], [original, duty])
+            self.assertEqual(info["unapplied_uuids"], [self.a])
+            review["advertisements"][0]["decisions"][0]["expected_skills"] = ["SQL"]
+            path.write_text(json.dumps(review), encoding="utf-8")
+            with self.assertRaisesRegex(summary.SummaryError, "item label mismatch"):
+                summary.apply_selected_review(records, path)
+            review["advertisements"][0]["decisions"][0]["expected_skills"] = ["Python"]
+            review["advertisements"][0]["decisions"][0]["item_sha256"] = "0" * 64
+            path.write_text(json.dumps(review), encoding="utf-8")
+            with self.assertRaisesRegex(summary.SummaryError, "item hash mismatch"):
+                summary.apply_selected_review(records, path)
+
     def test_applicant_qualifications_and_other_mentions_are_separate(self):
         records = [record(self.a, [
             v2_item(["Python"], "single", "required", "candidate_qualification"),

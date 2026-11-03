@@ -108,6 +108,8 @@ function renderQuality(q){
   for(const [count,labelText] of entries){const cell=elt("div","quality-cell");cell.append(elt("strong",null,count));cell.append(elt("span",null,labelText));grid.append(cell);}root.append(grid);
   const counts=q.status_counts||{};
   root.append(elt("p",null,`Selected: ${counts.current||0} · Blocked: ${counts.blocked||0} · Failed: ${counts.failed||0} · Stale: ${counts.stale||0} · Pending: ${counts.pending||0}. Feed phase: ${q.scan_phase||"unavailable"}.`));
+  const review=q.skill_review;
+  if(review){root.append(elt("p",null,`${review.decision_count} provisional source-review decisions affect the displayed skill counts. Original model outputs remain unchanged. ${review.unapplied_uuids.length} review records no longer match the selected ad version.`));}
   root.append(elt("p",null,"Contact screening and structural quotation checks do not prove extraction accuracy. Earlier cleaner captures were accepted for this project dataset and are included in the displayed counts. A status describes the last saved NAV check, not a live check. An inactive advertisement's original NAV page may no longer be available. Publication filters use saved dates; historical coverage is incomplete."));
 }
 function updateStatus(status){
@@ -122,8 +124,10 @@ function updateStatus(status){
   if(!last){$("update-status").textContent="Saved results stay available while an update runs.";return;}
   const report=last.report||{};
   const names={caught_up:"Update complete",no_updates_found:"No new updates",partial_pending:"Progress saved — work remains",discovery_failed:"Update failed — progress saved",processing_failed:"Update failed — progress saved",failed:"Update failed"};
-  $("update-status").textContent=(names[last.status]||last.status)+(last.error?`: ${last.error}`:report.stop_reason?` · ${report.stop_reason}`:"");
-  $("update-detail-text").textContent=last.error||`Pages: ${report.pages??0} · Details: ${report.details??0} · Extraction requests: ${report.extraction_requests??0} · Published: ${report.processed??0} · Reused: ${report.reused??0} · Blocked: ${report.blocked??0} · Failed: ${report.failed??0} · Remaining: ${report.pending??0}. ${report.stop_reason||""}`;
+  const completeWithoutNewResults=last.status==="caught_up"&&report.processed===0;
+  const held=report.blocked>0?` · ${report.blocked} held for review`:"";
+  $("update-status").textContent=last.error?`${names[last.status]||"Update failed"}: ${last.error}`:(completeWithoutNewResults?"Update complete — no new skill results":names[last.status]||last.status)+held;
+  $("update-detail-text").textContent=last.error||`Feed pages: ${report.pages??0} · Detail requests: ${report.details??0} · Extraction requests: ${report.extraction_requests??0} · Published: ${report.processed??0} · Resolved without extraction: ${report.reused??0} · Blocked during run: ${report.blocked??0} · Failed: ${report.failed??0} · Remaining: ${report.pending??0}. ${report.stop_reason&&report.stop_reason!==last.status?`Stop reason: ${report.stop_reason}.`:""}`;
 }
 async function pollStatus(){
   try{const status=await jsonRequest("/api/status");const wasRunning=!!state.wasRunning;state.wasRunning=status.running;updateStatus(status);if(wasRunning&&!status.running)await loadData();}

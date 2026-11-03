@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "status": "provisional agent source review; not approved ground truth",
+  "basis": "Archived frozen-prompt meaning review and saved selected run evidence. Original model outputs are unchanged.",
+  "advertisements": [
+    {
+      "uuid": "4135497b-cb65-4bed-890d-f9dcaf478711",
+      "content_sha256": "fd287f3e9bec1986cd0fd7199cdabe34f7eb3e65413234820d02ebacbdbc398c",
+      "decisions": [
+        {
+          "item_number": 20,
+          "item_sha256": "c2d1b368b8795fb7680cf2c3e0268f51f8fc77c2081a1aa72f0d463b1769fe7b",
+          "action": "replace",
+          "reason": "Scripting is one of explicit alternatives, not an independent preferred skill.",
+          "changes": {
+            "relationship": "any_of",
+            "skills": [
+              "Scripting",
+              "Automation tools"
+            ]
+          },
+          "expected_skills": [
+            "Scripting"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "8119dbb1-530f-4307-9ee0-e030c2b8e581",
+      "content_sha256": "be89d0943e195705478bea157d73a8f1459268e69c47169f5692f544d84fe275",
+      "decisions": [
+        {
+          "item_number": 1,
+          "item_sha256": "203c8d6ed47840d240fbfee0831255883cd7c272663491f54b5d21beb7f440ef",
+          "action": "remove",
+          "reason": "Educational backgrounds are outside the technical-skill counting scope.",
+          "expected_skills": [
+            "Informatics",
+            "Computer engineering",
+            "Artificial intelligence"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "content_sha256": "0adbea9416971ebc052cdafde4aba54fc0eef56ee0fab127cf990057fc90d08e",
+      "decisions": [
+        {
+          "item_number": 7,
+          "item_sha256": "9fc0f612428a2b4dc487f850d5aeed7d7e1ea6109b055d3c9071bb4ba85453d7",
+          "action": "remove",
+          "reason": "Generic digital solutions is not a distinct technical skill.",
+          "expected_skills": [
+            "Digital solutions"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "a5dabb26-7b1f-4538-aabe-cd78cac5f2cb",
+      "content_sha256": "cac88089048720bb370fac2048ad7b4b66b6b4e8f09605dd3933947876072b07",
+      "decisions": [
+        {
+          "item_number": 32,
+          "item_sha256": "88faec5f6203fd15433d2d08494ac34ed3254493e7ab80ec7ff02113fe666e4c",
+          "action": "replace",
+          "reason": "Python or equivalent automation technology is an explicit alternative.",
+          "changes": {
+            "relationship": "any_of",
+            "skills": [
+              "Python",
+              "Equivalent automation technology"
+            ]
+          },
+          "expected_skills": [
+            "Python"
+          ]
+        },
+        {
+          "item_number": 41,
+          "item_sha256": "b325c20a05c376d2a8aceede6862c4e0a0a905233a374885f64449bcded9430a",
+          "action": "replace",
+          "reason": "Named technologies are examples within a preferred broad competence, not individually preferred.",
+          "changes": {
+            "classification": "unclear",
+            "classification_context": null
+          },
+          "expected_skills": [
+            "dbt"
+          ]
+        },
+        {
+          "item_number": 42,
+          "item_sha256": "efe73338d81b32a0a80d6860bed53a87e9a8657ab7b657204c5b3a4226a8e24e",
+          "action": "replace",
+          "reason": "Named technologies are examples within a preferred broad competence, not individually preferred.",
+          "changes": {
+            "classification": "unclear",
+            "classification_context": null
+          },
+          "expected_skills": [
+            "Airflow"
+          ]
+        },
+        {
+          "item_number": 43,
+          "item_sha256": "7a545766e7c0e4234bdf9c0ed38c4de4032bbb6df23ef070ba8c243209d33c10",
+          "action": "replace",
+          "reason": "Named technologies are examples within a preferred broad competence, not individually preferred.",
+          "changes": {
+            "classification": "unclear",
+            "classification_context": null
+          },
+          "expected_skills": [
+            "Iceberg"
+          ]
+        },
+        {
+          "item_number": 44,
+          "item_sha256": "e603d29793814b3165c1f37bce3c147e66fdef9f6fee40d911b352df978dcdf2",
+          "action": "replace",
+          "reason": "Named technologies are examples within a preferred broad competence, not individually preferred.",
+          "changes": {
+            "classification": "unclear",
+            "classification_context": null
+          },
+          "expected_skills": [
+            "Trino"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "b35c3ca3-5e17-4e62-b048-c37317096e61",
+      "content_sha256": "3c48bcf2b57f72745515df0c978066643d11fc2ed376a610c7d14672cf7f55db",
+      "decisions": [
+        {
+          "item_number": 1,
+          "item_sha256": "3507e27841f359f99a8da06ad7115f9f295f3f5f8c787a057b22a25ae9419ced",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Information management"
+          ]
+        },
+        {
+          "item_number": 2,
+          "item_sha256": "20188d9ab1fe0bebbabcf799298f9c0874df61498cd968c06b60063b4e20c60a",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Records management"
+          ]
+        },
+        {
+          "item_number": 3,
+          "item_sha256": "7ba03f123b726d9ff2cdda1bf9cb45b1bd5c1b2fe54fd90ed98aeeb49a6a1b36",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Archives"
+          ]
+        },
+        {
+          "item_number": 4,
+          "item_sha256": "45f0b44b1ed6e80986bc55c1fbb8f5d36b9b26cf7feaeac9a9190345114a8ffa",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Digitalization"
+          ]
+        },
+        {
+          "item_number": 5,
+          "item_sha256": "37cbd77240b46438364332ed3d2ed2d63311fde9a2fbe06c063da5d1b9bb095f",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Business development"
+          ]
+        },
+        {
+          "item_number": 6,
+          "item_sha256": "22a1858780c5a6bc6c95f809b2bf8f3a09b9c8613419a068c49238c30606af3a",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Systems management"
+          ]
+        },
+        {
+          "item_number": 7,
+          "item_sha256": "cd46691972875402abdf8afaf8fbb65c204cfb85e519275a1bab6099d178d3dd",
+          "action": "remove",
+          "reason": "The source lists alternative backgrounds; independent required skills are unsupported. Group interpretation remains unresolved.",
+          "expected_skills": [
+            "Data management"
+          ]
+        },
+        {
+          "item_number": 28,
+          "item_sha256": "47e357c822ca9b002914975acbe30cb5ccb162450af80c4f7b585a95d2ca18e7",
+          "action": "remove",
+          "reason": "Generic project and development work is outside technical-skill scope.",
+          "expected_skills": [
+            "Project and development work"
+          ]
+        },
+        {
+          "item_number": 19,
+          "item_sha256": "51fadcab331945eb0b129196fa9b8d2389a0bf212fc1029aecc35baeea2770fd",
+          "action": "remove",
+          "reason": "Generic process mapping lacks an established technical skill in the cited phrase.",
+          "expected_skills": [
+            "Process mapping"
+          ]
+        },
+        {
+          "item_number": 20,
+          "item_sha256": "a2378f745f5ed42810dc3ab475f6d5c56af3308418cd006c23bd3550a6bf6bf8",
+          "action": "remove",
+          "reason": "Generic business development lacks an established technical skill in the cited phrase.",
+          "expected_skills": [
+            "Business development"
+          ]
+        },
+        {
+          "item_number": 24,
+          "item_sha256": "98612aaf33b35b40825e698f1d0a6936744f0966729a5730a4ad7a3e0fb6d457",
+          "action": "remove",
+          "reason": "Generic procurement lacks an established technical skill in the cited phrase.",
+          "expected_skills": [
+            "Procurement"
+          ]
+        },
+        {
+          "item_number": 10,
+          "item_sha256": "45a2dd6ebfe474f71625d4be17e7dde98d3b2fadb529810443faf9db0d05e23a",
+          "action": "remove",
+          "reason": "Regulatory compliance duty does not establish a technical skill in the cited phrase.",
+          "expected_skills": [
+            "Ensuring compliance with documentation and archiving requirements"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa",
+      "content_sha256": "f41a8ad5714fa25864167e0112cb9c6758f538ed3e24a62e82a48210751d76e3",
+      "decisions": [
+        {
+          "item_number": 3,
+          "item_sha256": "1668b5e90d9c3767f615fc89addeffb6c5910dbb1fead806efd66f149e2b4e51",
+          "action": "remove",
+          "reason": "Numerical literacy here is a nontechnical personal trait.",
+          "expected_skills": [
+            "Numerical literacy"
+          ]
+        },
+        {
+          "item_number": 11,
+          "item_sha256": "894e4f0b53625faebba2d81eadbbb19fe9f62842dd4c0efcd019588450dfb481",
+          "action": "split",
+          "reason": "Four objects joined by and are separate technical duties.",
+          "changes": [
+            {
+              "skills": [
+                "Statistical table creation and maintenance"
+              ]
+            },
+            {
+              "skills": [
+                "Table-matrix creation and maintenance"
+              ]
+            },
+            {
+              "skills": [
+                "Classification creation and maintenance"
+              ]
+            },
+            {
+              "skills": [
+                "Code-list creation and maintenance"
+              ]
+            }
+          ],
+          "expected_skills": [
+            "Statistical table, table-matrix, classification and code-list maintenance"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "1f614033-73b3-4c26-bda5-3d9abe281a12",
+      "content_sha256": "cac63ea057206a8efe94f53410fdedc9b0f26734045a69d0cdbc3ee62a726a87",
+      "decisions": [
+        {
+          "item_number": 9,
+          "item_sha256": "65a90a91c133a13c45e1fd4be04cce53b5a76fe837278955eed8263057c3abf5",
+          "action": "replace",
+          "reason": "The explicit or similar framework alternative must be preserved.",
+          "changes": {
+            "skills": [
+              "React",
+              "Vue",
+              "Angular",
+              "Equivalent web framework"
+            ]
+          },
+          "expected_skills": [
+            "React",
+            "Vue",
+            "Angular"
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "8d77969c-ab60-4da0-9a1e-427bf1eee30e",
+      "content_sha256": "7293e41c2e44aee607e3ef17c13c23afd5b88a45f8fae92a2bca95b02b3f541b",
+      "decisions": [
+        {
+          "item_number": 6,
+          "item_sha256": "302b833ebc4466bbce6c785c4998ed5a8218fb366951c845809a5019750ffa26",
+          "action": "remove",
+          "reason": "Generic research methodology does not establish a technical skill in the cited phrase.",
+          "expected_skills": [
+            "Research methodology"
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    "Skill-name aliases need explicit human review; no fuzzy merging applied.",
+    "Broad preferred data-platform competence and alternative background grouping require human interpretation.",
+    "Saved prepared input for one selected advertisement includes a previously identified biographical section; no new model request was made."
+  ]
+}

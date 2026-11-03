@@ -255,9 +255,11 @@ def publish_result(index, index_path, current_root, ad_id, digest, stage, prepar
 
 def generate_statistics(index_path, current_root, statistics_root):
     records, counts = statistics.load_current_records(index_path, current_root)
+    records, review_info = statistics.apply_selected_review(records)
     summary = statistics.aggregate(records)
     summary["status_counts"] = counts
-    statistics.write_outputs(index_path, records, summary, output_root=statistics_root)
+    statistics.write_outputs(index_path, records, summary, output_root=statistics_root,
+                             review_info=review_info)
     return summary
 
 
@@ -267,7 +269,9 @@ def statistics_need_refresh(index_path, statistics_root):
         return True
     try:
         summary = json.loads(path.read_text(encoding="utf-8"))
-        return summary.get("source_index_sha256") != hashlib.sha256(index_path.read_bytes()).hexdigest()
+        review_hash = hashlib.sha256(statistics.SELECTED_REVIEW.read_bytes()).hexdigest()
+        return (summary.get("source_index_sha256") != hashlib.sha256(index_path.read_bytes()).hexdigest()
+                or summary.get("review", {}).get("sha256") != review_hash)
     except (OSError, UnicodeError, ValueError):
         return True
 

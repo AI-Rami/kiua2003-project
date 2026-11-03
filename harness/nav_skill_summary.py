@@ -20,6 +20,7 @@ RUNS_ROOT = ROOT / "archive" / "comp2-generated-2026-11-02" / "nav_runs"
 CURRENT_ROOT = ROOT / "out" / "current"
 CURRENT_INDEX = CURRENT_ROOT / "index.json"
 OUTPUT_ROOT = ROOT / "out" / "statistics"
+SELECTED_REVIEW = ROOT / "reviews" / "current-v2.json"
 CLASSES = ("required", "preferred", "unclear")
 OTHER_TYPES = ("work_duty", "work_context", "interest_only")
 EXPECTED_ADS = 10
@@ -168,6 +169,7 @@ def load_current_records(index_path=CURRENT_INDEX, current_root=CURRENT_ROOT):
                 raise SummaryError(f"current index: invalid v2 item for {ad_id}")
         date, date_status = publication_date(result["capture_provenance"].get("published"))
         records.append({"uuid": ad_id, "source_url": source, "report": expected / "report.md",
+                        "content_sha256": content_hash,
                         "title": title.strip() if title else None, "title_checked_at_utc": checked_at,
                         "items": result["items"], "review_warnings": entry["review_warnings"],
                         "activity_status": entry.get("activity_status", "UNKNOWN"),
@@ -259,6 +261,96 @@ def load_records(index_path, runs_root=RUNS_ROOT):
 def item_digest(item):
     return hashlib.sha256(json.dumps(item, ensure_ascii=False, sort_keys=True,
                                      separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def apply_selected_review(records, review_path=SELECTED_REVIEW):
+    """Apply version- and item-hash-checked v2 decisions to copies of results."""
+    try:
+        raw = review_path.read_bytes()
+        review = json.loads(raw.decode("utf-8"))
+    except (OSError, UnicodeError, ValueError):
+        raise SummaryError("selected review: unreadable UTF-8 JSON") from None
+    if (not isinstance(review, dict) or review.get("schema_version") != 1
+            or not isinstance(review.get("advertisements"), list)):
+        raise SummaryError("selected review: invalid structure")
+    revised = copy.deepcopy(records)
+    by_uuid = {record["uuid"]: record for record in revised}
+    applied, stale, seen_ads = 0, [], set()
+    fields = {"skills", "relationship", "classification", "mention_type",
+              "skill_evidence", "classification_context"}
+    for ad in review["advertisements"]:
+        if not isinstance(ad, dict) or not isinstance(ad.get("uuid"), str) or ad["uuid"] in seen_ads:
+            raise SummaryError("selected review: invalid advertisement")
+        seen_ads.add(ad["uuid"])
+        record = by_uuid.get(ad["uuid"])
+        if record is None or record.get("content_sha256") != ad.get("content_sha256"):
+            stale.append(ad["uuid"])
+            continue
+        decisions = ad.get("decisions")
+        if not isinstance(decisions, list):
+            raise SummaryError("selected review: missing decisions")
+        source = ((record["report"].parent / "prepared_ad.txt").read_text(encoding="utf-8")
+                  if any(decision.get("action") in ("replace", "split")
+                         for decision in decisions if isinstance(decision, dict)) else "")
+        originals = record["items"]
+        by_number = {}
+        for decision in decisions:
+            if not isinstance(decision, dict):
+                raise SummaryError("selected review: invalid decision")
+            number = decision.get("item_number")
+            if (not isinstance(number, int) or isinstance(number, bool) or number < 1
+                    or number > len(originals) or number in by_number):
+                raise SummaryError("selected review: missing or repeated item")
+            original = originals[number - 1]
+            if decision.get("item_sha256") != item_digest(original):
+                raise SummaryError("selected review: item hash mismatch")
+            if decision.get("expected_skills") != original["skills"]:
+                raise SummaryError("selected review: item label mismatch")
+            action = decision.get("action")
+            if action == "remove":
+                if "changes" in decision:
+                    raise SummaryError("selected review: remove has changes")
+                by_number[number] = []
+            elif action in ("replace", "split"):
+                patches = [decision.get("changes")] if action == "replace" else decision.get("changes")
+                if not isinstance(patches, list) or not patches or any(not isinstance(p, dict) for p in patches):
+                    raise SummaryError("selected review: invalid replacement")
+                replacements = []
+                for patch in patches:
+                    if not set(patch).issubset(fields) or "skill_evidence" in patch:
+                        raise SummaryError("selected review: invalid changed fields")
+                    item = {**original, **patch}
+                    skills = item.get("skills")
+                    if (set(item) != fields or not isinstance(skills, list) or not skills
+                            or any(not isinstance(skill, str) or not skill.strip() for skill in skills)
+                            or len(set(skills)) != len(skills)
+                            or item.get("relationship") not in ("single", "any_of")
+                            or (item["relationship"] == "single" and len(skills) != 1)
+                            or (item["relationship"] == "any_of" and len(skills) < 2)
+                            or item.get("classification") not in CLASSES
+                            or item.get("mention_type") not in ("candidate_qualification", *OTHER_TYPES)
+                            or (item["mention_type"] != "candidate_qualification"
+                                and item["classification"] != "unclear")
+                            or item["skill_evidence"] not in source
+                            or (item["classification_context"] is not None
+                                and (not isinstance(item["classification_context"], str)
+                                     or not item["classification_context"].strip()
+                                     or item["classification_context"] not in source))):
+                        raise SummaryError("selected review: invalid v2 replacement")
+                    replacements.append(item)
+                if action == "split" and len(replacements) < 2:
+                    raise SummaryError("selected review: split needs multiple items")
+                by_number[number] = replacements
+            else:
+                raise SummaryError("selected review: unknown action")
+            applied += 1
+        record["items"] = [item for number, original in enumerate(originals, 1)
+                           for item in by_number.get(number, [original])]
+    info = {"path": review_path.resolve().relative_to(ROOT).as_posix(),
+            "sha256": hashlib.sha256(raw).hexdigest(), "decision_count": applied,
+            "correction_count": applied,
+            "unapplied_uuids": stale, "status": "provisional agent review; not approved ground truth"}
+    return revised, info
 
 
 def apply_review(records, review_path):
@@ -479,7 +571,7 @@ def render_summary(summary):
              "date on an updated ad does not establish historical collection coverage. No weekly, monthly or "
              "yearly statistics are calculated.", "",
              "## Counting rules", "",
-             "- Skill names are used exactly as saved. No aliases or similar names are merged.",
+             "- Saved skill names are used except for explicit version-checked provisional corrections. No aliases or similar names are merged.",
              "- Each UUID counts once per skill and classification. Total is the union of UUIDs, "
              "so it can be smaller than the sum of the three classification columns.",
              "- The main table counts only single applicant qualifications. A duty, team practice or interest "
@@ -494,7 +586,7 @@ def render_summary(summary):
         lines += ["## Review basis", "",
                   f"Applied {summary['review']['correction_count']} item corrections from "
                   f"`{summary['review']['path']}`. Original run files are unchanged. "
-                  "Review decisions and unresolved cases are in the companion progress record.", "",
+                  "Review decisions and unresolved cases are in the review file. These are provisional, not approved ground truth.", "",
                   "An `unclear` mention is not evidence of applicant demand. A named OR alternative is not independently mandatory.", ""]
     lines += [
              "## Applicant qualifications: single skills", "",
@@ -540,14 +632,14 @@ def write_outputs(index_path, records, summary, output_root=OUTPUT_ROOT, review_
         "earliest": dates[0] if dates else None, "latest": dates[-1] if dates else None,
         "scope": "saved dates among selected advertisements; not collection-period coverage",
     }
-    summary["dataset"] = "explicitly selected validated model extractions; small-sample prototype, not complete market coverage"
+    summary["dataset"] = "selected validated extractions with provisional source-review decisions; small-sample prototype, not complete market coverage"
     summary["source_index"] = index_path.resolve().relative_to(ROOT).as_posix()
     summary["source_index_sha256"] = hashlib.sha256(index_path.read_bytes()).hexdigest()
     summary["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
     if review_info:
         summary["review"] = review_info
     summary["counting_rules"] = [
-        "Exact saved skill names; no aliasing or fuzzy matching",
+        "Saved skill names except explicit version-checked provisional corrections; no aliasing or fuzzy matching",
         "One advertisement UUID per skill and classification; total is the UUID union",
         "Main table includes single candidate qualifications only",
         "OR-group membership is separate from independently required single skills",
@@ -583,9 +675,11 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         records, counts = load_current_records(CURRENT_INDEX, CURRENT_ROOT)
+        records, review_info = apply_selected_review(records)
         summary = aggregate(records)
         summary["status_counts"] = counts
-        folder = write_outputs(CURRENT_INDEX, records, summary, output_root=OUTPUT_ROOT)
+        folder = write_outputs(CURRENT_INDEX, records, summary, output_root=OUTPUT_ROOT,
+                               review_info=review_info)
     except (SummaryError, OSError, ValueError) as exc:
         print(f"Skill summary failed: {exc}", file=sys.stderr)
         return 1
