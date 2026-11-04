@@ -1,0 +1,32 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 2ed29047-97e4-4168-adb9-8da83e968c94
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/2ed29047-97e4-4168-adb9-8da83e968c94
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:23Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Information management | single | candidate_qualification | preferred | Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens | Det er også ønskelig om du har: | skill: exact; context: exact |
+| Artificial intelligence development and use | single | candidate_qualification | preferred | Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens | Det er også ønskelig om du har: | skill: exact; context: exact |
+| Development and follow-up of information management procedures, systems, and tools | single | work_duty | unclear | Utvikle og følge opp prosedyrer, systemer og verktøy for informasjonsforvaltning i ulike deler av Heimevernet og ulike aktører i Totalforsvaret | — | skill: exact; context: not_provided |
+| Implementation of information management tools | single | work_duty | unclear | Implementere nye verktøy som tas i bruk innen fagområdet | — | skill: exact; context: not_provided |
+| Information lifecycle management | single | work_duty | unclear | Bidra til styring og forvaltning av informasjon gjennom dens livsløp | — | skill: exact; context: not_provided |
+| Data storage, traceability, and searchability | single | work_duty | unclear | ved å påse at data og informasjon lagres, gjøres sporbar og søkbar | — | skill: exact; context: not_provided |
+| Decision support in the information management field | single | work_duty | unclear | Bidra til, og utarbeide, beslutningsstøtte innen ditt fagfelt | — | skill: exact; context: not_provided |
+| Information flow management | single | work_duty | unclear | Legge til rette for effektiv informasjonsflyt | — | skill: exact; context: not_provided |
+| Assessment of technological solutions against organizational needs | single | candidate_qualification | required | Du holder deg oppdatert på utviklingen innen fagområdet og evner å se hvordan nye og eksisterende teknologiske løsninger kan møte virksomhetens behov. | — | skill: exact; context: not_provided |
+
+Run: 2026-11-01_22-18-19_UTC_ad-2ed29047-97e4-4168-adb9-8da83e968c94 at 2026-11-01T22:18:19.445319+00:00
+Model: gpt-6-luna; response: resp_08d190e0ae36cca9016ae7baad270087d29fa74f123c4f3acc
+Usage: 2435 input, 3159 output, 5594 total tokens.
+Estimated token cost: $0.00182300 (dated standard rates; not a billing statement).
+Elapsed API time: 27.337 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

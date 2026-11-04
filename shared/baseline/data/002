@@ -1,0 +1,58 @@
+# Seniorrådgiver frontendutvikler
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 1f614033-73b3-4c26-bda5-3d9abe281a12
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/1f614033-73b3-4c26-bda5-3d9abe281a12
+
+Input: edited, cleaned NAV capture.
+Cleaner version: nav-contact-clean-v3
+Capture retrieved: 2026-11-02T21:24:47.988772+00:00
+Review state: auto_contact_checked
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Frontend development OR Full-stack development | any_of | candidate_qualification | required | Arbeidet som frontendutvikler eller fullstack-utvikler med ekspertise på frontend. | Du må ha: | skill: exact; context: exact |
+| Backend knowledge | single | candidate_qualification | required | god forståelse for backend | — | skill: exact; context: not_provided |
+| Software architecture | single | candidate_qualification | required | god forståelse for backend, arkitektur og applikasjonsdesign. | — | skill: exact; context: not_provided |
+| Application design | single | candidate_qualification | required | god forståelse for backend, arkitektur og applikasjonsdesign. | — | skill: exact; context: not_provided |
+| Basic web technologies | single | candidate_qualification | required | Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS. | Du må ha: | skill: exact; context: exact |
+| HTML | single | candidate_qualification | unclear | Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS. | Du må ha: | skill: exact; context: exact |
+| TypeScript | single | candidate_qualification | unclear | Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS. | Du må ha: | skill: exact; context: exact |
+| CSS | single | candidate_qualification | unclear | Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS. | Du må ha: | skill: exact; context: exact |
+| React OR Vue OR Angular | any_of | candidate_qualification | required | Arbeidet med React/Vue/Angular eller lignende rammeverk for web-utvikling. | Du må ha: | skill: exact; context: exact |
+| Solution design | single | work_duty | unclear | fra innsikt og løsningsdesign til utvikling, testing og kontinuerlig forbedring. | — | skill: exact; context: not_provided |
+| Software development | single | work_duty | unclear | fra innsikt og løsningsdesign til utvikling, testing og kontinuerlig forbedring. | — | skill: exact; context: not_provided |
+| Software testing | single | work_duty | unclear | fra innsikt og løsningsdesign til utvikling, testing og kontinuerlig forbedring. | — | skill: exact; context: not_provided |
+| Kotlin | single | work_context | unclear | Teamet utvikler løsninger med Kotlin og Spring Boot i backend, og Next.js og TypeScript i frontend. | — | skill: exact; context: not_provided |
+| Spring Boot | single | work_context | unclear | Teamet utvikler løsninger med Kotlin og Spring Boot i backend, og Next.js og TypeScript i frontend. | — | skill: exact; context: not_provided |
+| Next.js | single | candidate_qualification | preferred | Erfaring med NextJS. | Det er en fordel om du har: | skill: exact; context: exact |
+| TypeScript | single | work_context | unclear | Teamet utvikler løsninger med Kotlin og Spring Boot i backend, og Next.js og TypeScript i frontend. | — | skill: exact; context: not_provided |
+| PostgreSQL | single | work_context | unclear | Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform. | — | skill: exact; context: not_provided |
+| NATS | single | work_context | unclear | Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform. | — | skill: exact; context: not_provided |
+| Google Cloud Platform | single | work_context | unclear | Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform. | — | skill: exact; context: not_provided |
+| Continuous deployment | single | work_context | unclear | Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform. | — | skill: exact; context: not_provided |
+| CI/CD | single | candidate_qualification | preferred | Erfaring med CI/CD (f.eks.: github-actions og terraform). | Det er en fordel om du har: | skill: exact; context: exact |
+| GitHub Actions | single | candidate_qualification | unclear | Erfaring med CI/CD (f.eks.: github-actions og terraform). | Det er en fordel om du har: | skill: exact; context: exact |
+| Terraform | single | candidate_qualification | unclear | Erfaring med CI/CD (f.eks.: github-actions og terraform). | Det er en fordel om du har: | skill: exact; context: exact |
+| Backend development | single | candidate_qualification | preferred | Erfaring med backend-utvikling (f.eks Java/Kotlin). | Det er en fordel om du har: | skill: exact; context: exact |
+| Java | single | candidate_qualification | unclear | Erfaring med backend-utvikling (f.eks Java/Kotlin). | Det er en fordel om du har: | skill: exact; context: exact |
+| Kotlin | single | candidate_qualification | unclear | Erfaring med backend-utvikling (f.eks Java/Kotlin). | Det er en fordel om du har: | skill: exact; context: exact |
+| Frontend architecture | single | candidate_qualification | preferred | Erfaring med frontend arkitektur og designsystemer. | Det er en fordel om du har: | skill: exact; context: exact |
+| Design systems | single | candidate_qualification | preferred | Erfaring med frontend arkitektur og designsystemer. | Det er en fordel om du har: | skill: exact; context: exact |
+| AI-assisted coding | single | candidate_qualification | preferred | Testet ut koding med KI/agenter og har et reflektert forhold til det. | Det er en fordel om du har: | skill: exact; context: exact |
+| AI tools | single | work_context | unclear | KI-verktøy er en integrert del av utviklingsarbeidet vårt | — | skill: exact; context: not_provided |
+| AI adoption | single | interest_only | unclear | ønsker å bidra til å ta i bruk KI der det gir verdi. | — | skill: exact; context: not_provided |
+| Agile development | single | candidate_qualification | preferred | Erfaring med smidige utvikling og tverrfaglig arbeid. | Det er en fordel om du har: | skill: exact; context: exact |
+| Security work | single | interest_only | unclear | Interesse for sikkerhetsarbeid. | — | skill: exact; context: not_provided |
+| Product development | single | interest_only | unclear | interesse for teknologi, arkitektur og produktutvikling. | — | skill: exact; context: not_provided |
+| Technical leadership | single | interest_only | unclear | Dersom du har interesse for teknisk ledelse og de rette kvalifikasjonene, kan denne rollen også gi mulighet til å ta et slikt ansvar. | — | skill: exact; context: not_provided |
+
+Run: 2026-11-02_21-24-47_UTC_ad-1f614033-73b3-4c26-bda5-3d9abe281a12 at 2026-11-02T21:24:47.988772+00:00
+Model: gpt-6-luna; response: resp_0c96d416f0049f58016ae8ffa1239087d2951b9ed60b84a0d2
+Usage: 3049 input, 5024 output, 8073 total tokens.
+Estimated token cost: $0.00281690 (dated standard rates; not a billing statement).
+Elapsed API time: 51.409 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

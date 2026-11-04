@@ -1,0 +1,191 @@
+{
+  "format_version": 2,
+  "source_uuid": "2ed29047-97e4-4168-adb9-8da83e968c94",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/2ed29047-97e4-4168-adb9-8da83e968c94",
+  "run_id": "2026-11-01_22-18-19_UTC_ad-2ed29047-97e4-4168-adb9-8da83e968c94",
+  "run_timestamp": "2026-11-01T22:18:19.445319+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_08d190e0ae36cca9016ae7baad270087d29fa74f123c4f3acc",
+  "items": [
+    {
+      "skills": [
+        "Information management"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens",
+      "classification_context": "Det er også ønskelig om du har:"
+    },
+    {
+      "skills": [
+        "Artificial intelligence development and use"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens",
+      "classification_context": "Det er også ønskelig om du har:"
+    },
+    {
+      "skills": [
+        "Development and follow-up of information management procedures, systems, and tools"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikle og følge opp prosedyrer, systemer og verktøy for informasjonsforvaltning i ulike deler av Heimevernet og ulike aktører i Totalforsvaret",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Implementation of information management tools"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Implementere nye verktøy som tas i bruk innen fagområdet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Information lifecycle management"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Bidra til styring og forvaltning av informasjon gjennom dens livsløp",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data storage, traceability, and searchability"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "ved å påse at data og informasjon lagres, gjøres sporbar og søkbar",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Decision support in the information management field"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Bidra til, og utarbeide, beslutningsstøtte innen ditt fagfelt",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Information flow management"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Legge til rette for effektiv informasjonsflyt",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Assessment of technological solutions against organizational needs"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du holder deg oppdatert på utviklingen innen fagområdet og evner å se hvordan nye og eksisterende teknologiske løsninger kan møte virksomhetens behov.",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2435,
+    "input_tokens_details": {
+      "cache_write_tokens": 966,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 3159,
+    "output_tokens_details": {
+      "reasoning_tokens": 2419
+    },
+    "total_tokens": 5594
+  },
+  "estimated_cost_usd": 0.001823,
+  "elapsed_seconds": 27.33676689999993,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:23Z",
+    "content_hash_sha256": "9139ae297bf88116dbb05dafcec8172b28688c1ca8a4647c6c40beb661b08c88",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 1,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "9139ae297bf88116dbb05dafcec8172b28688c1ca8a4647c6c40beb661b08c88",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:37:37Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-13T00:00:00+02:00",
+    "updated": "2026-10-14T09:35:41.469978+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

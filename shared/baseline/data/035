@@ -1,0 +1,249 @@
+{
+  "format_version": 2,
+  "source_uuid": "8119dbb1-530f-4307-9ee0-e030c2b8e581",
+  "title": "Teknologi- og produktansvarlig ",
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/8119dbb1-530f-4307-9ee0-e030c2b8e581",
+  "run_id": "2026-11-02_21-14-49_UTC_ad-8119dbb1-530f-4307-9ee0-e030c2b8e581",
+  "run_timestamp": "2026-11-02T21:14:49.520963+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0498cbb6ec192126016ae8fd4b5ecc87d2acd67259536e7d52",
+  "items": [
+    {
+      "skills": [
+        "Informatics",
+        "Computer engineering",
+        "Artificial intelligence"
+      ],
+      "relationship": "any_of",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Bakgrunn fra informatikk, datateknikk, kunstig intelligens eller noe tilsvarende",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Data integration",
+        "Data platforms",
+        "Machine learning"
+      ],
+      "relationship": "any_of",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Praktisk erfaring med dataintegrasjon, dataplattformer eller maskinlæring fra jobb, studier eller egne prosjekter",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Language models"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bruker språkmodeller i hverdagen og vet hvor de er gode, og hvor de finner på ting",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Accounting data",
+        "Financial systems"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med regnskapsdata eller økonomisystemer en fordel, men ikke krav",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Software architecture"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Fra arkitektur og teknologivalg til hvor en språkmodell gjør jobben bedre, og hvor den ikke gjør det.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technology selection"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Fra arkitektur og teknologivalg til hvor en språkmodell gjør jobben bedre, og hvor den ikke gjør det.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Language model use-case assessment"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Fra arkitektur og teknologivalg til hvor en språkmodell gjør jobben bedre, og hvor den ikke gjør det.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Automation"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Ha ansvar for verktøy, data og automatisering i Ponte",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technology assessment"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Bistå teamet i andre prosjekter, for eksempel med teknologivurderinger og tekniske deler av søknader",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technical application writing"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Bistå teamet i andre prosjekter, for eksempel med teknologivurderinger og tekniske deler av søknader",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Excel"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "I dag løses dette med Excel, manuelt arbeid og litt flaks.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Scrum"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Vi jobber i stor grad som et scrum-team.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Building with language models"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Vis oss noe du har bygget der du har brukt språkmodeller; i løsningen eller for å lage den.",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 3280,
+    "input_tokens_details": {
+      "cache_write_tokens": 3277,
+      "cached_tokens": 0
+    },
+    "output_tokens": 3672,
+    "output_tokens_details": {
+      "reasoning_tokens": 2936
+    },
+    "total_tokens": 6952
+  },
+  "estimated_cost_usd": 0.002164,
+  "elapsed_seconds": 44.691260699997656,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited current NAV detail; automatic contact screen, not human approval",
+    "revised_version": "nav-contact-clean-v3",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-02T21:14:49.520963+00:00",
+    "content_hash_sha256": "be89d0943e195705478bea157d73a8f1459268e69c47169f5692f544d84fe275",
+    "review_state": "auto_contact_checked",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 0,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "source_status": "ACTIVE",
+    "source_id": "Stillingsregistrering",
+    "published": "2026-10-23T14:04:51+02:00",
+    "updated": "2026-10-23T15:08:00.333997+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

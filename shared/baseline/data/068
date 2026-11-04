@@ -1,0 +1,39 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:25Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Digital competence | single | candidate_qualification | required | God digital kompetanse og interesse for datastrukturer | — | skill: exact; context: not_provided |
+| Data structures | single | interest_only | unclear | God digital kompetanse og interesse for datastrukturer | — | skill: exact; context: not_provided |
+| Numerical literacy | single | candidate_qualification | required | har god tallforståelse og sans for detaljer og logiske sammenhenger | — | skill: exact; context: not_provided |
+| Statistics OR Data analysis OR Data processing | any_of | candidate_qualification | preferred | erfaring med statistikk, analyse eller databehandling | Det er en fordel om du har: | skill: exact; context: exact |
+| Metadata OR Classifications OR Information management | any_of | candidate_qualification | preferred | erfaring med metadata, klassifikasjoner eller informasjonsforvaltning | Det er en fordel om du har: | skill: exact; context: exact |
+| API concepts | single | candidate_qualification | preferred | forståelse for API-er og datautveksling | Det er en fordel om du har: | skill: exact; context: exact |
+| Data exchange | single | candidate_qualification | preferred | forståelse for API-er og datautveksling | Det er en fordel om du har: | skill: exact; context: exact |
+| SSB statistics OR Statistical production | any_of | candidate_qualification | preferred | kjennskap til SSBs statistikker eller statistikkproduksjon | Det er en fordel om du har: | skill: exact; context: exact |
+| User experience | single | interest_only | unclear | engasjement for god brukeropplevelse | Det er en fordel om du har: | skill: exact; context: exact |
+| Data modeling | single | work_context | unclear | Hos oss får du en variert arbeidshverdag i skjæringspunktet mellom statistikk, metadata, datamodellering, teknologi og brukerbehov. | — | skill: exact; context: not_provided |
+| Statistical table, table-matrix, classification and code-list maintenance | single | work_duty | unclear | Opprette og vedlikeholde tabeller, tabellmatriser, klassifikasjoner og kodelister i Statistikkbanken | — | skill: exact; context: not_provided |
+| Metadata quality assurance | single | work_duty | unclear | Kvalitetssikre metadata og logisk oppbygging av statistiske tabeller | — | skill: exact; context: not_provided |
+| Statistical table structure validation | single | work_duty | unclear | Kvalitetssikre metadata og logisk oppbygging av statistiske tabeller | — | skill: exact; context: not_provided |
+| Advice on statistical table design and dissemination | single | work_duty | unclear | Gi råd og veiledning til statistikkområdene om tabellutforming og formidling av statistikk | — | skill: exact; context: not_provided |
+| Technical user support for Statistikkbanken and APIs, including data extraction and use | single | work_duty | unclear | Veilede eksterne brukere i bruk av Statistikkbanken og API-ene, og bistå med tekniske spørsmål knyttet til uttak og bruk av data | — | skill: exact; context: not_provided |
+| Technical support for statistical publishing in Statistikkbanken | single | work_duty | unclear | Yte brukerstøtte til statistikkområdene som publiserer tall til Statistikkbanken | — | skill: exact; context: not_provided |
+
+Run: 2026-11-02_06-02-37_UTC_ad-dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa at 2026-11-02T06:02:37.530189+00:00
+Model: gpt-6-luna; response: resp_0378bc6b7d34027e016ae8277fb61487d2973dff68e4926e52
+Usage: 2999 input, 3182 output, 6181 total tokens.
+Estimated token cost: $0.00189090 (dated standard rates; not a billing statement).
+Elapsed API time: 40.218 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

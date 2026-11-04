@@ -1,0 +1,491 @@
+{
+  "format_version": 2,
+  "source_uuid": "b35c3ca3-5e17-4e62-b048-c37317096e61",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/b35c3ca3-5e17-4e62-b048-c37317096e61",
+  "run_id": "2026-11-02_05-59-01_UTC_ad-b35c3ca3-5e17-4e62-b048-c37317096e61",
+  "run_timestamp": "2026-11-02T05:59:01.464009+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0b7ab26dc7e6b4d2016ae826a6244887d29e6383a76323e25c",
+  "items": [
+    {
+      "skills": [
+        "Information management"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Records management"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Archives"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Digitalization"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Business development"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Systems management"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Data management"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Understanding relationships between information, work processes, technology, and organizational needs"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er viktig at du forstår sammenhengen mellom informasjon, arbeidsprosesser, teknologi og virksomhetens behov.",
+      "classification_context": "Kvalifikasjonskrav"
+    },
+    {
+      "skills": [
+        "Identifying documentation and archiving requirements"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "identifisere krav til dokumentasjon og arkivering i fylkeskommunens informasjonssystemer og arbeidsprosesser",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Ensuring compliance with documentation and archiving requirements"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "sikre at dokumentasjons- og arkivkrav ivaretas i samsvar med gjeldende regelverk",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Information and documentation lifecycle management for systems"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "ivareta informasjons- og dokumentasjonsperspektivet gjennom hele livsløpet til systemene, fra behovsavklaring og anskaffelse til forvaltning og utfasing",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Integrating documentation and archiving requirements into procurement, development, and change processes"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til at dokumentasjons- og arkivkrav ivaretas tidlig i anskaffelser, utviklingsprosjekter og endringsprosesser",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data quality"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "datakvalitet og informasjonsstyring",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Information governance"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "datakvalitet og informasjonsstyring",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Data sharing"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til bedre datakvalitet, informasjonsflyt og datadeling på tvers av systemer og organisatoriske enheter",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Information flow management"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til bedre datakvalitet, informasjonsflyt og datadeling på tvers av systemer og organisatoriske enheter",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Digital competence"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "solid digital kompetanse og evne til å bruke teknologi innovativt i forretningsprosesser",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Innovative use of technology in business processes"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "solid digital kompetanse og evne til å bruke teknologi innovativt i forretningsprosesser",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Process mapping"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "prosesskartlegging og virksomhetsutvikling",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Business development"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "prosesskartlegging og virksomhetsutvikling",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Information systems"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "informasjonssystemer og systemforvaltning",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Systems management"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "informasjonssystemer og systemforvaltning",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Documentation and archiving requirements in digital solutions"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "dokumentasjons- og arkivkrav i digitale løsninger",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Procurement"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "anskaffelser og kravspesifikasjoner",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Requirements specifications"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "anskaffelser og kravspesifikasjoner",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Privacy"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "personvern og informasjonssikkerhet",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Information security"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "personvern og informasjonssikkerhet",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Project and development work"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "prosjekt- og utviklingsarbeid",
+      "classification_context": "Det er en fordel om du har erfaring fra ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Artificial intelligence"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Skal vi lykkes med digitalisering, datadeling, kunstig intelligens og gode digitale tjenester, må informasjonen være strukturert, tilgjengelig og forvaltet på en trygg og helhetlig måte.",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 3302,
+    "input_tokens_details": {
+      "cache_write_tokens": 3299,
+      "cached_tokens": 0
+    },
+    "output_tokens": 4180,
+    "output_tokens_details": {
+      "reasoning_tokens": 2219
+    },
+    "total_tokens": 7482
+  },
+  "estimated_cost_usd": 0.0024202,
+  "elapsed_seconds": 41.66804769999726,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:25Z",
+    "content_hash_sha256": "3c48bcf2b57f72745515df0c978066643d11fc2ed376a610c7d14672cf7f55db",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 0,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "6161bf14636abb5eb2714c89a72ba6d371a9902cef278485bce746259d4bd46b",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T13:00:57Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-29T00:00:00+01:00",
+    "updated": "2026-10-29T11:49:40.417908+01:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 24,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 25,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 26,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 27,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 28,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 29,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

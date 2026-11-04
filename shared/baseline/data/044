@@ -1,0 +1,30 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: a1613f9c-1757-4351-81ea-1d0e5246fbd3
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/a1613f9c-1757-4351-81ea-1d0e5246fbd3
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:24Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| IT systems and infrastructure operations | single | work_duty | unclear | - drift og utvikling av IKT-systemer og infrastruktur | — | skill: exact; context: not_provided |
+| IT systems and infrastructure development | single | work_duty | unclear | - drift og utvikling av IKT-systemer og infrastruktur | — | skill: exact; context: not_provided |
+| Hardware installation and setup | single | work_duty | unclear | - installasjon og oppsett av maskinvare og programvare | — | skill: exact; context: not_provided |
+| Software installation and setup | single | work_duty | unclear | - installasjon og oppsett av maskinvare og programvare | — | skill: exact; context: not_provided |
+| IT user support | single | work_duty | unclear | - brukerstøtte til ansatte | — | skill: exact; context: not_provided |
+| Information and communications technology (ICT) | single | interest_only | unclear | - er interessert i IKT og teknologi | — | skill: exact; context: not_provided |
+| Digital solutions | single | interest_only | unclear | - har interesse for IKT, teknologi og digitale løsninger | — | skill: exact; context: not_provided |
+
+Run: 2026-11-01_22-22-13_UTC_ad-a1613f9c-1757-4351-81ea-1d0e5246fbd3 at 2026-11-01T22:22:13.079320+00:00
+Model: gpt-6-luna; response: resp_0b0de6bdc5a3f46a016ae7bb96aefc87d29a4f52e9d1e5af18
+Usage: 2598 input, 1370 output, 3968 total tokens.
+Estimated token cost: $0.00094480 (dated standard rates; not a billing statement).
+Elapsed API time: 13.731 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

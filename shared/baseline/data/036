@@ -1,0 +1,82 @@
+{
+  "format_version": 2,
+  "passed": true,
+  "errors": [],
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ],
+  "checks": [
+    "completed response without refusal or truncation",
+    "JSON fields and types",
+    "allowed relationships and classifications",
+    "allowed mention types and non-qualification labels",
+    "nonempty skills and skill quotation",
+    "alternative groups",
+    "independent exact continuous quotations (governing relationship requires review)",
+    "no identical duplicate items"
+  ]
+}

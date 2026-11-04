@@ -1,0 +1,48 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: b69f0bbd-082e-4d36-baae-456fb23ca32a
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/b69f0bbd-082e-4d36-baae-456fb23ca32a
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:25Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Software development and build generation | single | work_duty | unclear | Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter. | — | skill: exact; context: not_provided |
+| Android | single | work_duty | unclear | Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter. | — | skill: exact; context: not_provided |
+| iOS | single | work_duty | unclear | Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter. | — | skill: exact; context: not_provided |
+| Windows | single | work_duty | unclear | Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter. | — | skill: exact; context: not_provided |
+| Mac | single | work_duty | unclear | Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter. | — | skill: exact; context: not_provided |
+| VR devices | single | work_duty | unclear | Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter. | — | skill: exact; context: not_provided |
+| Multiplayer platform development | single | work_duty | unclear | Delta i videreutvikling av vår flerspillerplattform. | — | skill: exact; context: not_provided |
+| Game engines | single | candidate_qualification | preferred | Har god forståelse for spillmotorer og arkitektur i spillutvikling. | Ønskede kvalifikasjoner | skill: exact; context: exact |
+| Game development architecture | single | candidate_qualification | preferred | Har god forståelse for spillmotorer og arkitektur i spillutvikling. | Ønskede kvalifikasjoner | skill: exact; context: exact |
+| User experience in VR/AR environments | single | candidate_qualification | required | Har forståelse for sluttbrukerens behov og hvordan tekniske valg påvirker brukeropplevelsen – spesielt i VR/AR-miljøer. | Personlige egenskaper | skill: exact; context: exact |
+| Software performance | single | candidate_qualification | preferred | Har god forståelse for brukeropplevelse, ytelse og optimalisering. | Ønskede kvalifikasjoner | skill: exact; context: exact |
+| Software optimization | single | candidate_qualification | preferred | Har god forståelse for brukeropplevelse, ytelse og optimalisering. | Ønskede kvalifikasjoner | skill: exact; context: exact |
+| Codebase comprehension and improvement | single | candidate_qualification | preferred | Er komfortabel med å sette deg inn i eksisterende kode og forstå sammenhenger for å videreutvikle og forbedre. | Ønskede kvalifikasjoner | skill: exact; context: exact |
+| Unity OR Other game engine | any_of | candidate_qualification | required | Erfaring med Unity eller annen spillmotor og sterkt ønske om å lære Unity. | Kvalifikasjoner | skill: exact; context: exact |
+| Git | single | candidate_qualification | required | God kjennskap til Git og versjonskontroll. | Kvalifikasjoner | skill: exact; context: exact |
+| Version control | single | candidate_qualification | required | God kjennskap til Git og versjonskontroll. | Kvalifikasjoner | skill: exact; context: exact |
+| Agile development methodologies | single | candidate_qualification | required | Erfaring med smidige utviklingsmetodikker som Scrum. | Kvalifikasjoner | skill: exact; context: exact |
+| Scrum | single | candidate_qualification | unclear | Erfaring med smidige utviklingsmetodikker som Scrum. | Kvalifikasjoner | skill: exact; context: exact |
+| VR optimization | single | candidate_qualification | unclear | Optimalisering for VR | Erfaring med ett eller flere av følgende områder: | skill: exact; context: exact |
+| Network code | single | candidate_qualification | unclear | Nettverkskode | Erfaring med ett eller flere av følgende områder: | skill: exact; context: exact |
+| XR solution development | single | interest_only | unclear | Ønsker å bidra til utvikling av innovative løsninger innen XR. | — | skill: exact; context: not_provided |
+| Scalable and maintainable software design | single | candidate_qualification | required | Kreativ og løsningsorientert, som evner å se det store bildet og bygge løsninger som er skalerbare, enkle å vedlikeholde og teknisk solide. | Personlige egenskaper | skill: exact; context: exact |
+| Technical architecture decision-making | single | candidate_qualification | required | Tar eierskap til arkitekturvalg og tekniske beslutninger, og følger opp leveranser med høy kvalitet. | Personlige egenskaper | skill: exact; context: exact |
+| Technical communication | single | candidate_qualification | required | Samarbeidsvillig og kommunikativ, som trives med å jobbe i tverrfaglige team og kan forklare tekniske konsepter på en forståelig måte til både utviklere og designere. | Personlige egenskaper | skill: exact; context: exact |
+| Working across platforms and devices | single | candidate_qualification | required | Kan jobbe med ulike plattformer og enheter, og tilpasse seg nye arbeidsflyter og kundekrav. | Personlige egenskaper | skill: exact; context: exact |
+
+Run: 2026-11-02_06-00-34_UTC_ad-b69f0bbd-082e-4d36-baae-456fb23ca32a at 2026-11-02T06:00:34.721946+00:00
+Model: gpt-6-luna; response: resp_0432a290789b921f016ae8270331d887d28ebd100dcf3052bc
+Usage: 2132 input, 5294 output, 7426 total tokens.
+Estimated token cost: $0.00286020 (dated standard rates; not a billing statement).
+Elapsed API time: 60.320 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

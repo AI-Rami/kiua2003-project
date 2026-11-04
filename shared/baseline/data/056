@@ -1,0 +1,52 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: b35c3ca3-5e17-4e62-b048-c37317096e61
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/b35c3ca3-5e17-4e62-b048-c37317096e61
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:25Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Information management | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Records management | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Archives | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Digitalization | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Business development | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Systems management | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Data management | single | candidate_qualification | required | Du bør ha bakgrunn fra informasjonsforvaltning, dokumentasjonsforvaltning, arkiv, digitalisering, virksomhetsutvikling, systemforvaltning, dataforvaltning eller andre relevante fagområder. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Understanding relationships between information, work processes, technology, and organizational needs | single | candidate_qualification | required | Det er viktig at du forstår sammenhengen mellom informasjon, arbeidsprosesser, teknologi og virksomhetens behov. | Kvalifikasjonskrav | skill: exact; context: exact |
+| Identifying documentation and archiving requirements | single | work_duty | unclear | identifisere krav til dokumentasjon og arkivering i fylkeskommunens informasjonssystemer og arbeidsprosesser | — | skill: exact; context: not_provided |
+| Ensuring compliance with documentation and archiving requirements | single | work_duty | unclear | sikre at dokumentasjons- og arkivkrav ivaretas i samsvar med gjeldende regelverk | — | skill: exact; context: not_provided |
+| Information and documentation lifecycle management for systems | single | work_duty | unclear | ivareta informasjons- og dokumentasjonsperspektivet gjennom hele livsløpet til systemene, fra behovsavklaring og anskaffelse til forvaltning og utfasing | — | skill: exact; context: not_provided |
+| Integrating documentation and archiving requirements into procurement, development, and change processes | single | work_duty | unclear | bidra til at dokumentasjons- og arkivkrav ivaretas tidlig i anskaffelser, utviklingsprosjekter og endringsprosesser | — | skill: exact; context: not_provided |
+| Data quality | single | candidate_qualification | preferred | datakvalitet og informasjonsstyring | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Information governance | single | candidate_qualification | preferred | datakvalitet og informasjonsstyring | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Data sharing | single | work_duty | unclear | bidra til bedre datakvalitet, informasjonsflyt og datadeling på tvers av systemer og organisatoriske enheter | — | skill: exact; context: not_provided |
+| Information flow management | single | work_duty | unclear | bidra til bedre datakvalitet, informasjonsflyt og datadeling på tvers av systemer og organisatoriske enheter | — | skill: exact; context: not_provided |
+| Digital competence | single | candidate_qualification | preferred | solid digital kompetanse og evne til å bruke teknologi innovativt i forretningsprosesser | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Innovative use of technology in business processes | single | candidate_qualification | preferred | solid digital kompetanse og evne til å bruke teknologi innovativt i forretningsprosesser | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Process mapping | single | candidate_qualification | preferred | prosesskartlegging og virksomhetsutvikling | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Business development | single | candidate_qualification | preferred | prosesskartlegging og virksomhetsutvikling | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Information systems | single | candidate_qualification | preferred | informasjonssystemer og systemforvaltning | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Systems management | single | candidate_qualification | preferred | informasjonssystemer og systemforvaltning | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Documentation and archiving requirements in digital solutions | single | candidate_qualification | preferred | dokumentasjons- og arkivkrav i digitale løsninger | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Procurement | single | candidate_qualification | preferred | anskaffelser og kravspesifikasjoner | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Requirements specifications | single | candidate_qualification | preferred | anskaffelser og kravspesifikasjoner | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Privacy | single | candidate_qualification | preferred | personvern og informasjonssikkerhet | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Information security | single | candidate_qualification | preferred | personvern og informasjonssikkerhet | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Project and development work | single | candidate_qualification | preferred | prosjekt- og utviklingsarbeid | Det er en fordel om du har erfaring fra ett eller flere av følgende områder: | skill: exact; context: exact |
+| Artificial intelligence | single | work_context | unclear | Skal vi lykkes med digitalisering, datadeling, kunstig intelligens og gode digitale tjenester, må informasjonen være strukturert, tilgjengelig og forvaltet på en trygg og helhetlig måte. | — | skill: exact; context: not_provided |
+
+Run: 2026-11-02_05-59-01_UTC_ad-b35c3ca3-5e17-4e62-b048-c37317096e61 at 2026-11-02T05:59:01.464009+00:00
+Model: gpt-6-luna; response: resp_0b7ab26dc7e6b4d2016ae826a6244887d29e6383a76323e25c
+Usage: 3302 input, 4180 output, 7482 total tokens.
+Estimated token cost: $0.00242020 (dated standard rates; not a billing statement).
+Elapsed API time: 41.668 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

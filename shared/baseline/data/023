@@ -1,0 +1,448 @@
+{
+  "format_version": 2,
+  "source_uuid": "4135497b-cb65-4bed-890d-f9dcaf478711",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/4135497b-cb65-4bed-890d-f9dcaf478711",
+  "run_id": "2026-11-01_22-19-56_UTC_ad-4135497b-cb65-4bed-890d-f9dcaf478711",
+  "run_timestamp": "2026-11-01T22:19:56.715322+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_00674d1b5e4f4d71016ae7bb0e7da887d2babaaa117aabc6cf",
+  "items": [
+    {
+      "skills": [
+        "IT operations"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring innen IT-drift og god forståelse for teknologi og IKT-utfordringer, minimum 2 års erfaring.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Platform operations"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Drifte, vedlikeholde og videreutvikle plattform og sikkerhetsløsninger",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Security solution operations"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Drifte, vedlikeholde og videreutvikle plattform og sikkerhetsløsninger",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Platform development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Drifte, vedlikeholde og videreutvikle plattform og sikkerhetsløsninger",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Monitoring implementation and administration"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Implementere og administrere overvåking, logging og varsling for å sikre plattformens pålitelighet og ytelse.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Logging implementation and administration"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Implementere og administrere overvåking, logging og varsling for å sikre plattformens pålitelighet og ytelse.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Alerting implementation and administration"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Implementere og administrere overvåking, logging og varsling for å sikre plattformens pålitelighet og ytelse.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technical documentation"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utarbeide faglig dokumentasjon og videreformidle kunnskap innen fagområdet.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technical knowledge transfer"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utarbeide faglig dokumentasjon og videreformidle kunnskap innen fagområdet.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "ISO 27001/27002"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "ISO 27001/27002",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "NSM’s basic principles for ICT security"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "NSM’s grunnprinsipper for IKT-sikkerhet",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Security-classified platforms"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Sikkerhetsgraderte plattformer, miljø med høye oppetidskrav og redundans.",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "High-availability systems"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Sikkerhetsgraderte plattformer, miljø med høye oppetidskrav og redundans.",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Redundancy"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Sikkerhetsgraderte plattformer, miljø med høye oppetidskrav og redundans.",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Linux server environments",
+        "Windows server environments"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Drift av Linux og/eller windows servermiljø",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Container technology"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Container-teknologi som Kubernetes",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Kubernetes"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Container-teknologi som Kubernetes",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Automation"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code»",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Orchestration"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code»",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Scripting"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code»",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Infrastructure as Code"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code»",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Database administration"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Databaser innenfor Windows og Linux miljøer og drift av disse",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "VMware",
+        "Omnissa"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "VMware eller Omnissa",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "DevOps tools"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "DevOps-verktøy, prinsipper og –metodikker",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "DevOps principles and methodologies"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "DevOps-verktøy, prinsipper og –metodikker",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    },
+    {
+      "skills": [
+        "Agile methodology"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Smidig arbeidsmetodikk og prosjektarbeid",
+      "classification_context": "Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder:"
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2817,
+    "input_tokens_details": {
+      "cache_write_tokens": 1348,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 3709,
+    "output_tokens_details": {
+      "reasoning_tokens": 2070
+    },
+    "total_tokens": 6526
+  },
+  "estimated_cost_usd": 0.0021362,
+  "elapsed_seconds": 30.368128600006457,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:23Z",
+    "content_hash_sha256": "fd287f3e9bec1986cd0fd7199cdabe34f7eb3e65413234820d02ebacbdbc398c",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 1,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "2161ef281d3637573eae83739968690b6490b7b2f428dd7add378f43009554e7",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:35:35Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-07T00:00:00+02:00",
+    "updated": "2026-10-07T13:03:09.074283+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 24,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 25,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 26,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    }
+  ]
+}

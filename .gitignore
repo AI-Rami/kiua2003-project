@@ -1,6 +1,6 @@
 .env
 .env.local
-out/
+/out/
 archive/
 .venv/
 __pycache__/

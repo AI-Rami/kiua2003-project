@@ -1,0 +1,432 @@
+{
+  "format_version": 2,
+  "source_uuid": "b69f0bbd-082e-4d36-baae-456fb23ca32a",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/b69f0bbd-082e-4d36-baae-456fb23ca32a",
+  "run_id": "2026-11-02_06-00-34_UTC_ad-b69f0bbd-082e-4d36-baae-456fb23ca32a",
+  "run_timestamp": "2026-11-02T06:00:34.721946+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0432a290789b921f016ae8270331d887d28ebd100dcf3052bc",
+  "items": [
+    {
+      "skills": [
+        "Software development and build generation"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Android"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "iOS"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Windows"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Mac"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "VR devices"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Multiplayer platform development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Delta i videreutvikling av vår flerspillerplattform.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Game engines"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Har god forståelse for spillmotorer og arkitektur i spillutvikling.",
+      "classification_context": "Ønskede kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Game development architecture"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Har god forståelse for spillmotorer og arkitektur i spillutvikling.",
+      "classification_context": "Ønskede kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "User experience in VR/AR environments"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Har forståelse for sluttbrukerens behov og hvordan tekniske valg påvirker brukeropplevelsen – spesielt i VR/AR-miljøer.",
+      "classification_context": "Personlige egenskaper"
+    },
+    {
+      "skills": [
+        "Software performance"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Har god forståelse for brukeropplevelse, ytelse og optimalisering.",
+      "classification_context": "Ønskede kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Software optimization"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Har god forståelse for brukeropplevelse, ytelse og optimalisering.",
+      "classification_context": "Ønskede kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Codebase comprehension and improvement"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Er komfortabel med å sette deg inn i eksisterende kode og forstå sammenhenger for å videreutvikle og forbedre.",
+      "classification_context": "Ønskede kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Unity",
+        "Other game engine"
+      ],
+      "relationship": "any_of",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med Unity eller annen spillmotor og sterkt ønske om å lære Unity.",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Git"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kjennskap til Git og versjonskontroll.",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Version control"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kjennskap til Git og versjonskontroll.",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Agile development methodologies"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med smidige utviklingsmetodikker som Scrum.",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "Scrum"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med smidige utviklingsmetodikker som Scrum.",
+      "classification_context": "Kvalifikasjoner"
+    },
+    {
+      "skills": [
+        "VR optimization"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Optimalisering for VR",
+      "classification_context": "Erfaring med ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "Network code"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Nettverkskode",
+      "classification_context": "Erfaring med ett eller flere av følgende områder:"
+    },
+    {
+      "skills": [
+        "XR solution development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "Ønsker å bidra til utvikling av innovative løsninger innen XR.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Scalable and maintainable software design"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Kreativ og løsningsorientert, som evner å se det store bildet og bygge løsninger som er skalerbare, enkle å vedlikeholde og teknisk solide.",
+      "classification_context": "Personlige egenskaper"
+    },
+    {
+      "skills": [
+        "Technical architecture decision-making"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Tar eierskap til arkitekturvalg og tekniske beslutninger, og følger opp leveranser med høy kvalitet.",
+      "classification_context": "Personlige egenskaper"
+    },
+    {
+      "skills": [
+        "Technical communication"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Samarbeidsvillig og kommunikativ, som trives med å jobbe i tverrfaglige team og kan forklare tekniske konsepter på en forståelig måte til både utviklere og designere.",
+      "classification_context": "Personlige egenskaper"
+    },
+    {
+      "skills": [
+        "Working across platforms and devices"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Kan jobbe med ulike plattformer og enheter, og tilpasse seg nye arbeidsflyter og kundekrav.",
+      "classification_context": "Personlige egenskaper"
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2132,
+    "input_tokens_details": {
+      "cache_write_tokens": 663,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 5294,
+    "output_tokens_details": {
+      "reasoning_tokens": 3894
+    },
+    "total_tokens": 7426
+  },
+  "estimated_cost_usd": 0.0028602,
+  "elapsed_seconds": 60.31979769999816,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:25Z",
+    "content_hash_sha256": "57f8290a68b083851d0bb227373017dbb8d4a5ed2354d0053bad55e2d1b2fa85",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 0,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "57f8290a68b083851d0bb227373017dbb8d4a5ed2354d0053bad55e2d1b2fa85",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:35:33Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2025-11-27T00:00:01+01:00",
+    "updated": "2026-10-06T14:59:47.703977+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 24,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 25,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    }
+  ]
+}

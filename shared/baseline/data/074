@@ -1,0 +1,46 @@
+# Statistikk- og datautvikler -  befolkningsstatistikk
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: fbae0d93-6d19-4ba3-b7f1-c8facc554e5d
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/fbae0d93-6d19-4ba3-b7f1-c8facc554e5d
+
+Input: edited, cleaned NAV capture.
+Cleaner version: nav-contact-clean-v3
+Capture retrieved: not recorded
+Review state: auto_contact_checked
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Programming | single | candidate_qualification | required | Kompetanse i programmering, for eksempel Python eller R | — | skill: exact; context: not_provided |
+| Python OR R | any_of | candidate_qualification | unclear | Kompetanse i programmering, for eksempel Python eller R | — | skill: exact; context: not_provided |
+| Git | single | candidate_qualification | preferred | Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid | — | skill: exact; context: not_provided |
+| Jupyter | single | candidate_qualification | preferred | Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid | — | skill: exact; context: not_provided |
+| VS Code | single | candidate_qualification | preferred | Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid | — | skill: exact; context: not_provided |
+| Cloud platforms | single | candidate_qualification | preferred | Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid | — | skill: exact; context: not_provided |
+| Register data | single | candidate_qualification | preferred | Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon | — | skill: exact; context: not_provided |
+| Data processing | single | candidate_qualification | preferred | Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon | — | skill: exact; context: not_provided |
+| GIS | single | candidate_qualification | preferred | Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon | — | skill: exact; context: not_provided |
+| Geographic analysis | single | candidate_qualification | preferred | Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon | — | skill: exact; context: not_provided |
+| Statistical production | single | candidate_qualification | preferred | Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon | — | skill: exact; context: not_provided |
+| Statistics | single | interest_only | unclear | Det er en fordel med interesse for eller erfaring med geografiske problemstillinger og analyser, statistikk, analyse og samfunnsutvikling | — | skill: exact; context: not_provided |
+| Statistical production and analysis on population, immigration, integration, elections, and regional matters | single | work_duty | unclear | Produksjon av statistikk og analyser om befolkning, innvandring og integrering, valg og regionale forhold | — | skill: exact; context: not_provided |
+| Statistical register management and development | single | work_duty | unclear | Videreutvikling og forvaltning av det statistiske folkeregisteret som grunnlag for en rekke av SSBs statistikker | — | skill: exact; context: not_provided |
+| Regional standards management and development | single | work_duty | unclear | Forvaltning og utvikling av regionale standarder, geografiske klassifikasjoner og analyser av geografiske data | — | skill: exact; context: not_provided |
+| Geographic classifications | single | work_duty | unclear | Forvaltning og utvikling av regionale standarder, geografiske klassifikasjoner og analyser av geografiske data | — | skill: exact; context: not_provided |
+| Geographic data analysis | single | work_duty | unclear | Forvaltning og utvikling av regionale standarder, geografiske klassifikasjoner og analyser av geografiske data | — | skill: exact; context: not_provided |
+| Statistical production on cloud-based data platforms | single | work_duty | unclear | Etablering og videreutvikling av statistikkproduksjon på SSBs skybaserte dataplattform | — | skill: exact; context: not_provided |
+| Automated production workflow development and improvement | single | work_duty | unclear | Utvikling og forbedring av automatiserte produksjonsløp | — | skill: exact; context: not_provided |
+| Register data analysis | single | work_duty | unclear | Analyse av registerdata og utvikling av nye statistiske produkter og metoder | — | skill: exact; context: not_provided |
+| Statistical product development | single | work_duty | unclear | Analyse av registerdata og utvikling av nye statistiske produkter og metoder | — | skill: exact; context: not_provided |
+| Statistical method development | single | work_duty | unclear | Analyse av registerdata og utvikling av nye statistiske produkter og metoder | — | skill: exact; context: not_provided |
+| Statistical dissemination | single | work_duty | unclear | Formidling av statistikk og analyser | — | skill: exact; context: not_provided |
+
+Run: 2026-11-04_20-44-55_UTC_ad-fbae0d93-6d19-4ba3-b7f1-c8facc554e5d at 2026-11-04T20:44:55.523738+00:00
+Model: gpt-6-luna; response: resp_05d387b2eae8cf76016aeb9948515887d2a64e643b6a00cece
+Usage: 3062 input, 3269 output, 6331 total tokens.
+Estimated token cost: $0.00194070 (dated standard rates; not a billing statement).
+Elapsed API time: 35.027 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

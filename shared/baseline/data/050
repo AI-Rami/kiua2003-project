@@ -1,0 +1,72 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: a5dabb26-7b1f-4538-aabe-cd78cac5f2cb
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/a5dabb26-7b1f-4538-aabe-cd78cac5f2cb
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:24Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Kubernetes | single | work_context | unclear | Du får arbeide med Kubernetes, GitOps, Terraform, lakehouse-teknologi, observability og moderne plattformutvikling i et fagmiljø som satser tungt på dataforvaltning og analyse. | — | skill: exact; context: not_provided |
+| GitOps | single | work_context | unclear | Du får arbeide med Kubernetes, GitOps, Terraform, lakehouse-teknologi, observability og moderne plattformutvikling i et fagmiljø som satser tungt på dataforvaltning og analyse. | — | skill: exact; context: not_provided |
+| Terraform | single | work_context | unclear | Du får arbeide med Kubernetes, GitOps, Terraform, lakehouse-teknologi, observability og moderne plattformutvikling i et fagmiljø som satser tungt på dataforvaltning og analyse. | — | skill: exact; context: not_provided |
+| Data platform design and implementation | single | work_duty | unclear | designe og implementere en modulær og portabel dataplattform basert på åpne standarder og open source-teknologi | — | skill: exact; context: not_provided |
+| Open standards | single | work_duty | unclear | designe og implementere en modulær og portabel dataplattform basert på åpne standarder og open source-teknologi | — | skill: exact; context: not_provided |
+| Data ingestion | single | work_duty | unclear | etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet | — | skill: exact; context: not_provided |
+| Data storage | single | work_duty | unclear | etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet | — | skill: exact; context: not_provided |
+| Data products | single | work_duty | unclear | etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet | — | skill: exact; context: not_provided |
+| Metadata management | single | work_duty | unclear | etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet | — | skill: exact; context: not_provided |
+| Master data management | single | work_duty | unclear | etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet | — | skill: exact; context: not_provided |
+| Data quality | single | work_duty | unclear | etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet | — | skill: exact; context: not_provided |
+| Lakehouse architecture | single | candidate_qualification | preferred | moderne dataplattformer og lakehouse-arkitektur | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Data processing | single | work_duty | unclear | bidra til utvikling av lakehouse-arkitektur og felles dataplattformtjenester for lagring, bearbeiding og tilgjengeliggjøring av data | — | skill: exact; context: not_provided |
+| Data availability | single | work_duty | unclear | bidra til utvikling av lakehouse-arkitektur og felles dataplattformtjenester for lagring, bearbeiding og tilgjengeliggjøring av data | — | skill: exact; context: not_provided |
+| Data classification | single | work_duty | unclear | bidra til etablering av datasentriske sikkerhetsmekanismer gjennom klassifisering, metadata, tilgangsstyring og sporbarhet | — | skill: exact; context: not_provided |
+| Traceability | single | work_duty | unclear | bidra til etablering av datasentriske sikkerhetsmekanismer gjennom klassifisering, metadata, tilgangsstyring og sporbarhet | — | skill: exact; context: not_provided |
+| Infrastructure as Code | single | candidate_qualification | required | erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Container technology | single | candidate_qualification | required | erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Cloud technology | single | candidate_qualification | required | erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Delivery automation | single | candidate_qualification | required | erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Monitoring | single | candidate_qualification | preferred | monitorering, logging og observability | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Logging | single | candidate_qualification | preferred | monitorering, logging og observability | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Observability | single | candidate_qualification | preferred | monitorering, logging og observability | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Tracing | single | work_duty | unclear | sikre god "observability" gjennom monitorering, logging, sporing, kapasitetsstyring og feilsøking | — | skill: exact; context: not_provided |
+| Capacity management | single | work_duty | unclear | sikre god "observability" gjennom monitorering, logging, sporing, kapasitetsstyring og feilsøking | — | skill: exact; context: not_provided |
+| Troubleshooting | single | work_duty | unclear | sikre god "observability" gjennom monitorering, logging, sporing, kapasitetsstyring og feilsøking | — | skill: exact; context: not_provided |
+| Architecture patterns | single | work_duty | unclear | bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur | — | skill: exact; context: not_provided |
+| Technology selection | single | work_duty | unclear | bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur | — | skill: exact; context: not_provided |
+| Platform standardization | single | work_duty | unclear | bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur | — | skill: exact; context: not_provided |
+| Target architecture | single | work_duty | unclear | bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur | — | skill: exact; context: not_provided |
+| Data platform development OR Data platform operation OR Analytics platform experience OR Platform-adjacent solution experience | any_of | candidate_qualification | required | erfaring med utvikling eller drift av dataplattformer, analyseplattformer eller andre plattformnære løsninger | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Python | single | candidate_qualification | required | erfaring med programmering ved bruk av Python eller tilsvarende teknologier for automatisering | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Automation programming | single | candidate_qualification | required | erfaring med programmering ved bruk av Python eller tilsvarende teknologier for automatisering | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Architecture | single | candidate_qualification | required | god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Integrations | single | candidate_qualification | required | god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Data flow | single | candidate_qualification | required | god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Modern development processes | single | candidate_qualification | required | god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Security | single | candidate_qualification | required | god forståelse for sikkerhet og tilgangsstyring | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Access control | single | candidate_qualification | required | god forståelse for sikkerhet og tilgangsstyring | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| Open-source components | single | candidate_qualification | required | god kjennskap til og interesse for open source-komponenter | For å kvalifisere til stillingen må du ha: | skill: exact; context: exact |
+| dbt | single | candidate_qualification | preferred | teknologier som dbt, Airflow, Iceberg og/eller Trino | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Airflow | single | candidate_qualification | preferred | teknologier som dbt, Airflow, Iceberg og/eller Trino | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Iceberg | single | candidate_qualification | preferred | teknologier som dbt, Airflow, Iceberg og/eller Trino | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Trino | single | candidate_qualification | preferred | teknologier som dbt, Airflow, Iceberg og/eller Trino | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| API integrations | single | candidate_qualification | preferred | API-integrasjoner og hendelsesbasert arkitektur | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Event-driven architecture | single | candidate_qualification | preferred | API-integrasjoner og hendelsesbasert arkitektur | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Object storage | single | candidate_qualification | preferred | objektlagring og S3-kompatible lagringsløsninger | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| S3-compatible storage | single | candidate_qualification | preferred | objektlagring og S3-kompatible lagringsløsninger | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+| Agile methodology | single | candidate_qualification | preferred | smidig arbeidsmetodikk og prosjektarbeid | Det er også ønskelig, men ikke et krav, at du har erfaring med: | skill: exact; context: exact |
+
+Run: 2026-11-01_22-23-08_UTC_ad-a5dabb26-7b1f-4538-aabe-cd78cac5f2cb at 2026-11-01T22:23:08.426268+00:00
+Model: gpt-6-luna; response: resp_0603d06f50c8d4a7016ae7bbce20e487d2925287d4f2bed83c
+Usage: 3053 input, 5839 output, 8892 total tokens.
+Estimated token cost: $0.00322480 (dated standard rates; not a billing statement).
+Elapsed API time: 45.750 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

@@ -1,0 +1,385 @@
+{
+  "format_version": 2,
+  "source_uuid": "fbae0d93-6d19-4ba3-b7f1-c8facc554e5d",
+  "title": "Statistikk- og datautvikler -  befolkningsstatistikk",
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/fbae0d93-6d19-4ba3-b7f1-c8facc554e5d",
+  "run_id": "2026-11-04_20-44-55_UTC_ad-fbae0d93-6d19-4ba3-b7f1-c8facc554e5d",
+  "run_timestamp": "2026-11-04T20:44:55.523738+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_05d387b2eae8cf76016aeb9948515887d2a64e643b6a00cece",
+  "items": [
+    {
+      "skills": [
+        "Programming"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Kompetanse i programmering, for eksempel Python eller R",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Python",
+        "R"
+      ],
+      "relationship": "any_of",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Kompetanse i programmering, for eksempel Python eller R",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Git"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Jupyter"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "VS Code"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Cloud platforms"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er ønskelig med erfaring med moderne utviklingsverktøy og arbeidsformer, som Git, Jupyter, VS Code og skybaserte plattformer, samt prosjektarbeid",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Register data"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data processing"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "GIS"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Geographic analysis"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical production"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er en fordel med erfaring fra registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistics"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "Det er en fordel med interesse for eller erfaring med geografiske problemstillinger og analyser, statistikk, analyse og samfunnsutvikling",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical production and analysis on population, immigration, integration, elections, and regional matters"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Produksjon av statistikk og analyser om befolkning, innvandring og integrering, valg og regionale forhold",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical register management and development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Videreutvikling og forvaltning av det statistiske folkeregisteret som grunnlag for en rekke av SSBs statistikker",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Regional standards management and development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Forvaltning og utvikling av regionale standarder, geografiske klassifikasjoner og analyser av geografiske data",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Geographic classifications"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Forvaltning og utvikling av regionale standarder, geografiske klassifikasjoner og analyser av geografiske data",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Geographic data analysis"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Forvaltning og utvikling av regionale standarder, geografiske klassifikasjoner og analyser av geografiske data",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical production on cloud-based data platforms"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Etablering og videreutvikling av statistikkproduksjon på SSBs skybaserte dataplattform",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Automated production workflow development and improvement"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikling og forbedring av automatiserte produksjonsløp",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Register data analysis"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Analyse av registerdata og utvikling av nye statistiske produkter og metoder",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical product development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Analyse av registerdata og utvikling av nye statistiske produkter og metoder",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical method development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Analyse av registerdata og utvikling av nye statistiske produkter og metoder",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical dissemination"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Formidling av statistikk og analyser",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 3062,
+    "input_tokens_details": {
+      "cache_write_tokens": 3059,
+      "cached_tokens": 0
+    },
+    "output_tokens": 3269,
+    "output_tokens_details": {
+      "reasoning_tokens": 1951
+    },
+    "total_tokens": 6331
+  },
+  "estimated_cost_usd": 0.0019407,
+  "elapsed_seconds": 35.026837999990676,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "revised_version": "nav-contact-clean-v3",
+    "content_hash_sha256": "909c09905e67383ecaba0b60f87030e00d5f3ba4f37b332f80453187e2eb11b5",
+    "review_state": "auto_contact_checked",
+    "published": "2026-11-03T00:00:00+01:00",
+    "updated": "2026-11-03T15:01:16.929353+01:00",
+    "source_id": "IMPORTAPI"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

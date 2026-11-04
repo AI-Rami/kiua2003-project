@@ -1,0 +1,161 @@
+{
+  "format_version": 2,
+  "source_uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+  "run_id": "2026-11-01_22-22-13_UTC_ad-a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+  "run_timestamp": "2026-11-01T22:22:13.079320+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0b0de6bdc5a3f46a016ae7bb96aefc87d29a4f52e9d1e5af18",
+  "items": [
+    {
+      "skills": [
+        "IT systems and infrastructure operations"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "- drift og utvikling av IKT-systemer og infrastruktur",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "IT systems and infrastructure development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "- drift og utvikling av IKT-systemer og infrastruktur",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Hardware installation and setup"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "- installasjon og oppsett av maskinvare og programvare",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Software installation and setup"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "- installasjon og oppsett av maskinvare og programvare",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "IT user support"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "- brukerstøtte til ansatte",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Information and communications technology (ICT)"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "- er interessert i IKT og teknologi",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Digital solutions"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "- har interesse for IKT, teknologi og digitale løsninger",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2598,
+    "input_tokens_details": {
+      "cache_write_tokens": 1129,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 1370,
+    "output_tokens_details": {
+      "reasoning_tokens": 1034
+    },
+    "total_tokens": 3968
+  },
+  "estimated_cost_usd": 0.0009448,
+  "elapsed_seconds": 13.730762799998047,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:24Z",
+    "content_hash_sha256": "0adbea9416971ebc052cdafde4aba54fc0eef56ee0fab127cf990057fc90d08e",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 0,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "0adbea9416971ebc052cdafde4aba54fc0eef56ee0fab127cf990057fc90d08e",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:43:14Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-19T00:00:00+02:00",
+    "updated": "2026-10-19T14:58:04.121388+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

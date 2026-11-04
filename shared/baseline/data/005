@@ -1,0 +1,577 @@
+{
+  "format_version": 2,
+  "source_uuid": "1f614033-73b3-4c26-bda5-3d9abe281a12",
+  "title": "Seniorrådgiver frontendutvikler",
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/1f614033-73b3-4c26-bda5-3d9abe281a12",
+  "run_id": "2026-11-02_21-24-47_UTC_ad-1f614033-73b3-4c26-bda5-3d9abe281a12",
+  "run_timestamp": "2026-11-02T21:24:47.988772+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0c96d416f0049f58016ae8ffa1239087d2951b9ed60b84a0d2",
+  "items": [
+    {
+      "skills": [
+        "Frontend development",
+        "Full-stack development"
+      ],
+      "relationship": "any_of",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidet som frontendutvikler eller fullstack-utvikler med ekspertise på frontend.",
+      "classification_context": "Du må ha:"
+    },
+    {
+      "skills": [
+        "Backend knowledge"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for backend",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Software architecture"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for backend, arkitektur og applikasjonsdesign.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Application design"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for backend, arkitektur og applikasjonsdesign.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Basic web technologies"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS.",
+      "classification_context": "Du må ha:"
+    },
+    {
+      "skills": [
+        "HTML"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS.",
+      "classification_context": "Du må ha:"
+    },
+    {
+      "skills": [
+        "TypeScript"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS.",
+      "classification_context": "Du må ha:"
+    },
+    {
+      "skills": [
+        "CSS"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidet med grunnleggende web-teknologi, som HTML, Typescript og CSS.",
+      "classification_context": "Du må ha:"
+    },
+    {
+      "skills": [
+        "React",
+        "Vue",
+        "Angular"
+      ],
+      "relationship": "any_of",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Arbeidet med React/Vue/Angular eller lignende rammeverk for web-utvikling.",
+      "classification_context": "Du må ha:"
+    },
+    {
+      "skills": [
+        "Solution design"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "fra innsikt og løsningsdesign til utvikling, testing og kontinuerlig forbedring.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Software development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "fra innsikt og løsningsdesign til utvikling, testing og kontinuerlig forbedring.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Software testing"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "fra innsikt og løsningsdesign til utvikling, testing og kontinuerlig forbedring.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Kotlin"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Teamet utvikler løsninger med Kotlin og Spring Boot i backend, og Next.js og TypeScript i frontend.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Spring Boot"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Teamet utvikler løsninger med Kotlin og Spring Boot i backend, og Next.js og TypeScript i frontend.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Next.js"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med NextJS.",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "TypeScript"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Teamet utvikler løsninger med Kotlin og Spring Boot i backend, og Next.js og TypeScript i frontend.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "PostgreSQL"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "NATS"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Google Cloud Platform"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Continuous deployment"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Vi lagrer data i PostgreSQL og NATS, og deployerer kontinuerlig til Google Cloud Platform ved hjelp av GitHub Actions og Terraform.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "CI/CD"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med CI/CD (f.eks.: github-actions og terraform).",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "GitHub Actions"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med CI/CD (f.eks.: github-actions og terraform).",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Terraform"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med CI/CD (f.eks.: github-actions og terraform).",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Backend development"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med backend-utvikling (f.eks Java/Kotlin).",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Java"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med backend-utvikling (f.eks Java/Kotlin).",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Kotlin"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med backend-utvikling (f.eks Java/Kotlin).",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Frontend architecture"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med frontend arkitektur og designsystemer.",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Design systems"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med frontend arkitektur og designsystemer.",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "AI-assisted coding"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Testet ut koding med KI/agenter og har et reflektert forhold til det.",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "AI tools"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "KI-verktøy er en integrert del av utviklingsarbeidet vårt",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "AI adoption"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "ønsker å bidra til å ta i bruk KI der det gir verdi.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Agile development"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med smidige utvikling og tverrfaglig arbeid.",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Security work"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "Interesse for sikkerhetsarbeid.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Product development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "interesse for teknologi, arkitektur og produktutvikling.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technical leadership"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "Dersom du har interesse for teknisk ledelse og de rette kvalifikasjonene, kan denne rollen også gi mulighet til å ta et slikt ansvar.",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 3049,
+    "input_tokens_details": {
+      "cache_write_tokens": 1580,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 5024,
+    "output_tokens_details": {
+      "reasoning_tokens": 3190
+    },
+    "total_tokens": 8073
+  },
+  "estimated_cost_usd": 0.0028169000000000002,
+  "elapsed_seconds": 51.40868919999048,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited current NAV detail; automatic contact screen, not human approval",
+    "revised_version": "nav-contact-clean-v3",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-02T21:24:47.988772+00:00",
+    "content_hash_sha256": "cac63ea057206a8efe94f53410fdedc9b0f26734045a69d0cdbc3ee62a726a87",
+    "review_state": "auto_contact_checked",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 1,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-19T15:16:55.13757+02:00",
+    "updated": "2026-10-20T08:00:49.44996+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 24,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 25,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 26,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 27,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 28,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 29,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 30,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 31,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 32,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 33,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 34,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 35,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 2f62e300-c698-4f53-8510-db90b1692cb9
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/2f62e300-c698-4f53-8510-db90b1692cb9
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:23Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Backend development | single | candidate_qualification | required | 5+ år med backend erfaring | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| C# .NET | single | candidate_qualification | required | God erfaring med C# .NET | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| Azure | single | candidate_qualification | required | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| Entra | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Key Vault | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Azure Storage accounts | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Azure App Services | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Azure App Configuration | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Azure Functions | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Application Insights | single | candidate_qualification | unclear | Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights) | — | skill: exact; context: not_provided |
+| Customer Identity and Access Management (CIAM) | single | candidate_qualification | required | God kunnskap med CIAM (Customer Identity and Access Management) | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| Relational databases (SQL) | single | candidate_qualification | required | Relational Database (SQL) | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| Infrastructure as Code (IaC) resource management | single | candidate_qualification | required | IaC (Resource Management) | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| Agile development | single | candidate_qualification | required | Smidig utvikling/DevOps | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| DevOps | single | candidate_qualification | required | Smidig utvikling/DevOps | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| CI/CD pipeline management | single | candidate_qualification | required | Pipeline management (CI/CD) | Nøkkelkvalifikasjoner: | skill: exact; context: exact |
+| Full-stack development | single | candidate_qualification | preferred | Erfaring med Fullstack utvikling | Ønskede kvalifikasjoner: | skill: exact; context: exact |
+| Microservices | single | candidate_qualification | preferred | Microservice and distributed systems | Ønskede kvalifikasjoner: | skill: exact; context: exact |
+| Distributed systems | single | candidate_qualification | preferred | Microservice and distributed systems | Ønskede kvalifikasjoner: | skill: exact; context: exact |
+| Containerization | single | candidate_qualification | preferred | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | Ønskede kvalifikasjoner: | skill: exact; context: exact |
+| Orchestration | single | candidate_qualification | preferred | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | Ønskede kvalifikasjoner: | skill: exact; context: exact |
+| Docker | single | candidate_qualification | unclear | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | — | skill: exact; context: not_provided |
+| Kubernetes | single | candidate_qualification | unclear | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | — | skill: exact; context: not_provided |
+| Azure Container Apps | single | candidate_qualification | unclear | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | — | skill: exact; context: not_provided |
+| Azure Kubernetes Service | single | candidate_qualification | unclear | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | — | skill: exact; context: not_provided |
+| Helm | single | candidate_qualification | unclear | God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm) | — | skill: exact; context: not_provided |
+| NoSQL databases | single | candidate_qualification | preferred | Forståelse for No-SQL | Ønskede kvalifikasjoner: | skill: exact; context: exact |
+| XR technology | single | work_context | unclear | Mulighet til å jobbe med banebrytende teknologi innen XR og teknologi som gjør en forskjell. | — | skill: exact; context: not_provided |
+
+Run: 2026-11-01_22-13-46_UTC_ad-2f62e300-c698-4f53-8510-db90b1692cb9 at 2026-11-01T22:13:46.403289+00:00
+Model: gpt-6-luna; response: resp_0b8a3b9b1f0beedc016ae7b99c14ec87d296beef2516868359
+Usage: 1767 input, 3303 output, 5070 total tokens.
+Estimated token cost: $0.00182820 (dated standard rates; not a billing statement).
+Elapsed API time: 28.003 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

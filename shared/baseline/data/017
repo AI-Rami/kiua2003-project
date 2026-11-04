@@ -1,0 +1,476 @@
+{
+  "format_version": 2,
+  "source_uuid": "2f62e300-c698-4f53-8510-db90b1692cb9",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/2f62e300-c698-4f53-8510-db90b1692cb9",
+  "run_id": "2026-11-01_22-13-46_UTC_ad-2f62e300-c698-4f53-8510-db90b1692cb9",
+  "run_timestamp": "2026-11-01T22:13:46.403289+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0b8a3b9b1f0beedc016ae7b99c14ec87d296beef2516868359",
+  "items": [
+    {
+      "skills": [
+        "Backend development"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "5+ år med backend erfaring",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "C# .NET"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God erfaring med C# .NET",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Azure"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Entra"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Key Vault"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Azure Storage accounts"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Azure App Services"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Azure App Configuration"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Azure Functions"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Application Insights"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Customer Identity and Access Management (CIAM)"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap med CIAM (Customer Identity and Access Management)",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Relational databases (SQL)"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Relational Database (SQL)",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Infrastructure as Code (IaC) resource management"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "IaC (Resource Management)",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Agile development"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Smidig utvikling/DevOps",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "DevOps"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Smidig utvikling/DevOps",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "CI/CD pipeline management"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Pipeline management (CI/CD)",
+      "classification_context": "Nøkkelkvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Full-stack development"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med Fullstack utvikling",
+      "classification_context": "Ønskede kvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Microservices"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Microservice and distributed systems",
+      "classification_context": "Ønskede kvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Distributed systems"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Microservice and distributed systems",
+      "classification_context": "Ønskede kvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Containerization"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": "Ønskede kvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Orchestration"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": "Ønskede kvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "Docker"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Kubernetes"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Azure Container Apps"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Azure Kubernetes Service"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Helm"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "NoSQL databases"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Forståelse for No-SQL",
+      "classification_context": "Ønskede kvalifikasjoner:"
+    },
+    {
+      "skills": [
+        "XR technology"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Mulighet til å jobbe med banebrytende teknologi innen XR og teknologi som gjør en forskjell.",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 1767,
+    "input_tokens_details": {
+      "cache_write_tokens": 1764,
+      "cached_tokens": 0
+    },
+    "output_tokens": 3303,
+    "output_tokens_details": {
+      "reasoning_tokens": 1781
+    },
+    "total_tokens": 5070
+  },
+  "estimated_cost_usd": 0.0018282,
+  "elapsed_seconds": 28.00305010000011,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:23Z",
+    "content_hash_sha256": "907e17b44b349aa77aef78b7b0fd47ec2150abab6398e4e29b357ccc852b8b94",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 0,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "907e17b44b349aa77aef78b7b0fd47ec2150abab6398e4e29b357ccc852b8b94",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:35:33Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-06-24T00:00:01+02:00",
+    "updated": "2026-10-06T14:59:17.840062+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 24,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 25,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 26,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 27,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 28,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

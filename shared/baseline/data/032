@@ -1,0 +1,36 @@
+# Teknologi- og produktansvarlig
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 8119dbb1-530f-4307-9ee0-e030c2b8e581
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/8119dbb1-530f-4307-9ee0-e030c2b8e581
+
+Input: edited, cleaned NAV capture.
+Cleaner version: nav-contact-clean-v3
+Capture retrieved: 2026-11-02T21:14:49.520963+00:00
+Review state: auto_contact_checked
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Informatics OR Computer engineering OR Artificial intelligence | any_of | candidate_qualification | required | Bakgrunn fra informatikk, datateknikk, kunstig intelligens eller noe tilsvarende | Kvalifikasjoner | skill: exact; context: exact |
+| Data integration OR Data platforms OR Machine learning | any_of | candidate_qualification | required | Praktisk erfaring med dataintegrasjon, dataplattformer eller maskinlæring fra jobb, studier eller egne prosjekter | Kvalifikasjoner | skill: exact; context: exact |
+| Language models | single | candidate_qualification | required | Du bruker språkmodeller i hverdagen og vet hvor de er gode, og hvor de finner på ting | Kvalifikasjoner | skill: exact; context: exact |
+| Accounting data OR Financial systems | any_of | candidate_qualification | preferred | Erfaring med regnskapsdata eller økonomisystemer en fordel, men ikke krav | — | skill: exact; context: not_provided |
+| Software architecture | single | work_duty | unclear | Fra arkitektur og teknologivalg til hvor en språkmodell gjør jobben bedre, og hvor den ikke gjør det. | — | skill: exact; context: not_provided |
+| Technology selection | single | work_duty | unclear | Fra arkitektur og teknologivalg til hvor en språkmodell gjør jobben bedre, og hvor den ikke gjør det. | — | skill: exact; context: not_provided |
+| Language model use-case assessment | single | work_duty | unclear | Fra arkitektur og teknologivalg til hvor en språkmodell gjør jobben bedre, og hvor den ikke gjør det. | — | skill: exact; context: not_provided |
+| Automation | single | work_duty | unclear | Ha ansvar for verktøy, data og automatisering i Ponte | — | skill: exact; context: not_provided |
+| Technology assessment | single | work_duty | unclear | Bistå teamet i andre prosjekter, for eksempel med teknologivurderinger og tekniske deler av søknader | — | skill: exact; context: not_provided |
+| Technical application writing | single | work_duty | unclear | Bistå teamet i andre prosjekter, for eksempel med teknologivurderinger og tekniske deler av søknader | — | skill: exact; context: not_provided |
+| Excel | single | work_context | unclear | I dag løses dette med Excel, manuelt arbeid og litt flaks. | — | skill: exact; context: not_provided |
+| Scrum | single | work_context | unclear | Vi jobber i stor grad som et scrum-team. | — | skill: exact; context: not_provided |
+| Building with language models | single | candidate_qualification | required | Vis oss noe du har bygget der du har brukt språkmodeller; i løsningen eller for å lage den. | — | skill: exact; context: not_provided |
+
+Run: 2026-11-02_21-14-49_UTC_ad-8119dbb1-530f-4307-9ee0-e030c2b8e581 at 2026-11-02T21:14:49.520963+00:00
+Model: gpt-6-luna; response: resp_0498cbb6ec192126016ae8fd4b5ecc87d2acd67259536e7d52
+Usage: 3280 input, 3672 output, 6952 total tokens.
+Estimated token cost: $0.00216400 (dated standard rates; not a billing statement).
+Elapsed API time: 44.691 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

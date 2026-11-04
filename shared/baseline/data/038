@@ -1,0 +1,30 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 8d77969c-ab60-4da0-9a1e-427bf1eee30e
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/8d77969c-ab60-4da0-9a1e-427bf1eee30e
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:24Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Coding and programming tools | single | candidate_qualification | unclear | Erfaring med og/eller interesse for koding- og programmeringsverktøy - fortrinnsvis Python | — | skill: exact; context: not_provided |
+| Python | single | candidate_qualification | preferred | Erfaring med og/eller interesse for koding- og programmeringsverktøy - fortrinnsvis Python | — | skill: exact; context: not_provided |
+| Data preparation | single | candidate_qualification | preferred | Ønskelig med erfaring med å tilrettelegge data og sammenstille disse | — | skill: exact; context: not_provided |
+| Data compilation | single | candidate_qualification | preferred | Ønskelig med erfaring med å tilrettelegge data og sammenstille disse | — | skill: exact; context: not_provided |
+| Collaboration tools | single | candidate_qualification | preferred | Ønskelig med erfaring innen team-/prosjektarbeid og bruk av ulike samhandlingsverktøy i oppgaveløsing | — | skill: exact; context: not_provided |
+| Research methodology | single | candidate_qualification | preferred | Det er en fordel med forståelse for forskningsmetodikk | — | skill: exact; context: not_provided |
+| Data extraction | single | work_duty | unclear | - Uttrekk og tilrettelegging av data | — | skill: exact; context: not_provided |
+
+Run: 2026-11-01_22-21-21_UTC_ad-8d77969c-ab60-4da0-9a1e-427bf1eee30e at 2026-11-01T22:21:21.353086+00:00
+Model: gpt-6-luna; response: resp_0a479acf1adb262d016ae7bb631ac887d2a666e6d9eca98b70
+Usage: 2816 input, 1868 output, 4684 total tokens.
+Estimated token cost: $0.00121560 (dated standard rates; not a billing statement).
+Elapsed API time: 17.230 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

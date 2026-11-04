@@ -1,0 +1,2 @@
+shared/baseline/data/* -text -diff
+shared/baseline/db/* -text

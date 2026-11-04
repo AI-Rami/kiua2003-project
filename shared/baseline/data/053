@@ -1,0 +1,794 @@
+{
+  "format_version": 2,
+  "source_uuid": "a5dabb26-7b1f-4538-aabe-cd78cac5f2cb",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/a5dabb26-7b1f-4538-aabe-cd78cac5f2cb",
+  "run_id": "2026-11-01_22-23-08_UTC_ad-a5dabb26-7b1f-4538-aabe-cd78cac5f2cb",
+  "run_timestamp": "2026-11-01T22:23:08.426268+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0603d06f50c8d4a7016ae7bbce20e487d2925287d4f2bed83c",
+  "items": [
+    {
+      "skills": [
+        "Kubernetes"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Du får arbeide med Kubernetes, GitOps, Terraform, lakehouse-teknologi, observability og moderne plattformutvikling i et fagmiljø som satser tungt på dataforvaltning og analyse.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "GitOps"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Du får arbeide med Kubernetes, GitOps, Terraform, lakehouse-teknologi, observability og moderne plattformutvikling i et fagmiljø som satser tungt på dataforvaltning og analyse.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Terraform"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Du får arbeide med Kubernetes, GitOps, Terraform, lakehouse-teknologi, observability og moderne plattformutvikling i et fagmiljø som satser tungt på dataforvaltning og analyse.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data platform design and implementation"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "designe og implementere en modulær og portabel dataplattform basert på åpne standarder og open source-teknologi",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Open standards"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "designe og implementere en modulær og portabel dataplattform basert på åpne standarder og open source-teknologi",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data ingestion"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data storage"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data products"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Metadata management"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Master data management"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data quality"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "etablere kapabiliteter for datainntak, dataflyt, datalagring, dataprodukter, metadataforvaltning, masterdataforvaltning og datakvalitet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Lakehouse architecture"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "moderne dataplattformer og lakehouse-arkitektur",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Data processing"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til utvikling av lakehouse-arkitektur og felles dataplattformtjenester for lagring, bearbeiding og tilgjengeliggjøring av data",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data availability"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til utvikling av lakehouse-arkitektur og felles dataplattformtjenester for lagring, bearbeiding og tilgjengeliggjøring av data",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data classification"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til etablering av datasentriske sikkerhetsmekanismer gjennom klassifisering, metadata, tilgangsstyring og sporbarhet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Traceability"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til etablering av datasentriske sikkerhetsmekanismer gjennom klassifisering, metadata, tilgangsstyring og sporbarhet",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Infrastructure as Code"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Container technology"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Cloud technology"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Delivery automation"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med container- og skyteknologi, Infrastructure as Code og automatisering av leveranser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Monitoring"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "monitorering, logging og observability",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Logging"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "monitorering, logging og observability",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Observability"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "monitorering, logging og observability",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Tracing"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "sikre god \"observability\" gjennom monitorering, logging, sporing, kapasitetsstyring og feilsøking",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Capacity management"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "sikre god \"observability\" gjennom monitorering, logging, sporing, kapasitetsstyring og feilsøking",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Troubleshooting"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "sikre god \"observability\" gjennom monitorering, logging, sporing, kapasitetsstyring og feilsøking",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Architecture patterns"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technology selection"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Platform standardization"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Target architecture"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "bidra til teknologivalg, arkitekturmønstre, standardisering og videreutvikling av plattformens målarkitektur",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data platform development",
+        "Data platform operation",
+        "Analytics platform experience",
+        "Platform-adjacent solution experience"
+      ],
+      "relationship": "any_of",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med utvikling eller drift av dataplattformer, analyseplattformer eller andre plattformnære løsninger",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Python"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med programmering ved bruk av Python eller tilsvarende teknologier for automatisering",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Automation programming"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med programmering ved bruk av Python eller tilsvarende teknologier for automatisering",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Architecture"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Integrations"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Data flow"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Modern development processes"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for arkitektur, integrasjoner, dataflyt og moderne utviklingsprosesser",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Security"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for sikkerhet og tilgangsstyring",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Access control"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god forståelse for sikkerhet og tilgangsstyring",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "Open-source components"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "god kjennskap til og interesse for open source-komponenter",
+      "classification_context": "For å kvalifisere til stillingen må du ha:"
+    },
+    {
+      "skills": [
+        "dbt"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "teknologier som dbt, Airflow, Iceberg og/eller Trino",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Airflow"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "teknologier som dbt, Airflow, Iceberg og/eller Trino",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Iceberg"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "teknologier som dbt, Airflow, Iceberg og/eller Trino",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Trino"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "teknologier som dbt, Airflow, Iceberg og/eller Trino",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "API integrations"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "API-integrasjoner og hendelsesbasert arkitektur",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Event-driven architecture"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "API-integrasjoner og hendelsesbasert arkitektur",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Object storage"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "objektlagring og S3-kompatible lagringsløsninger",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "S3-compatible storage"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "objektlagring og S3-kompatible lagringsløsninger",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    },
+    {
+      "skills": [
+        "Agile methodology"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "smidig arbeidsmetodikk og prosjektarbeid",
+      "classification_context": "Det er også ønskelig, men ikke et krav, at du har erfaring med:"
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 3053,
+    "input_tokens_details": {
+      "cache_write_tokens": 1584,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 5839,
+    "output_tokens_details": {
+      "reasoning_tokens": 2718
+    },
+    "total_tokens": 8892
+  },
+  "estimated_cost_usd": 0.0032248000000000003,
+  "elapsed_seconds": 45.74954760001856,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:24Z",
+    "content_hash_sha256": "cac88089048720bb370fac2048ad7b4b66b6b4e8f09605dd3933947876072b07",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 1,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "1eb3e7a92c49a3979c26efc5cd35caa1dec67225807a580590c66e1e6527cec3",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:35:57Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-12T00:00:00+02:00",
+    "updated": "2026-10-13T09:09:11.210351+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 17,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 18,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 19,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 20,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 21,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 22,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 23,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 24,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 25,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 26,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 27,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 28,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 29,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 30,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 31,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 32,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 33,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 34,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 35,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 36,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 37,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 38,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 39,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 40,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 41,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 42,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 43,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 44,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 45,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 46,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 47,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 48,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 49,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    }
+  ]
+}

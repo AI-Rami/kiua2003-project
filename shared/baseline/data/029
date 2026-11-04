@@ -1,0 +1,252 @@
+{
+  "format_version": 2,
+  "source_uuid": "5ae61e99-0980-4eac-a120-8338820483cc",
+  "title": "Systemingeniør (IoT/energi), Rondekraft",
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/5ae61e99-0980-4eac-a120-8338820483cc",
+  "run_id": "2026-11-04_20-45-30_UTC_ad-5ae61e99-0980-4eac-a120-8338820483cc",
+  "run_timestamp": "2026-11-04T20:45:30.685677+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0e3f3aa493e07245016aeb996a950087d2b9f93c2839c5896a",
+  "items": [
+    {
+      "skills": [
+        "Modbus RTU (RS485)"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kjennskap til Modbus RTU (RS485), og Modbus TCP.",
+      "classification_context": "Hva vi ser etter"
+    },
+    {
+      "skills": [
+        "Modbus TCP"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God kjennskap til Modbus RTU (RS485), og Modbus TCP.",
+      "classification_context": "Hva vi ser etter"
+    },
+    {
+      "skills": [
+        "Sensors"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med sensorer, og sensorintegrasjon.",
+      "classification_context": "Hva vi ser etter"
+    },
+    {
+      "skills": [
+        "Sensor integration"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med sensorer, og sensorintegrasjon.",
+      "classification_context": "Hva vi ser etter"
+    },
+    {
+      "skills": [
+        "Artificial intelligence (AI/KI)"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Kunnskap om, og praktisk erfaring med AI/KI.",
+      "classification_context": "Hva vi ser etter"
+    },
+    {
+      "skills": [
+        "VPN configuration and operation"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med oppsett, og drift av VPN-løsninger er en fordel i denne rollen.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Solar energy",
+        "Battery systems",
+        "Edge devices",
+        "Electrical safety (NEK 400)"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det samme gjelder erfaring med solenergi, batterianlegg, edge-enheter eller elsikkerhet (NEK 400).",
+      "classification_context": "Dette er fordeler, men ikke krav."
+    },
+    {
+      "skills": [
+        "Technical platform and infrastructure development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Videreutvikle den tekniske plattformen, KI-funksjonene og infrastrukturen.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Modbus-based configuration and integration of inverters, batteries, and sensors"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Local AI development"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Anomaly alerting"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Predictive maintenance"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Secure and encrypted data transmission"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Sikre trygg, og kryptert dataoverføring på lukket nett.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "System operation and monitoring"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Drifte, overvåke og videreutvikle løsningen etter hvert som den rulles ut i stor skala.",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2023,
+    "input_tokens_details": {
+      "cache_write_tokens": 554,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 3227,
+    "output_tokens_details": {
+      "reasoning_tokens": 2416
+    },
+    "total_tokens": 5250
+  },
+  "estimated_cost_usd": 0.0018158,
+  "elapsed_seconds": 31.92779449999216,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "revised_version": "nav-contact-clean-v3",
+    "content_hash_sha256": "f00301a8ee964f077b9b77d63b47cfb4df9960b8d77d785fcf824204281091f6",
+    "review_state": "auto_contact_checked",
+    "published": "2026-11-03T13:51:44+01:00",
+    "updated": "2026-11-03T15:13:35.104328+01:00",
+    "source_id": "Stillingsregistrering"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

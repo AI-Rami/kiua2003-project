@@ -1,0 +1,49 @@
+# Skill extraction report
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 4135497b-cb65-4bed-890d-f9dcaf478711
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/4135497b-cb65-4bed-890d-f9dcaf478711
+
+Input: edited, cleaned NAV capture; title unavailable in source export.
+Cleaner version: nav-contact-clean-v2
+Capture retrieved: 2026-11-01T14:02:23Z
+Review state: pending_human_review
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| IT operations | single | candidate_qualification | required | Erfaring innen IT-drift og god forståelse for teknologi og IKT-utfordringer, minimum 2 års erfaring. | — | skill: exact; context: not_provided |
+| Platform operations | single | work_duty | unclear | Drifte, vedlikeholde og videreutvikle plattform og sikkerhetsløsninger | — | skill: exact; context: not_provided |
+| Security solution operations | single | work_duty | unclear | Drifte, vedlikeholde og videreutvikle plattform og sikkerhetsløsninger | — | skill: exact; context: not_provided |
+| Platform development | single | work_duty | unclear | Drifte, vedlikeholde og videreutvikle plattform og sikkerhetsløsninger | — | skill: exact; context: not_provided |
+| Monitoring implementation and administration | single | work_duty | unclear | Implementere og administrere overvåking, logging og varsling for å sikre plattformens pålitelighet og ytelse. | — | skill: exact; context: not_provided |
+| Logging implementation and administration | single | work_duty | unclear | Implementere og administrere overvåking, logging og varsling for å sikre plattformens pålitelighet og ytelse. | — | skill: exact; context: not_provided |
+| Alerting implementation and administration | single | work_duty | unclear | Implementere og administrere overvåking, logging og varsling for å sikre plattformens pålitelighet og ytelse. | — | skill: exact; context: not_provided |
+| Technical documentation | single | work_duty | unclear | Utarbeide faglig dokumentasjon og videreformidle kunnskap innen fagområdet. | — | skill: exact; context: not_provided |
+| Technical knowledge transfer | single | work_duty | unclear | Utarbeide faglig dokumentasjon og videreformidle kunnskap innen fagområdet. | — | skill: exact; context: not_provided |
+| ISO 27001/27002 | single | candidate_qualification | preferred | ISO 27001/27002 | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| NSM’s basic principles for ICT security | single | candidate_qualification | preferred | NSM’s grunnprinsipper for IKT-sikkerhet | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Security-classified platforms | single | candidate_qualification | preferred | Sikkerhetsgraderte plattformer, miljø med høye oppetidskrav og redundans. | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| High-availability systems | single | candidate_qualification | preferred | Sikkerhetsgraderte plattformer, miljø med høye oppetidskrav og redundans. | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Redundancy | single | candidate_qualification | preferred | Sikkerhetsgraderte plattformer, miljø med høye oppetidskrav og redundans. | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Linux server environments OR Windows server environments | any_of | candidate_qualification | preferred | Drift av Linux og/eller windows servermiljø | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Container technology | single | candidate_qualification | preferred | Container-teknologi som Kubernetes | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Kubernetes | single | candidate_qualification | unclear | Container-teknologi som Kubernetes | — | skill: exact; context: not_provided |
+| Automation | single | candidate_qualification | preferred | Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code» | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Orchestration | single | candidate_qualification | preferred | Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code» | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Scripting | single | candidate_qualification | preferred | Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code» | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Infrastructure as Code | single | candidate_qualification | unclear | Automatisering og orkestrering ved hjelp av scripting eller verktøy for dette som «Infrastructure as Code» | — | skill: exact; context: not_provided |
+| Database administration | single | candidate_qualification | preferred | Databaser innenfor Windows og Linux miljøer og drift av disse | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| VMware OR Omnissa | any_of | candidate_qualification | preferred | VMware eller Omnissa | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| DevOps tools | single | candidate_qualification | preferred | DevOps-verktøy, prinsipper og –metodikker | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| DevOps principles and methodologies | single | candidate_qualification | preferred | DevOps-verktøy, prinsipper og –metodikker | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+| Agile methodology | single | candidate_qualification | preferred | Smidig arbeidsmetodikk og prosjektarbeid | Det er i tillegg ønskelig at du har kompetanse og erfaring innen noen av de påfølgende områder: | skill: exact; context: exact |
+
+Run: 2026-11-01_22-19-56_UTC_ad-4135497b-cb65-4bed-890d-f9dcaf478711 at 2026-11-01T22:19:56.715322+00:00
+Model: gpt-6-luna; response: resp_00674d1b5e4f4d71016ae7bb0e7da887d2babaaa117aabc6cf
+Usage: 2817 input, 3709 output, 6526 total tokens.
+Estimated token cost: $0.00213620 (dated standard rates; not a billing statement).
+Elapsed API time: 30.368 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

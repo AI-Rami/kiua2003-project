@@ -1,0 +1,37 @@
+# Systemingeniør (IoT/energi), Rondekraft
+
+Extraction format: v2 (separate skill and context quotations).
+
+Advertisement UUID: 5ae61e99-0980-4eac-a120-8338820483cc
+Source: https://arbeidsplassen.nav.no/stillinger/stilling/5ae61e99-0980-4eac-a120-8338820483cc
+
+Input: edited, cleaned NAV capture.
+Cleaner version: nav-contact-clean-v3
+Capture retrieved: not recorded
+Review state: auto_contact_checked
+Saved source status is not a live status check.
+
+| Skills | Relationship | Mention type | Classification | Skill quotation | Context quotation | Quote matches |
+| --- | --- | --- | --- | --- | --- | --- |
+| Modbus RTU (RS485) | single | candidate_qualification | required | God kjennskap til Modbus RTU (RS485), og Modbus TCP. | Hva vi ser etter | skill: exact; context: exact |
+| Modbus TCP | single | candidate_qualification | required | God kjennskap til Modbus RTU (RS485), og Modbus TCP. | Hva vi ser etter | skill: exact; context: exact |
+| Sensors | single | candidate_qualification | required | Erfaring med sensorer, og sensorintegrasjon. | Hva vi ser etter | skill: exact; context: exact |
+| Sensor integration | single | candidate_qualification | required | Erfaring med sensorer, og sensorintegrasjon. | Hva vi ser etter | skill: exact; context: exact |
+| Artificial intelligence (AI/KI) | single | candidate_qualification | required | Kunnskap om, og praktisk erfaring med AI/KI. | Hva vi ser etter | skill: exact; context: exact |
+| VPN configuration and operation | single | candidate_qualification | preferred | Erfaring med oppsett, og drift av VPN-løsninger er en fordel i denne rollen. | — | skill: exact; context: not_provided |
+| Solar energy OR Battery systems OR Edge devices OR Electrical safety (NEK 400) | any_of | candidate_qualification | preferred | Det samme gjelder erfaring med solenergi, batterianlegg, edge-enheter eller elsikkerhet (NEK 400). | Dette er fordeler, men ikke krav. | skill: exact; context: exact |
+| Technical platform and infrastructure development | single | work_duty | unclear | Videreutvikle den tekniske plattformen, KI-funksjonene og infrastrukturen. | — | skill: exact; context: not_provided |
+| Modbus-based configuration and integration of inverters, batteries, and sensors | single | work_duty | unclear | Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP. | — | skill: exact; context: not_provided |
+| Local AI development | single | work_duty | unclear | Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold. | — | skill: exact; context: not_provided |
+| Anomaly alerting | single | work_duty | unclear | Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold. | — | skill: exact; context: not_provided |
+| Predictive maintenance | single | work_duty | unclear | Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold. | — | skill: exact; context: not_provided |
+| Secure and encrypted data transmission | single | work_duty | unclear | Sikre trygg, og kryptert dataoverføring på lukket nett. | — | skill: exact; context: not_provided |
+| System operation and monitoring | single | work_duty | unclear | Drifte, overvåke og videreutvikle løsningen etter hvert som den rulles ut i stor skala. | — | skill: exact; context: not_provided |
+
+Run: 2026-11-04_20-45-30_UTC_ad-5ae61e99-0980-4eac-a120-8338820483cc at 2026-11-04T20:45:30.685677+00:00
+Model: gpt-6-luna; response: resp_0e3f3aa493e07245016aeb996a950087d2b9f93c2839c5896a
+Usage: 2023 input, 3227 output, 5250 total tokens.
+Estimated token cost: $0.00181580 (dated standard rates; not a billing statement).
+Elapsed API time: 31.928 seconds.
+
+Structure and quotation checks passed. Each quotation is an exact continuous passage from the prepared text. These checks do not establish that a context quotation governs its skill quotation. Extraction accuracy and completeness have not yet been evaluated.

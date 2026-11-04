@@ -1,0 +1,301 @@
+{
+  "format_version": 2,
+  "source_uuid": "dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa",
+  "run_id": "2026-11-02_06-02-37_UTC_ad-dc0bdd91-ddb4-4e5f-8eb7-bf51f57e31aa",
+  "run_timestamp": "2026-11-02T06:02:37.530189+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0378bc6b7d34027e016ae8277fb61487d2973dff68e4926e52",
+  "items": [
+    {
+      "skills": [
+        "Digital competence"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "God digital kompetanse og interesse for datastrukturer",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data structures"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "God digital kompetanse og interesse for datastrukturer",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Numerical literacy"
+      ],
+      "relationship": "single",
+      "classification": "required",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "har god tallforståelse og sans for detaljer og logiske sammenhenger",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistics",
+        "Data analysis",
+        "Data processing"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med statistikk, analyse eller databehandling",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Metadata",
+        "Classifications",
+        "Information management"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "erfaring med metadata, klassifikasjoner eller informasjonsforvaltning",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "API concepts"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "forståelse for API-er og datautveksling",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Data exchange"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "forståelse for API-er og datautveksling",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "SSB statistics",
+        "Statistical production"
+      ],
+      "relationship": "any_of",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "kjennskap til SSBs statistikker eller statistikkproduksjon",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "User experience"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "interest_only",
+      "skill_evidence": "engasjement for god brukeropplevelse",
+      "classification_context": "Det er en fordel om du har:"
+    },
+    {
+      "skills": [
+        "Data modeling"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_context",
+      "skill_evidence": "Hos oss får du en variert arbeidshverdag i skjæringspunktet mellom statistikk, metadata, datamodellering, teknologi og brukerbehov.",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical table, table-matrix, classification and code-list maintenance"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Opprette og vedlikeholde tabeller, tabellmatriser, klassifikasjoner og kodelister i Statistikkbanken",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Metadata quality assurance"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Kvalitetssikre metadata og logisk oppbygging av statistiske tabeller",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Statistical table structure validation"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Kvalitetssikre metadata og logisk oppbygging av statistiske tabeller",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Advice on statistical table design and dissemination"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Gi råd og veiledning til statistikkområdene om tabellutforming og formidling av statistikk",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technical user support for Statistikkbanken and APIs, including data extraction and use"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Veilede eksterne brukere i bruk av Statistikkbanken og API-ene, og bistå med tekniske spørsmål knyttet til uttak og bruk av data",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Technical support for statistical publishing in Statistikkbanken"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "Yte brukerstøtte til statistikkområdene som publiserer tall til Statistikkbanken",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2999,
+    "input_tokens_details": {
+      "cache_write_tokens": 1530,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 3182,
+    "output_tokens_details": {
+      "reasoning_tokens": 2266
+    },
+    "total_tokens": 6181
+  },
+  "estimated_cost_usd": 0.0018909,
+  "elapsed_seconds": 40.217962999999145,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:25Z",
+    "content_hash_sha256": "f41a8ad5714fa25864167e0112cb9c6758f538ed3e24a62e82a48210751d76e3",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 1,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "f41a8ad5714fa25864167e0112cb9c6758f538ed3e24a62e82a48210751d76e3",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:38:06Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-14T00:00:00+02:00",
+    "updated": "2026-10-14T15:09:15.370818+02:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 8,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 9,
+      "skill_evidence": "exact",
+      "classification_context": "exact"
+    },
+    {
+      "item": 10,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 11,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 12,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 13,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 14,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 15,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 16,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}

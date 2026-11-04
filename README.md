@@ -1,6 +1,27 @@
-# kiua2003-project
+# KIUA2003 NAV skills dashboard
 
-A two-person KIUA2003 project exploring an agentic workflow.
+This two-person course project collects NAV IT advertisements explicitly listing Innlandet, extracts technical skill mentions, and shows saved advertisement counts with source quotations in a local dashboard. The current results are a small, provisional dataset, not a complete view of the job market. [SPEC.md](SPEC.md) describes the product and limits; [AGENTS.md](AGENTS.md) gives instructions for any coding agent.
+
+## Start here: same saved results on a new computer
+
+Use Python 3 from the repository root. Check out `work/nav-skeleton` until this branch is merged. No package installation or API key is needed to view the shared snapshot:
+
+```powershell
+python harness/start.py
+```
+
+Open `http://127.0.0.1:8765/` and stop the server with Ctrl+C. `python harness/start.py --check-only` restores and validates the data without opening the server. On a fresh checkout, the command verifies `shared/baseline/` and copies its selected results, statistics and NAV checkpoint into the ignored `out/` folder. It never replaces an existing local result index and checkpoint after an update. The shared snapshot contains **13 selected advertisements** from the 2026-11-04 completed local update. The statistics use the selected results and provisional review decisions; they are not proof of extraction accuracy or complete NAV coverage.
+
+To use **Run update** later, provide your own OpenAI key as the `KIUA2003_API` environment variable to the server process and allow NAV network access. Never commit the key or put it in a project file. The button can make paid model requests when new eligible ads are found. The saved 13 results can be viewed without a key and unchanged ads are reused. See [the update section](#one-command-catch-up-update) for limits and recovery.
+
+| Path | Role |
+| --- | --- |
+| `shared/baseline/` | Versioned snapshot for a fresh checkout: manifest and hashes, selected extraction artifacts, statistics, and compressed SQLite checkpoint. |
+| `out/` | Local working copy restored from the snapshot. It changes as updates run and is intentionally Git-ignored. |
+| `reviews/current-v2.json` | Tracked provisional source-review decisions applied to displayed counts. |
+| `harness/start.py` | One-command restore, validation and local UI startup. |
+
+The package contains selected runs and the resume database. It excludes older attempts, backups and two unused captures that failed the current contact screen. An automatic contact check cannot guarantee that every personal detail is absent. The snapshot is a dated starting point: once someone runs an update, their own `out/` becomes their current data.
 
 This project includes a NAV saved-input extraction skeleton, resumable NAV discovery and edited-text capture, and a bounded incremental update command that connects discovery, extraction and offline statistics. See [SPEC.md](SPEC.md) for the product plan and [AGENTS.md](AGENTS.md) for working instructions.
 
@@ -15,7 +36,7 @@ The earlier MET Norway exercise is in `harness/probe.py`; its checker is `eval/c
 
 ## Compulsory 2 output layout and incremental update
 
-The current deliverables include a project plan, saved-input walking skeleton, automatic discovery-to-statistics command, and a local web dashboard. Extensive prompt optimization and extraction evaluation are paused until after Compulsory 2. The update command passed isolated local checks. One bounded live NAV run on 2026-11-02 exercised feed continuation and queue persistence, then stopped at its two-page limit before detail discovery or model extraction. The dashboard has been checked locally with saved results and a mocked update; its button has not been used for a live end-to-end run.
+The current deliverables include a project plan, saved-input walking skeleton, automatic discovery-to-statistics command, and a local web dashboard. Extensive prompt optimization and extraction evaluation are paused until after Compulsory 2. The dashboard button was used for a completed live update on 2026-11-04: it read six feed pages, made 1,479 detail requests and two model requests, and published two validated results. The current saved index contains 13 selected advertisements, one blocked entry and no unfinished queue entries. This is a saved snapshot, not a promise that NAV has no later events.
 
 | Path | Purpose |
 | --- | --- |
@@ -31,7 +52,7 @@ Selection and archive decisions are in [the Comp2 migration manifest](docs/comp2
 python harness/nav_discover.py --mode poll --db out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/state.sqlite3 --max-pages 1000 --max-details 2000 --max-seconds 1200
 ```
 
-The incremental command below resumes the saved cursor; it does not restart from August. Its first bounded live run advanced the cursor by two pages and left processing queued because the feed scan had not reached its current end. The latest frozen-prompt evaluation reviewed nine ads; one known problematic capture was blocked rather than processed. A second targeted review record has no usable cleaned capture. Both remain blocked and excluded from current statistics. The older ten-ad summaries and the frozen evaluation remain archived for the postponed table investigation.
+The incremental command below resumes the saved cursor; it does not restart from August. Earlier bounded tests left queued work; the 2026-11-04 button-triggered update completed that saved work. Earlier extraction attempts and the frozen-prompt evaluation are historical evidence, not the source of current statistics.
 
 ### One-command catch-up update
 
@@ -41,7 +62,7 @@ From the repository root, with `KIUA2003_API` available to the Python process, r
 python harness/nav_update.py --db out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/state.sqlite3
 ```
 
-`run_update()` in `harness/nav_update.py` is the same reusable workflow entry point a future “Run update” button can call. The saved database is currently in `scan` phase after the two-page verification, with an advanced cursor and 1,440 queued UUIDs. This command resumes that position; it does **not** restart from August or discard the queue. When a prior scan has finished, it polls the saved final page using conditional headers. [NAV documents](https://navikt.github.io/pam-stilling-feed/) that the current feed end has both `next_url` and `next_id` set to `null`; it is a polling point, not a permanent historical snapshot. The collector validates each returned next URL, the overlapping page boundary, and forward cursor movement. A repeated or non-advancing cursor stops with saved progress rather than looping.
+`run_update()` in `harness/nav_update.py` is also called by the dashboard's **Run update** button. The shared checkpoint was saved after a completed 2026-11-04 update. A later run polls its saved final feed page using conditional headers; it does **not** restart from August or discard saved work. [NAV documents](https://navikt.github.io/pam-stilling-feed/) that the current feed end has both `next_url` and `next_id` set to `null`; it is a polling point, not a permanent historical snapshot. The collector validates each returned next URL, the overlapping page boundary, and forward cursor movement. A repeated or non-advancing cursor stops with saved progress rather than looping.
 
 Normal mode has no two-page test default. Its operational ceilings are **1,000 feed pages, 2,000 detail requests, 20 model requests and 1,200 seconds per invocation**. These are safeguards, not claims that one invocation will always catch up. `--max-pages` is optional and can impose a smaller test limit; `--max-details`, `--max-extractions` and `--max-seconds` can also be reduced for a test. For example, the earlier bounded verification used `--max-pages 2 --max-details 50 --max-extractions 5 --max-seconds 600`. A ceiling or interruption yields partial progress; run the **same normal command** again to continue. Feed-page and detail progress is printed during a long run. The command distinguishes a reached feed end from remaining detail or extraction work, and reports `caught_up` only after the saved phase is done and the processing queue has no unfinished entries. `no_updates_found` means a completed poll found no work.
 
@@ -65,7 +86,7 @@ The dashboard binds only to `127.0.0.1`. Reading saved results needs no API key.
 
 Tables read only the selected validated v2 results from `out/current/index.json` and their linked artifacts; they do not scan `out/nav_runs/` or the archive. Publication-period, last-saved-status and skill-search filters recalculate the counts from those saved records without NAV or model calls. Custom dates are inclusive; records without a saved publication date are excluded from period filters and reported. “Active” and “Inactive” mean status at the last saved NAV check. Every count uses distinct advertisement UUIDs; applicant `OR` groups remain separate, and other technical mentions have their own table. Clicking a row shows saved supporting quotations, available titles (otherwise a short UUID), publication date, status, classification and NAV source link. The page withholds a quotation if the local contact screen detects a contact pattern in that quotation.
 
-The dataset currently includes nine earlier-cleaner captures accepted for this project and two newer automatically contact-checked captures. Neither state proves that all contact data was removed. The current index also records blocked, stale, failed and pending results; only `current` validated results appear in the tables. Structural validation does not establish skill-extraction accuracy or completeness. The page's date filters describe selected ads only and are not weekly, monthly or yearly market-coverage statistics. The local dashboard was not tested with a live button-triggered update in this build.
+The 2026-11-04 snapshot contains 13 selected ads, including earlier-cleaner captures accepted for this project and newer automatically contact-checked captures. Neither state proves that all contact data was removed. The index also records one blocked entry; only `current` validated results appear in the tables. Structural validation does not establish skill-extraction accuracy or completeness. The page's date filters describe selected ads only and are not weekly, monthly or yearly market-coverage statistics.
 
 ## NAV saved-input walking skeleton
 
@@ -105,11 +126,11 @@ Run this model-free command from the repository root:
 python harness/nav_skill_summary.py
 ```
 
-The command reads the explicit selection in `out/current/index.json` and the provisional, version-checked source review in `reviews/current-v2.json`. It rejects duplicate UUIDs, unsafe selected paths, mismatched input hashes, prompt identities, run identities, failed validation and malformed v2 items before writing `out/statistics/summary.json`, `summary.md` and `advertisements.md`. It never scans archived run folders or selects by modification time. A failed validation leaves the existing statistics files in place. The index currently has eleven selected model extractions and one blocked record; blocked, failed, stale and pending entries never enter the count. The generated tables are a small-sample prototype rather than approved skill statistics. The review changes derived counts only; original model results remain unchanged. A decision is skipped if its advertisement version changes. Unresolved interpretation and skill-name aliases require human review.
+The command reads the explicit selection in `out/current/index.json` and the provisional, version-checked source review in `reviews/current-v2.json`. It rejects duplicate UUIDs, unsafe selected paths, mismatched input hashes, prompt identities, run identities, failed validation and malformed v2 items before writing `out/statistics/summary.json`, `summary.md` and `advertisements.md`. It never scans archived run folders or selects by modification time. A failed validation leaves the existing statistics files in place. The shared snapshot has thirteen selected model extractions and one blocked record; blocked, failed, stale and pending entries never enter the count. The generated tables are a small-sample prototype rather than approved skill statistics. The review changes derived counts only; original model results remain unchanged. A decision is skipped if its advertisement version changes. Unresolved interpretation and skill-name aliases require human review.
 
 The readable report now leads with **single applicant qualifications**, counted by distinct advertisement UUID and required/preferred/unclear classification. Its next table keeps applicant `OR` choices as whole groups, without counting every alternative as independently mandatory. Separate tables show technical mentions in duties, work context and interest-only wording; these are mentions, not applicant requirements. A UUID counts once per row and classification, and each row's total is the union of UUIDs across its columns. The structured JSON retains the earlier broad count arrays for traceability, but the new qualification and other-mention arrays are the intended table sources. Skill names remain as saved except for explicit provisional review decisions. No fuzzy aliases are merged.
 
-The advertisement index now displays publication dates taken from each selected result's saved capture provenance and job titles when available. On 2026-11-03 a bounded title-only NAV detail lookup added display titles for four older selected ads without changing their extraction results; six of eleven selected ads now have titles and five remain "Title unavailable." Future detail discovery stores title metadata, and the incremental updater carries a saved title into new results without adding it to the skill-extraction prompt. The summary shows how many selected ads have a valid publication date and their date range. This range is **not** NAV collection-period coverage; it cannot establish that all ads published between those dates were collected. Weekly, monthly and yearly views remain planned. The older v1 mechanical and corrected summaries, review decisions and frozen-prompt evaluation remain under `archive/comp2-generated-2026-11-02/` as development evidence.
+The advertisement index displays saved publication dates and job titles when available. The shared snapshot has titles for eight of its thirteen selected ads; the others show "Title unavailable." A 2026-11-03 targeted title lookup recovered four older titles without changing extraction results. Future detail discovery stores title metadata, and the incremental updater carries a saved title into new results without adding it to the skill-extraction prompt. The summary shows the date range among selected ads. This range is **not** NAV collection-period coverage; it cannot establish that all ads published between those dates were collected. Weekly, monthly and yearly views remain planned. The older v1 mechanical and corrected summaries, review decisions and frozen-prompt evaluation remain under `archive/comp2-generated-2026-11-02/` as local development evidence, not part of the shared baseline.
 
 ## Bounded NAV metadata collection
 

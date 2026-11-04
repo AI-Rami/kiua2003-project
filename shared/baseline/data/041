@@ -1,0 +1,161 @@
+{
+  "format_version": 2,
+  "source_uuid": "8d77969c-ab60-4da0-9a1e-427bf1eee30e",
+  "title": null,
+  "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/8d77969c-ab60-4da0-9a1e-427bf1eee30e",
+  "run_id": "2026-11-01_22-21-21_UTC_ad-8d77969c-ab60-4da0-9a1e-427bf1eee30e",
+  "run_timestamp": "2026-11-01T22:21:21.353086+00:00",
+  "model": "gpt-6-luna",
+  "response_id": "resp_0a479acf1adb262d016ae7bb631ac887d2a666e6d9eca98b70",
+  "items": [
+    {
+      "skills": [
+        "Coding and programming tools"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med og/eller interesse for koding- og programmeringsverktøy - fortrinnsvis Python",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Python"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Erfaring med og/eller interesse for koding- og programmeringsverktøy - fortrinnsvis Python",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data preparation"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Ønskelig med erfaring med å tilrettelegge data og sammenstille disse",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data compilation"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Ønskelig med erfaring med å tilrettelegge data og sammenstille disse",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Collaboration tools"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Ønskelig med erfaring innen team-/prosjektarbeid og bruk av ulike samhandlingsverktøy i oppgaveløsing",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Research methodology"
+      ],
+      "relationship": "single",
+      "classification": "preferred",
+      "mention_type": "candidate_qualification",
+      "skill_evidence": "Det er en fordel med forståelse for forskningsmetodikk",
+      "classification_context": null
+    },
+    {
+      "skills": [
+        "Data extraction"
+      ],
+      "relationship": "single",
+      "classification": "unclear",
+      "mention_type": "work_duty",
+      "skill_evidence": "- Uttrekk og tilrettelegging av data",
+      "classification_context": null
+    }
+  ],
+  "validation": "passed",
+  "usage": {
+    "input_tokens": 2816,
+    "input_tokens_details": {
+      "cache_write_tokens": 1347,
+      "cached_tokens": 1466
+    },
+    "output_tokens": 1868,
+    "output_tokens_details": {
+      "reasoning_tokens": 1495
+    },
+    "total_tokens": 4684
+  },
+  "estimated_cost_usd": 0.0012155999999999998,
+  "elapsed_seconds": 17.23022949998267,
+  "mode": "cleaned-capture",
+  "source_label": "edited cleaned NAV capture",
+  "capture_provenance": {
+    "label": "edited targeted review capture; not an unchanged NAV response",
+    "revised_version": "nav-contact-clean-v2",
+    "revised_outcome": "saved",
+    "retrieved_at_utc": "2026-11-01T14:02:24Z",
+    "content_hash_sha256": "7293e41c2e44aee607e3ef17c13c23afd5b88a45f8fae92a2bca95b02b3f541b",
+    "review_state": "pending_human_review",
+    "cleaning_actions": {
+      "removed_contact_passages": 0,
+      "removed_contact_sections": 1,
+      "removed_team_sections": 0,
+      "contact_hint_passages": 0
+    },
+    "previous_versions": [
+      {
+        "content_hash": "11a34850ffe394cebb285c0ff1c62fad36296ead78289acf9da87b6793367546",
+        "cleaning_version": "nav-contact-clean-v1",
+        "captured_at": "2026-11-01T12:57:29Z"
+      }
+    ],
+    "source_status": "ACTIVE",
+    "source_id": "IMPORTAPI",
+    "published": "2026-10-27T00:00:00+01:00",
+    "updated": "2026-10-28T08:10:18.159364+01:00"
+  },
+  "quotation_matches": [
+    {
+      "item": 1,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 2,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 3,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 4,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 5,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 6,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    },
+    {
+      "item": 7,
+      "skill_evidence": "exact",
+      "classification_context": "not_provided"
+    }
+  ]
+}
