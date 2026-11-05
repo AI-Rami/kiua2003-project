@@ -1,7 +1,22 @@
 # KIUA2003 NAV Skills Dashboard
 
-Analyses technical skills in NAV IT advertisements for Innlandet.
-For students, jobseekers and career advisers.
+This project helps students, jobseekers and career advisers explore
+technical skills mentioned in selected NAV IT advertisements listing
+Innlandet. The dashboard shows how many advertisements mention each
+skill and links the counts to saved quotations and source advertisements.
+
+## How it works
+
+When **Run update** starts, Python resumes the saved NAV feed position
+and checks new or changed advertisements. It processes new details that
+are active, list Innlandet as a work location and have an IT occupation
+category. It converts their descriptions to text and screens contact
+details before sending eligible text to the extraction model. Python
+checks the model's JSON and supporting quotations before publishing a
+result. Unchanged advertisements reuse their saved results. Python
+counts distinct advertisements per skill, and the dashboard displays
+the counts, classifications and evidence. Previously saved results
+remain available when an advertisement later becomes inactive.
 
 ## Start
 
