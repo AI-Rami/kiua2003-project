@@ -4,7 +4,14 @@ This two-person course project collects NAV IT advertisements explicitly listing
 
 ## Start here: same saved results on a new computer
 
-Use Python 3 from the repository root. Check out `work/nav-skeleton` until this branch is merged. No package installation or API key is needed to view the shared snapshot:
+The current walking skeleton is on **`work/nav-skeleton`**, not `main`. To download that branch, use:
+
+```powershell
+git clone --branch work/nav-skeleton https://github.com/AI-Rami/kiua2003-project.git
+cd kiua2003-project
+```
+
+Use Python 3 from the repository root. No package installation or API key is needed to view the shared snapshot:
 
 ```powershell
 python harness/start.py
@@ -21,7 +28,7 @@ To use **Run update** later, provide your own OpenAI key as the `KIUA2003_API` e
 | `reviews/current-v2.json` | Tracked provisional source-review decisions applied to displayed counts. |
 | `harness/start.py` | One-command restore, validation and local UI startup. |
 
-The package contains selected runs and the resume database. It excludes older attempts, backups and two unused captures that failed the current contact screen. An automatic contact check cannot guarantee that every personal detail is absent. The snapshot is a dated starting point: once someone runs an update, their own `out/` becomes their current data.
+The package contains selected runs and the resume database. It excludes older attempts, backups, two unused captures and one old targeted reprocessing row that failed the current contact screen. An automatic contact check cannot guarantee that every personal detail is absent. The snapshot is a dated starting point: once someone runs an update, their own `out/` becomes their current data.
 
 This project includes a NAV saved-input extraction skeleton, resumable NAV discovery and edited-text capture, and a bounded incremental update command that connects discovery, extraction and offline statistics. See [SPEC.md](SPEC.md) for the product plan and [AGENTS.md](AGENTS.md) for working instructions.
 
@@ -44,9 +51,9 @@ The current deliverables include a project plan, saved-input walking skeleton, a
 | `out/current/index.json` | **Sole application statistics selection:** at most one validated v2 model extraction per eligible UUID, plus pending, stale, failed and blocked statuses. Existing selected runs are under `out/current/<uuid>/`; newly published versions are under `out/current/<uuid>/versions/<content-hash>/`. Selection does not imply human approval or semantic accuracy. |
 | `out/statistics/` | Current prototype tables generated only from `out/current/index.json`. All skill rows are present in `summary.md` and `summary.json`. |
 | `out/ui/` | Ignored local dashboard status from the latest button-triggered update, when one has run. The page itself is in `ui/`. |
-| `archive/comp2-generated-2026-11-02/` | Historical extraction runs, batch indexes, evaluation, review records and old summaries, outside active application output. The archived MET probe has a compatibility copy at `out/probe.json` because `eval/check_probe.py` expects that path. |
+| `archive/comp2-generated-2026-11-02/` | Local historical evidence on the development computer. It is not included in the GitHub checkout or used by the dashboard. |
 
-Selection and archive decisions are in [the Comp2 migration manifest](docs/comp2-output-migration.md); the [earlier cleanup manifest](docs/output-cleanup-manifest.md) records the previous stage and is historical. The active collection checkpoint is `out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/state.sqlite3`; its companion `summary.json` records the last observed feed end. The standalone discovery command can still poll that end with:
+Selection and archive decisions are in [the Comp2 migration manifest](docs/comp2-output-migration.md); the [earlier cleanup manifest](docs/output-cleanup-manifest.md) records the previous stage and is historical. The active collection checkpoint is `out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/state.sqlite3`. It is restored from the shared package; older local `summary.json` diagnostics are not required to resume. The standalone discovery command can still poll that end with:
 
 ```powershell
 python harness/nav_discover.py --mode poll --db out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/state.sqlite3 --max-pages 1000 --max-details 2000 --max-seconds 1200
@@ -99,14 +106,7 @@ python harness/nav_skeleton.py --mode saved-input
 
 Use `--input path/to/ad.json` with either command for another compatible saved advertisement. The default is the edited fixture `fixtures/nav_ad_01.json`. Dry run only prints the plan and limits; it does not read or validate the input, require a key, make a network call, or change files. Saved-input mode automatically (1) reads the saved advertisement and prepares its entire HTML description as readable text, (2) calls `gpt-6-luna` through OpenAI's Responses API to extract technical skills, and (3) validates the response before creating the JSON result and Markdown report.
 
-For an edited review export with `cleaned_description`, supply `--capture` explicitly. This mode sends the entire saved plain text to the same extractor and validator without another HTML conversion or cleaning step. For the selected Innlandet IT capture:
-
-```powershell
-python harness/nav_skeleton.py --mode dry-run --capture out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/review_exports/2026-11-01_14-02-32_UTC-e1de2335/2ed29047-97e4-4168-adb9-8da83e968c94-nav-contact-clean-v2.json
-python harness/nav_skeleton.py --mode cleaned-capture --capture out/nav_discovery/2026-11-01_12-02-24_UTC-3a430b9a/review_exports/2026-11-01_14-02-32_UTC-e1de2335/2ed29047-97e4-4168-adb9-8da83e968c94-nav-contact-clean-v2.json
-```
-
-The export is edited data pending human review. It has no title field, so the result records the title as unavailable. The report and result retain its UUID, source link, cleaner version, retrieval provenance and review state. No NAV request is made. A successful structure and quotation check does not establish extraction accuracy or personal-data clearance.
+For a separately prepared, compatible edited capture JSON containing `cleaned_description`, use `--mode cleaned-capture --capture <path-to-capture.json>`. This sends its saved plain text to the extractor and validator without another HTML conversion or contact-cleaning pass. The earlier `review_exports/` example is not part of the shared GitHub package, so the tracked fixture command above is the reproducible extraction example. Selected result files under `out/current/` are already processed outputs, not capture inputs. A successful structure and quotation check does not establish extraction accuracy or personal-data clearance.
 
 New extraction runs use **format v2**. Each item has `skills`, `relationship`, `classification`, `mention_type`, `skill_evidence` and nullable `classification_context`. `mention_type` distinguishes `candidate_qualification`, `work_duty`, `work_context` and `interest_only`. A qualification may be `required`, `preferred` or `unclear`; duty, context and interest-only mentions are `unclear` unless a separate applicant qualification establishes competence, in which case that qualification supplies the item's evidence and mention type. Interest alone is never existing competence. A `single` item contains exactly one skill; `any_of` preserves explicit alternatives without making each mandatory.
 
