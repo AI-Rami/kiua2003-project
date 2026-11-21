@@ -1,0 +1,176 @@
+ad_id,skill,label,quote,checked
+2f62e300,C#,required,God erfaring med C# .NET,yes
+2f62e300,.NET,required,God erfaring med C# .NET,yes
+2f62e300,Azure,required,Generell kompetanse i Azure,yes
+2f62e300,Entra,required,Entra,yes
+2f62e300,Key Vault,required,Key Vault,yes
+2f62e300,Storage accounts,required,Storage accounts,yes
+2f62e300,App Services,required,App Services,yes
+2f62e300,App configuration,required,App configuration,yes
+2f62e300,Azure Functions,required,Azure functions,yes
+2f62e300,Application Insights,required,Application Insights,yes
+2f62e300,CIAM,required,God kunnskap med CIAM,yes
+2f62e300,SQL,required,Relational Database (SQL),yes
+2f62e300,IaC,required,IaC (Resource Management),yes
+2f62e300,Agile,required,Smidig utvikling,yes
+2f62e300,DevOps,required,DevOps,yes
+2f62e300,CI/CD,required,Pipeline management (CI/CD),yes
+2f62e300,Full-stack development,preferred,Erfaring med Fullstack utvikling,yes
+2f62e300,Microservices,preferred,Microservice and distributed systems,yes
+2f62e300,Distributed systems,preferred,Microservice and distributed systems,yes
+2f62e300,Docker,preferred,Docker,yes
+2f62e300,Kubernetes,preferred,Kubernetes,yes
+2f62e300,Azure Container Apps,preferred,Azure Container Apps,yes
+2f62e300,Azure Kubernetes Service,preferred,Azure Kubernetes Service,yes
+2f62e300,Helm,preferred,Helm,yes
+2f62e300,NoSQL,preferred,Forståelse for No-SQL,yes
+2f62e300,XR,unclear,teknologi innen XR,yes
+5ae61e99,Modbus RTU,required,God kjennskap til Modbus RTU (RS485),yes
+5ae61e99,RS485,required,Modbus RTU (RS485),yes
+5ae61e99,Modbus TCP,required,og Modbus TCP,yes
+5ae61e99,Sensor integration,required,"Erfaring med sensorer, og sensorintegrasjon",yes
+5ae61e99,AI,required,praktisk erfaring med AI/KI,yes
+5ae61e99,VPN,preferred,"Erfaring med oppsett, og drift av VPN-løsninger er en fordel",yes
+5ae61e99,Solar energy systems,preferred,erfaring med solenergi,yes
+5ae61e99,Battery systems,preferred,"batterianlegg, edge-enheter",yes
+5ae61e99,Edge devices,preferred,edge-enheter,yes
+5ae61e99,Electrical safety (NEK 400),preferred,elsikkerhet (NEK 400),yes
+5ae61e99,Anomaly detection,unclear,avviksvarsling,yes
+5ae61e99,Predictive maintenance,unclear,prediktivt vedlikehold,yes
+5ae61e99,Encrypted data transfer,unclear,kryptert dataoverføring,yes
+b69f0bbd,Unity,required,Erfaring med Unity eller annen spillmotor,yes
+b69f0bbd,Game engines,required,Erfaring med Unity eller annen spillmotor,yes
+b69f0bbd,Git,required,God kjennskap til Git og versjonskontroll,yes
+b69f0bbd,Version control,required,Git og versjonskontroll,yes
+b69f0bbd,Scrum,required,smidige utviklingsmetodikker som Scrum,yes
+b69f0bbd,Agile,required,smidige utviklingsmetodikker som Scrum,yes
+b69f0bbd,VR optimization,required,Optimalisering for VR,yes
+b69f0bbd,Network code,required,Nettverkskode,yes
+b69f0bbd,Game architecture,preferred,arkitektur i spillutvikling,yes
+b69f0bbd,Performance optimization,preferred,ytelse og optimalisering,yes
+b69f0bbd,Android,unclear,"Android, iOS, Windows, Mac og VR-enheter",yes
+b69f0bbd,iOS,unclear,"Android, iOS, Windows, Mac og VR-enheter",yes
+b69f0bbd,Windows,unclear,"Android, iOS, Windows, Mac og VR-enheter",yes
+b69f0bbd,macOS,unclear,"Android, iOS, Windows, Mac og VR-enheter",yes
+b69f0bbd,Multiplayer platform,unclear,videreutvikling av vår flerspillerplattform,yes
+b69f0bbd,XR,unclear,innovative løsninger innen XR,yes
+2ed29047,Information management,preferred,Arbeidserfaring innen informasjonsforvaltning,yes
+2ed29047,AI,preferred,med fokus på utvikling og bruk av kunstig intelligens,yes
+4135497b,IT operations,required,Erfaring innen IT-drift,no
+4135497b,ISO 27001,preferred,ISO 27001/27002,no
+4135497b,ISO 27002,preferred,ISO 27001/27002,no
+4135497b,NSM basic principles for ICT security,preferred,NSM’s grunnprinsipper for IKT-sikkerhet,no
+4135497b,High availability,preferred,miljø med høye oppetidskrav og redundans,no
+4135497b,Linux server operations,preferred,Drift av Linux og/eller windows servermiljø,no
+4135497b,Windows server operations,preferred,Drift av Linux og/eller windows servermiljø,no
+4135497b,Kubernetes,preferred,Container-teknologi som Kubernetes,no
+4135497b,Container technology,preferred,Container-teknologi som Kubernetes,no
+4135497b,Scripting,preferred,ved hjelp av scripting,no
+4135497b,Infrastructure as Code,preferred,«Infrastructure as Code»,no
+4135497b,Databases,preferred,Databaser innenfor Windows og Linux miljøer,no
+4135497b,VMware,preferred,VMware eller Omnissa,no
+4135497b,Omnissa,preferred,VMware eller Omnissa,no
+4135497b,DevOps,preferred,"DevOps-verktøy, prinsipper og –metodikker",no
+4135497b,Agile,preferred,Smidig arbeidsmetodikk,no
+4135497b,Monitoring,unclear,"administrere overvåking, logging og varsling",no
+4135497b,Logging,unclear,"overvåking, logging og varsling",no
+4135497b,Alerting,unclear,"overvåking, logging og varsling",no
+a1613f9c,IT infrastructure operations,unclear,drift og utvikling av IKT-systemer og infrastruktur,yes
+a1613f9c,Hardware installation,unclear,installasjon og oppsett av maskinvare og programvare,yes
+a1613f9c,Software installation,unclear,installasjon og oppsett av maskinvare og programvare,yes
+a1613f9c,User support,unclear,brukerstøtte til ansatte,yes
+8d77969c,Python,preferred,fortrinnsvis Python,no
+8d77969c,Programming,required,Erfaring med og/eller interesse for koding- og programmeringsverktøy,no
+8d77969c,Data preparation,preferred,Ønskelig med erfaring med å tilrettelegge data og sammenstille disse,no
+8d77969c,Research methodology,preferred,Det er en fordel med forståelse for forskningsmetodikk,no
+8d77969c,Data extraction,unclear,Uttrekk og tilrettelegging av data,no
+a5dabb26,Data platforms,required,erfaring med utvikling eller drift av dataplattformer,no
+a5dabb26,Python,required,programmering ved bruk av Python eller tilsvarende teknologier,no
+a5dabb26,Programming,required,erfaring med programmering,no
+a5dabb26,Software architecture,required,"god forståelse for arkitektur, integrasjoner, dataflyt",no
+a5dabb26,System integration,required,"arkitektur, integrasjoner, dataflyt",no
+a5dabb26,Containers,required,erfaring med container- og skyteknologi,no
+a5dabb26,Cloud,required,container- og skyteknologi,no
+a5dabb26,Infrastructure as Code,required,"skyteknologi, Infrastructure as Code og automatisering av leveranser",no
+a5dabb26,CI/CD,required,automatisering av leveranser,no
+a5dabb26,Access control,required,god forståelse for sikkerhet og tilgangsstyring,no
+a5dabb26,Open source,required,god kjennskap til og interesse for open source-komponenter,no
+a5dabb26,Lakehouse architecture,preferred,moderne dataplattformer og lakehouse-arkitektur,no
+a5dabb26,Monitoring,preferred,"monitorering, logging og observability",no
+a5dabb26,Logging,preferred,"monitorering, logging og observability",no
+a5dabb26,Observability,preferred,"monitorering, logging og observability",no
+a5dabb26,dbt,preferred,"teknologier som dbt, Airflow, Iceberg og/eller Trino",no
+a5dabb26,Airflow,preferred,"teknologier som dbt, Airflow, Iceberg og/eller Trino",no
+a5dabb26,Iceberg,preferred,"teknologier som dbt, Airflow, Iceberg og/eller Trino",no
+a5dabb26,Trino,preferred,"teknologier som dbt, Airflow, Iceberg og/eller Trino",no
+a5dabb26,API integration,preferred,API-integrasjoner og hendelsesbasert arkitektur,no
+a5dabb26,Event-driven architecture,preferred,API-integrasjoner og hendelsesbasert arkitektur,no
+a5dabb26,Object storage,preferred,objektlagring og S3-kompatible lagringsløsninger,no
+a5dabb26,S3,preferred,objektlagring og S3-kompatible lagringsløsninger,no
+a5dabb26,Agile,preferred,smidig arbeidsmetodikk og prosjektarbeid,no
+a5dabb26,Kubernetes,unclear,"plattformtjenester basert på Kubernetes, GitOps og Infrastructure as Code (IaC)",no
+a5dabb26,GitOps,unclear,"Kubernetes, GitOps og Infrastructure as Code (IaC)",no
+a5dabb26,Metadata management,unclear,metadataforvaltning,no
+a5dabb26,Master data management,unclear,masterdataforvaltning,no
+a5dabb26,Data quality,unclear,masterdataforvaltning og datakvalitet,no
+dc0bdd91,Statistics,preferred,"erfaring med statistikk, analyse eller databehandling",no
+dc0bdd91,Data analysis,preferred,"erfaring med statistikk, analyse eller databehandling",no
+dc0bdd91,Data processing,preferred,"erfaring med statistikk, analyse eller databehandling",no
+dc0bdd91,Metadata,preferred,"erfaring med metadata, klassifikasjoner eller informasjonsforvaltning",no
+dc0bdd91,Classifications,preferred,"erfaring med metadata, klassifikasjoner eller informasjonsforvaltning",no
+dc0bdd91,Information management,preferred,"erfaring med metadata, klassifikasjoner eller informasjonsforvaltning",no
+dc0bdd91,APIs,preferred,forståelse for API-er og datautveksling,no
+dc0bdd91,Data exchange,preferred,forståelse for API-er og datautveksling,no
+dc0bdd91,Data structures,unclear,interesse for datastrukturer,no
+fbae0d93,Programming,required,Kompetanse i programmering,no
+fbae0d93,Python,required,for eksempel Python eller R,no
+fbae0d93,R,required,for eksempel Python eller R,no
+fbae0d93,Git,preferred,"som Git, Jupyter, VS Code og skybaserte plattformer",no
+fbae0d93,Jupyter,preferred,"som Git, Jupyter, VS Code og skybaserte plattformer",no
+fbae0d93,VS Code,preferred,"som Git, Jupyter, VS Code og skybaserte plattformer",no
+fbae0d93,Cloud platforms,preferred,"Git, Jupyter, VS Code og skybaserte plattformer",no
+fbae0d93,Register data,preferred,"registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",no
+fbae0d93,Data processing,preferred,"registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",no
+fbae0d93,GIS,preferred,"registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",no
+fbae0d93,Geospatial analysis,preferred,"registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",no
+fbae0d93,Statistics production,preferred,"registerdata, databehandling, GIS, geografiske analyser eller statistikkproduksjon",no
+fbae0d93,Automated production pipelines,unclear,Utvikling og forbedring av automatiserte produksjonsløp,no
+1f614033,Frontend development,required,Arbeidet som frontendutvikler eller fullstack-utvikler med ekspertise på frontend,no
+1f614033,HTML,required,"grunnleggende web-teknologi, som HTML, Typescript og CSS",no
+1f614033,TypeScript,required,"HTML, Typescript og CSS",no
+1f614033,CSS,required,"HTML, Typescript og CSS",no
+1f614033,React,required,Arbeidet med React/Vue/Angular eller lignende rammeverk,no
+1f614033,Vue,required,Arbeidet med React/Vue/Angular eller lignende rammeverk,no
+1f614033,Angular,required,Arbeidet med React/Vue/Angular eller lignende rammeverk,no
+1f614033,Agile,preferred,Erfaring med smidige utvikling,no
+1f614033,Next.js,preferred,Erfaring med NextJS,no
+1f614033,Backend development,preferred,Erfaring med backend-utvikling (f.eks Java/Kotlin),no
+1f614033,Java,preferred,backend-utvikling (f.eks Java/Kotlin),no
+1f614033,Kotlin,preferred,backend-utvikling (f.eks Java/Kotlin),no
+1f614033,Frontend architecture,preferred,Erfaring med frontend arkitektur og designsystemer,no
+1f614033,Design systems,preferred,frontend arkitektur og designsystemer,no
+1f614033,AI coding agents,preferred,Testet ut koding med KI/agenter,no
+1f614033,CI/CD,preferred,Erfaring med CI/CD (f.eks.: github-actions og terraform),no
+1f614033,GitHub Actions,preferred,github-actions og terraform,no
+1f614033,Terraform,preferred,github-actions og terraform,no
+1f614033,Security,unclear,Interesse for sikkerhetsarbeid,no
+1f614033,Spring Boot,unclear,Kotlin og Spring Boot i backend,no
+1f614033,PostgreSQL,unclear,Vi lagrer data i PostgreSQL og NATS,no
+1f614033,NATS,unclear,PostgreSQL og NATS,no
+1f614033,Google Cloud Platform,unclear,Google Cloud Platform,no
+b35c3ca3,Information management,preferred,informasjons- eller dokumentasjonsforvaltning,no
+b35c3ca3,Document management,preferred,informasjons- eller dokumentasjonsforvaltning,no
+b35c3ca3,Process mapping,preferred,prosesskartlegging og virksomhetsutvikling,no
+b35c3ca3,System management,preferred,informasjonssystemer og systemforvaltning,no
+b35c3ca3,Data quality,preferred,datakvalitet og informasjonsstyring,no
+b35c3ca3,Information security,preferred,personvern og informasjonssikkerhet,no
+b35c3ca3,Data sharing,unclear,"datakvalitet, informasjonsflyt og datadeling",no
+8119dbb1,Data integration,required,"Praktisk erfaring med dataintegrasjon, dataplattformer eller maskinlæring",no
+8119dbb1,Data platforms,required,"dataintegrasjon, dataplattformer eller maskinlæring",no
+8119dbb1,Machine learning,required,"dataintegrasjon, dataplattformer eller maskinlæring",no
+8119dbb1,Large language models,required,Du bruker språkmodeller i hverdagen,no
+8119dbb1,Accounting data,preferred,Erfaring med regnskapsdata eller økonomisystemer en fordel,no
+8119dbb1,Financial systems,preferred,regnskapsdata eller økonomisystemer,no
+8119dbb1,Automation,unclear,"Ha ansvar for verktøy, data og automatisering",no
+8119dbb1,Software architecture,unclear,Fra arkitektur og teknologivalg,no
+8119dbb1,Scrum,unclear,Vi jobber i stor grad som et scrum-team,no

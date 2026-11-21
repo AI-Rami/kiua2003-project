@@ -1,0 +1,176 @@
+ad_id,gold_skill,gold_label,model_skill,model_label,model_mention_type,found
+1f614033,AI coding agents,preferred,,,,no
+1f614033,Agile,preferred,Agile development,preferred,candidate_qualification,yes
+1f614033,Angular,required,Angular,required,candidate_qualification,yes
+1f614033,Backend development,preferred,Backend development,preferred,candidate_qualification,yes
+1f614033,CI/CD,preferred,CI/CD,preferred,candidate_qualification,yes
+1f614033,CSS,required,CSS,unclear,candidate_qualification,yes
+1f614033,Design systems,preferred,Design systems,preferred,candidate_qualification,yes
+1f614033,Frontend architecture,preferred,Frontend architecture,preferred,candidate_qualification,yes
+1f614033,Frontend development,required,Frontend development,required,candidate_qualification,yes
+1f614033,GitHub Actions,preferred,GitHub Actions,unclear,candidate_qualification,yes
+1f614033,Google Cloud Platform,unclear,Google Cloud Platform,unclear,work_context,yes
+1f614033,HTML,required,HTML,unclear,candidate_qualification,yes
+1f614033,Java,preferred,Java,unclear,candidate_qualification,yes
+1f614033,Kotlin,preferred,Kotlin,unclear,work_context,yes
+1f614033,NATS,unclear,NATS,unclear,work_context,yes
+1f614033,Next.js,preferred,Next.js,preferred,candidate_qualification,yes
+1f614033,PostgreSQL,unclear,PostgreSQL,unclear,work_context,yes
+1f614033,React,required,React,required,candidate_qualification,yes
+1f614033,Security,unclear,Security work,unclear,interest_only,yes
+1f614033,Spring Boot,unclear,Spring Boot,unclear,work_context,yes
+1f614033,Terraform,preferred,Terraform,unclear,candidate_qualification,yes
+1f614033,TypeScript,required,TypeScript,unclear,candidate_qualification,yes
+1f614033,Vue,required,Vue,required,candidate_qualification,yes
+2ed29047,AI,preferred,Artificial intelligence development and use,preferred,candidate_qualification,yes
+2ed29047,Information management,preferred,Information management,preferred,candidate_qualification,yes
+2f62e300,.NET,required,C# .NET,required,candidate_qualification,yes
+2f62e300,Agile,required,Agile development,required,candidate_qualification,yes
+2f62e300,App Services,required,Azure App Services,unclear,candidate_qualification,yes
+2f62e300,App configuration,required,Azure App Configuration,unclear,candidate_qualification,yes
+2f62e300,Application Insights,required,Application Insights,unclear,candidate_qualification,yes
+2f62e300,Azure,required,Azure,required,candidate_qualification,yes
+2f62e300,Azure Container Apps,preferred,Azure Container Apps,unclear,candidate_qualification,yes
+2f62e300,Azure Functions,required,Azure Functions,unclear,candidate_qualification,yes
+2f62e300,Azure Kubernetes Service,preferred,Azure Kubernetes Service,unclear,candidate_qualification,yes
+2f62e300,C#,required,C# .NET,required,candidate_qualification,yes
+2f62e300,CI/CD,required,CI/CD pipeline management,required,candidate_qualification,yes
+2f62e300,CIAM,required,Customer Identity and Access Management (CIAM),required,candidate_qualification,yes
+2f62e300,DevOps,required,DevOps,required,candidate_qualification,yes
+2f62e300,Distributed systems,preferred,Distributed systems,preferred,candidate_qualification,yes
+2f62e300,Docker,preferred,Docker,unclear,candidate_qualification,yes
+2f62e300,Entra,required,Entra,unclear,candidate_qualification,yes
+2f62e300,Full-stack development,preferred,Full-stack development,preferred,candidate_qualification,yes
+2f62e300,Helm,preferred,Helm,unclear,candidate_qualification,yes
+2f62e300,IaC,required,Infrastructure as Code (IaC) resource management,required,candidate_qualification,yes
+2f62e300,Key Vault,required,Key Vault,unclear,candidate_qualification,yes
+2f62e300,Kubernetes,preferred,Kubernetes,unclear,candidate_qualification,yes
+2f62e300,Microservices,preferred,Microservices,preferred,candidate_qualification,yes
+2f62e300,NoSQL,preferred,NoSQL databases,preferred,candidate_qualification,yes
+2f62e300,SQL,required,Relational databases (SQL),required,candidate_qualification,yes
+2f62e300,Storage accounts,required,Azure Storage accounts,unclear,candidate_qualification,yes
+2f62e300,XR,unclear,XR technology,unclear,work_context,yes
+4135497b,Agile,preferred,Agile methodology,preferred,candidate_qualification,yes
+4135497b,Alerting,unclear,Alerting implementation and administration,unclear,work_duty,yes
+4135497b,Container technology,preferred,Container technology,preferred,candidate_qualification,yes
+4135497b,Databases,preferred,Database administration,preferred,candidate_qualification,yes
+4135497b,DevOps,preferred,DevOps tools,preferred,candidate_qualification,yes
+4135497b,High availability,preferred,High-availability systems,preferred,candidate_qualification,yes
+4135497b,ISO 27001,preferred,ISO 27001/27002,preferred,candidate_qualification,yes
+4135497b,ISO 27002,preferred,ISO 27001/27002,preferred,candidate_qualification,yes
+4135497b,IT operations,required,IT operations,required,candidate_qualification,yes
+4135497b,Infrastructure as Code,preferred,Infrastructure as Code,unclear,candidate_qualification,yes
+4135497b,Kubernetes,preferred,Kubernetes,unclear,candidate_qualification,yes
+4135497b,Linux server operations,preferred,,,,no
+4135497b,Logging,unclear,Logging implementation and administration,unclear,work_duty,yes
+4135497b,Monitoring,unclear,Monitoring implementation and administration,unclear,work_duty,yes
+4135497b,NSM basic principles for ICT security,preferred,NSM’s basic principles for ICT security,preferred,candidate_qualification,yes
+4135497b,Omnissa,preferred,Omnissa,preferred,candidate_qualification,yes
+4135497b,Scripting,preferred,Scripting,preferred,candidate_qualification,yes
+4135497b,VMware,preferred,VMware,preferred,candidate_qualification,yes
+4135497b,Windows server operations,preferred,,,,no
+5ae61e99,AI,required,Artificial intelligence (AI/KI),required,candidate_qualification,yes
+5ae61e99,Anomaly detection,unclear,,,,no
+5ae61e99,Battery systems,preferred,Battery systems,preferred,candidate_qualification,yes
+5ae61e99,Edge devices,preferred,Edge devices,preferred,candidate_qualification,yes
+5ae61e99,Electrical safety (NEK 400),preferred,Electrical safety (NEK 400),preferred,candidate_qualification,yes
+5ae61e99,Encrypted data transfer,unclear,,,,no
+5ae61e99,Modbus RTU,required,Modbus RTU (RS485),required,candidate_qualification,yes
+5ae61e99,Modbus TCP,required,Modbus TCP,required,candidate_qualification,yes
+5ae61e99,Predictive maintenance,unclear,Predictive maintenance,unclear,work_duty,yes
+5ae61e99,RS485,required,Modbus RTU (RS485),required,candidate_qualification,yes
+5ae61e99,Sensor integration,required,Sensor integration,required,candidate_qualification,yes
+5ae61e99,Solar energy systems,preferred,,,,no
+5ae61e99,VPN,preferred,VPN configuration and operation,preferred,candidate_qualification,yes
+8119dbb1,Accounting data,preferred,Accounting data,preferred,candidate_qualification,yes
+8119dbb1,Automation,unclear,Automation,unclear,work_duty,yes
+8119dbb1,Data integration,required,Data integration,required,candidate_qualification,yes
+8119dbb1,Data platforms,required,Data platforms,required,candidate_qualification,yes
+8119dbb1,Financial systems,preferred,Financial systems,preferred,candidate_qualification,yes
+8119dbb1,Large language models,required,Language models,required,candidate_qualification,yes
+8119dbb1,Machine learning,required,Machine learning,required,candidate_qualification,yes
+8119dbb1,Scrum,unclear,Scrum,unclear,work_context,yes
+8119dbb1,Software architecture,unclear,Software architecture,unclear,work_duty,yes
+8d77969c,Data extraction,unclear,Data extraction,unclear,work_duty,yes
+8d77969c,Data preparation,preferred,Data preparation,preferred,candidate_qualification,yes
+8d77969c,Programming,required,Coding and programming tools,unclear,candidate_qualification,yes
+8d77969c,Python,preferred,Python,preferred,candidate_qualification,yes
+8d77969c,Research methodology,preferred,Research methodology,preferred,candidate_qualification,yes
+a1613f9c,Hardware installation,unclear,Hardware installation and setup,unclear,work_duty,yes
+a1613f9c,IT infrastructure operations,unclear,IT systems and infrastructure operations,unclear,work_duty,yes
+a1613f9c,Software installation,unclear,Software installation and setup,unclear,work_duty,yes
+a1613f9c,User support,unclear,IT user support,unclear,work_duty,yes
+a5dabb26,API integration,preferred,API integrations,preferred,candidate_qualification,yes
+a5dabb26,Access control,required,Access control,required,candidate_qualification,yes
+a5dabb26,Agile,preferred,Agile methodology,preferred,candidate_qualification,yes
+a5dabb26,Airflow,preferred,Airflow,preferred,candidate_qualification,yes
+a5dabb26,CI/CD,required,,,,no
+a5dabb26,Cloud,required,Cloud technology,required,candidate_qualification,yes
+a5dabb26,Containers,required,Container technology,required,candidate_qualification,yes
+a5dabb26,Data platforms,required,Data platform development,required,candidate_qualification,yes
+a5dabb26,Data quality,unclear,Data quality,unclear,work_duty,yes
+a5dabb26,Event-driven architecture,preferred,Event-driven architecture,preferred,candidate_qualification,yes
+a5dabb26,GitOps,unclear,GitOps,unclear,work_context,yes
+a5dabb26,Iceberg,preferred,Iceberg,preferred,candidate_qualification,yes
+a5dabb26,Infrastructure as Code,required,Infrastructure as Code,required,candidate_qualification,yes
+a5dabb26,Kubernetes,unclear,Kubernetes,unclear,work_context,yes
+a5dabb26,Lakehouse architecture,preferred,Lakehouse architecture,preferred,candidate_qualification,yes
+a5dabb26,Logging,preferred,Logging,preferred,candidate_qualification,yes
+a5dabb26,Master data management,unclear,Master data management,unclear,work_duty,yes
+a5dabb26,Metadata management,unclear,Metadata management,unclear,work_duty,yes
+a5dabb26,Monitoring,preferred,Monitoring,preferred,candidate_qualification,yes
+a5dabb26,Object storage,preferred,Object storage,preferred,candidate_qualification,yes
+a5dabb26,Observability,preferred,Observability,preferred,candidate_qualification,yes
+a5dabb26,Open source,required,Open-source components,required,candidate_qualification,yes
+a5dabb26,Programming,required,Automation programming,required,candidate_qualification,yes
+a5dabb26,Python,required,Python,required,candidate_qualification,yes
+a5dabb26,S3,preferred,S3-compatible storage,preferred,candidate_qualification,yes
+a5dabb26,Software architecture,required,,,,no
+a5dabb26,System integration,required,,,,no
+a5dabb26,Trino,preferred,Trino,preferred,candidate_qualification,yes
+a5dabb26,dbt,preferred,dbt,preferred,candidate_qualification,yes
+b35c3ca3,Data quality,preferred,Data quality,preferred,candidate_qualification,yes
+b35c3ca3,Data sharing,unclear,Data sharing,unclear,work_duty,yes
+b35c3ca3,Document management,preferred,,,,no
+b35c3ca3,Information management,preferred,Information management,required,candidate_qualification,yes
+b35c3ca3,Information security,preferred,Information security,preferred,candidate_qualification,yes
+b35c3ca3,Process mapping,preferred,Process mapping,preferred,candidate_qualification,yes
+b35c3ca3,System management,preferred,Systems management,required,candidate_qualification,yes
+b69f0bbd,Agile,required,Agile development methodologies,required,candidate_qualification,yes
+b69f0bbd,Android,unclear,Android,unclear,work_duty,yes
+b69f0bbd,Game architecture,preferred,Game development architecture,preferred,candidate_qualification,yes
+b69f0bbd,Game engines,required,Game engines,preferred,candidate_qualification,yes
+b69f0bbd,Git,required,Git,required,candidate_qualification,yes
+b69f0bbd,Multiplayer platform,unclear,Multiplayer platform development,unclear,work_duty,yes
+b69f0bbd,Network code,required,Network code,unclear,candidate_qualification,yes
+b69f0bbd,Performance optimization,preferred,,,,no
+b69f0bbd,Scrum,required,Scrum,unclear,candidate_qualification,yes
+b69f0bbd,Unity,required,Unity,required,candidate_qualification,yes
+b69f0bbd,VR optimization,required,VR optimization,unclear,candidate_qualification,yes
+b69f0bbd,Version control,required,Version control,required,candidate_qualification,yes
+b69f0bbd,Windows,unclear,Windows,unclear,work_duty,yes
+b69f0bbd,XR,unclear,XR solution development,unclear,interest_only,yes
+b69f0bbd,iOS,unclear,iOS,unclear,work_duty,yes
+b69f0bbd,macOS,unclear,,,,no
+dc0bdd91,APIs,preferred,API concepts,preferred,candidate_qualification,yes
+dc0bdd91,Classifications,preferred,Classifications,preferred,candidate_qualification,yes
+dc0bdd91,Data analysis,preferred,Data analysis,preferred,candidate_qualification,yes
+dc0bdd91,Data exchange,preferred,Data exchange,preferred,candidate_qualification,yes
+dc0bdd91,Data processing,preferred,Data processing,preferred,candidate_qualification,yes
+dc0bdd91,Data structures,unclear,Data structures,unclear,interest_only,yes
+dc0bdd91,Information management,preferred,Information management,preferred,candidate_qualification,yes
+dc0bdd91,Metadata,preferred,Metadata,preferred,candidate_qualification,yes
+dc0bdd91,Statistics,preferred,Statistics,preferred,candidate_qualification,yes
+fbae0d93,Automated production pipelines,unclear,,,,no
+fbae0d93,Cloud platforms,preferred,Cloud platforms,preferred,candidate_qualification,yes
+fbae0d93,Data processing,preferred,Data processing,preferred,candidate_qualification,yes
+fbae0d93,GIS,preferred,GIS,preferred,candidate_qualification,yes
+fbae0d93,Geospatial analysis,preferred,Geographic analysis,preferred,candidate_qualification,yes
+fbae0d93,Git,preferred,Git,preferred,candidate_qualification,yes
+fbae0d93,Jupyter,preferred,Jupyter,preferred,candidate_qualification,yes
+fbae0d93,Programming,required,Programming,required,candidate_qualification,yes
+fbae0d93,Python,required,Python,unclear,candidate_qualification,yes
+fbae0d93,R,required,R,unclear,candidate_qualification,yes
+fbae0d93,Register data,preferred,Register data,preferred,candidate_qualification,yes
+fbae0d93,Statistics production,preferred,Statistical production,preferred,candidate_qualification,yes
+fbae0d93,VS Code,preferred,VS Code,preferred,candidate_qualification,yes
