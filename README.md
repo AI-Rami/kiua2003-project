@@ -43,7 +43,15 @@ This checks the shared data and restoration, not extraction accuracy.
 
 ## Evaluate the saved workflow
 
-Run from the project root without an API key:
+To reproduce the **second test** from the five saved revised-prompt answers, run
+
+```powershell
+python harness/check_revised_evaluation.py
+```
+
+This offline check needs only Python. It validates the original answer text, compares each outcome and score with the saved record, and exits successfully when it reproduces all five outcomes. Expect four validated ads, one rejected answer (item 8), and 50 matches among 84 model items and 80 reference items. The [reviewed comparison](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/reviewed-report.md) explains these results. The screened answers are included beside the report in `answers.json`.
+
+To reproduce the **first test** and its synthetic checks, run from the project root:
 
 ```powershell
 python eval/run.py --mode offline-suite --suite eval/cases/manifest.json
@@ -51,9 +59,9 @@ python eval/run.py --mode offline-suite --suite eval/cases/manifest.json
 
 The offline suite replays five fixed development advertisements against approved answers and checks five synthetic boundaries, including a contact-uncertain input that must be blocked before a model call. Each run creates one dated, readable `out/evaluation/<run>/report.md` covering all five ads and the separate synthetic results. Open `out/evaluation/index.md` to find current reports by run date; `record.json` holds the detailed numbers. It needs no API key or network access and does not change dashboard statistics. The five ads do not measure accuracy on unseen advertisements. See [eval/README.md](eval/README.md) for the case catalog, replay-only command and local regression tests, [task 005](tasks/005-nav-evaluation.md) for the evaluation scope and [task 006](tasks/006-evaluation-reporting.md) for reporting. The earlier scorer and saved scores are retained as provisional history.
 
-The [reviewed five-ad baseline report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md), its [original generated report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/report.md), and its [run record](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/record.json) are shared under `docs/`. Later generated runs remain local under ignored `out/` until a checked report is deliberately shared.
+The [reviewed five-ad baseline report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md), its [original generated report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/report.md), and its [run record](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/record.json) are shared under `docs/`. The [revised-prompt reviewed report and four-ad comparison](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/reviewed-report.md) records a fresh five-request run with four validated responses and one validation failure; its generated report and run record are copied beside it. Raw responses remain local under ignored `out/`.
 
-For a bounded fresh-model evaluation, see the exact command, pricing preflight and prompt-hash requirement in [eval/README.md](eval/README.md). This mode needs your own `KIUA2003_API` key and has only been tested locally with mocked responses; it does not update the dashboard dataset.
+For a bounded fresh-model evaluation, see the exact command, pricing preflight and prompt-hash requirement in [eval/README.md](eval/README.md). This mode needs your own `KIUA2003_API` key. It was exercised with five live model requests on 22 November 2026 and does not update the dashboard dataset.
 
 ## Update
 

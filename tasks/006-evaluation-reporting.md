@@ -8,7 +8,7 @@
 
 - `eval/run.py` implements frozen replay, the offline suite and a bounded fresh-model mode. All three already create unique folders under ignored `out/evaluation/`.
 - `eval/cases/manifest.json` pins five approved development cases. `eval/cases/offline-suite.json` names five synthetic checks. `eval/scoring.py` compares exact item or complete OR-group names; wording differences can cause unmatched items without proving semantic errors.
-- The offline suite validates five saved responses and passes five synthetic checks. The generated report gives quantitative results and automatic differences; the [separate reviewed report](../docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md) explains their meaning against the source. Fresh-model mode has only been exercised with mocks.
+- The offline suite validates five saved responses and passes five synthetic checks. The generated report gives quantitative results and automatic differences; the [separate reviewed report](../docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md) explains their meaning against the source. One bounded fresh-model run on 22 November 2026 attempted five cases, validated four and failed one; its [reviewed report](../docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/reviewed-report.md) compares the four scored cases with the baseline.
 - Keep Task 005's approved references, saved responses, prompt, schema, model settings and counting rules unchanged. Preserve unrelated work and existing run folders.
 
 ## Report design
