@@ -1,0 +1,12 @@
+{
+  "label": "synthetic stress-test advertisement (not a real NAV ad)",
+  "uuid": "dc8477b2-cae6-5057-8644-ab46e899883e",
+  "title": "STRESS TEST: 03_empty",
+  "source_link": "https://example.invalid/stress-test",
+  "revised_version": "stress-test-v1",
+  "revised_outcome": "saved",
+  "review_state": "synthetic",
+  "cleaned_description": "   ",
+  "content_hash_sha256": "0aad7da77d2ed59c396c99a74e49f3a4524dcdbcb5163251b1433d640247aeb4",
+  "stress_note": "Expected: rejected before any model call (no readable text)."
+}

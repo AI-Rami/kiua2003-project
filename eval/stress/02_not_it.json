@@ -1,0 +1,12 @@
+{
+  "label": "synthetic stress-test advertisement (not a real NAV ad)",
+  "uuid": "1b40a19f-279c-5513-9764-c58d5dfca0ef",
+  "title": "STRESS TEST: 02_not_it",
+  "source_link": "https://example.invalid/stress-test",
+  "revised_version": "stress-test-v1",
+  "revised_outcome": "saved",
+  "review_state": "synthetic",
+  "cleaned_description": "Sykepleier, Lillehammer\n\nVi søker sykepleier til medisinsk avdeling.\n\nKvalifikasjoner:\n- Norsk autorisasjon som sykepleier\n- Gode samarbeidsevner\n- Flytende norsk\n\nVi tilbyr hyggelige kolleger.",
+  "content_hash_sha256": "130feed0d92db2d86811b500598bb4930b4417ad3baba8da872f3e12a98b8413",
+  "stress_note": "Expected: no technical skills."
+}

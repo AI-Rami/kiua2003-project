@@ -1,0 +1,12 @@
+{
+  "label": "synthetic stress-test advertisement (not a real NAV ad)",
+  "uuid": "bc7a0264-a32d-58d7-bbb7-c5f0c722f8ce",
+  "title": "STRESS TEST: 04_only_noise",
+  "source_link": "https://example.invalid/stress-test",
+  "revised_version": "stress-test-v1",
+  "revised_outcome": "saved",
+  "review_state": "synthetic",
+  "cleaned_description": "!!! ### ??? ... ---\n\n12345 67890\n\nlorem ipsum dolor sit amet",
+  "content_hash_sha256": "80b658e3986920b914861a589923805a72696c00ae786b5c6ea8730da536f924",
+  "stress_note": "Expected: no technical skills, no invented ones."
+}
