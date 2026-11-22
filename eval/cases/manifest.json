@@ -1,0 +1,28 @@
+{
+  "suite_version": 1,
+  "name": "NAV v2 development regression cases",
+  "baseline_manifest_sha256": "92f65526c6aa2aa3532fc3776de767cb324d80063bdc38f7753c6f4314763d32",
+  "draft_gold_sha256": "67340edd944367663a4a913e192d39f183c70a7b2aac6fe8ac80b6e27a171c34",
+  "prompt_sha256": "789bf663f2303ff46257cd22e85ea2fa08f8fff020fda401bc18aa572258543b",
+  "schema_sha256": "b84a98dfae5ddebe5d6c796e369d02537668f6bb0c151b4381144a45a30e048c",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "max_output_tokens": 8192,
+  "references": {
+    "path": "eval/references/development-v2-approved.json",
+    "sha256": "5420bb954f55e7624a0de3cfe2c9368df42b576b7bd88aa280ec907e882f0efc"
+  },
+  "offline_cases": {
+    "path": "eval/cases/offline-suite.json",
+    "sha256": "df01fe5397e9af531438bef376580f140796ae78d8c5df1659aa84c97af17687"
+  },
+  "cases": [
+    {"uuid": "2ed29047-97e4-4168-adb9-8da83e968c94", "reference_status": "approved_complete"},
+    {"uuid": "2f62e300-c698-4f53-8510-db90b1692cb9", "reference_status": "approved_complete"},
+    {"uuid": "5ae61e99-0980-4eac-a120-8338820483cc", "reference_status": "approved_complete"},
+    {"uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3", "reference_status": "approved_complete"},
+    {"uuid": "b69f0bbd-082e-4d36-baae-456fb23ca32a", "reference_status": "approved_complete"}
+  ],
+  "excluded_draft_advertisements": 8,
+  "note": "Five complete v2 answers were agreed by Rami, who reports Yehya's concurrence. Historical checked labels are not approved references; saved model responses remain unchanged for this development-set replay."
+}

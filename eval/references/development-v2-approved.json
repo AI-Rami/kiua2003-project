@@ -1,0 +1,946 @@
+{
+  "schema_version": 1,
+  "reviewers": [
+    "Rami",
+    "Yehya"
+  ],
+  "aliases": {},
+  "cases": {
+    "2ed29047-97e4-4168-adb9-8da83e968c94": {
+      "approval": "approved_complete",
+      "input_sha256": "9139ae297bf88116dbb05dafcec8172b28688c1ca8a4647c6c40beb661b08c88",
+      "items": [
+        {
+          "skills": [
+            "Information management"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens",
+          "classification_context": "Det er også ønskelig om du har:"
+        },
+        {
+          "skills": [
+            "AI development"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens",
+          "classification_context": "Det er også ønskelig om du har:"
+        },
+        {
+          "skills": [
+            "AI use"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Arbeidserfaring innen informasjonsforvaltning, med fokus på utvikling og bruk av kunstig intelligens",
+          "classification_context": "Det er også ønskelig om du har:"
+        },
+        {
+          "skills": [
+            "Information lifecycle management"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Bidra til styring og forvaltning av informasjon gjennom dens livsløp, ved å påse at data og informasjon lagres, gjøres sporbar og søkbar",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Development of information management procedures"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikle og følge opp prosedyrer, systemer og verktøy for informasjonsforvaltning",
+          "classification_context": null
+        }
+      ]
+    },
+    "2f62e300-c698-4f53-8510-db90b1692cb9": {
+      "approval": "approved_complete",
+      "input_sha256": "907e17b44b349aa77aef78b7b0fd47ec2150abab6398e4e29b357ccc852b8b94",
+      "items": [
+        {
+          "skills": [
+            "Backend development"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "På vegne av vår kunde som utvikler fremtidens trenings- og opplæringsløsninger gjennom XR-teknologi, søker vi en dyktig Senior Backend Developer.\n\nNøkkelkvalifikasjoner:\n\n- 5+ år med backend erfaring",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "C#"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God erfaring med C# .NET",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            ".NET"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God erfaring med C# .NET",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Azure"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Entra"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Key Vault"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Storage accounts"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "App Services"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "App configuration"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Azure functions"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Application Insights"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Generell kompetanse i Azure (Entra, Key Vault, Storage accounts, App Services, App configuration, Azure functions, Application Insights)",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Customer Identity and Access Management (CIAM)"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap med CIAM (Customer Identity and Access Management)",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Relational databases (SQL)"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Relational Database (SQL)",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Infrastructure as Code"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "IaC (Resource Management)",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Agile development"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Smidig utvikling/DevOps",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "DevOps"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Smidig utvikling/DevOps",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "CI/CD pipeline management"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Pipeline management (CI/CD)",
+          "classification_context": "Nøkkelkvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Full-stack development"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med Fullstack utvikling",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Microservices"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Microservice and distributed systems",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Distributed systems"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Microservice and distributed systems",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Containerization"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Container orchestration"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Docker"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Kubernetes"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Azure Container Apps"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Azure Kubernetes Service"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "Helm"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kunnskap innen containerization and orchestration (Docker, Kubernetes, Azure Container Apps, Azure Kubernetes Service, Helm)",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "NoSQL"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Forståelse for No-SQL",
+          "classification_context": "Ønskede kvalifikasjoner:"
+        },
+        {
+          "skills": [
+            "XR technology"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_context",
+          "skill_evidence": "Mulighet til å jobbe med banebrytende teknologi innen XR",
+          "classification_context": null
+        }
+      ]
+    },
+    "5ae61e99-0980-4eac-a120-8338820483cc": {
+      "approval": "approved_complete",
+      "input_sha256": "f00301a8ee964f077b9b77d63b47cfb4df9960b8d77d785fcf824204281091f6",
+      "items": [
+        {
+          "skills": [
+            "Modbus RTU (RS485)"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kjennskap til Modbus RTU (RS485), og Modbus TCP.",
+          "classification_context": "Hva vi ser etter"
+        },
+        {
+          "skills": [
+            "Modbus TCP"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kjennskap til Modbus RTU (RS485), og Modbus TCP.",
+          "classification_context": "Hva vi ser etter"
+        },
+        {
+          "skills": [
+            "Sensors"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med sensorer, og sensorintegrasjon.",
+          "classification_context": "Hva vi ser etter"
+        },
+        {
+          "skills": [
+            "Sensor integration"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med sensorer, og sensorintegrasjon.",
+          "classification_context": "Hva vi ser etter"
+        },
+        {
+          "skills": [
+            "Artificial intelligence (AI)"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Kunnskap om, og praktisk erfaring med AI/KI.",
+          "classification_context": "Hva vi ser etter"
+        },
+        {
+          "skills": [
+            "VPN setup"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med oppsett, og drift av VPN-løsninger er en fordel i denne rollen. Det samme gjelder erfaring med solenergi, batterianlegg, edge-enheter eller elsikkerhet (NEK 400). Dette er fordeler, men ikke krav.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "VPN operation"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med oppsett, og drift av VPN-løsninger er en fordel i denne rollen. Det samme gjelder erfaring med solenergi, batterianlegg, edge-enheter eller elsikkerhet (NEK 400). Dette er fordeler, men ikke krav.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Solar energy",
+            "Battery installations",
+            "Edge devices",
+            "Electrical safety (NEK 400)"
+          ],
+          "relationship": "any_of",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med oppsett, og drift av VPN-løsninger er en fordel i denne rollen. Det samme gjelder erfaring med solenergi, batterianlegg, edge-enheter eller elsikkerhet (NEK 400). Dette er fordeler, men ikke krav.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Inverter configuration"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Inverter integration"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Battery configuration"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Battery integration"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Sensor configuration"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Konfigurere, og integrere invertere, batterier og sensorer over Modbus RTU, og Modbus TCP.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Local AI development"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Anomaly alerting"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Predictive maintenance"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikle, og forbedre lokal kunstig intelligens, avviksvarsling og prediktivt vedlikehold.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Encrypted data transfer"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Sikre trygg, og kryptert dataoverføring på lukket nett.",
+          "classification_context": null
+        }
+      ]
+    },
+    "a1613f9c-1757-4351-81ea-1d0e5246fbd3": {
+      "approval": "approved_complete",
+      "input_sha256": "0adbea9416971ebc052cdafde4aba54fc0eef56ee0fab127cf990057fc90d08e",
+      "items": [
+        {
+          "skills": [
+            "IT systems operation"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "drift og utvikling av IKT-systemer og infrastruktur",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "IT systems development"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "drift og utvikling av IKT-systemer og infrastruktur",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "IT infrastructure operation"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "drift og utvikling av IKT-systemer og infrastruktur",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "IT infrastructure development"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "drift og utvikling av IKT-systemer og infrastruktur",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "Hardware installation"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "installasjon og oppsett av maskinvare og programvare",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "Hardware setup"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "installasjon og oppsett av maskinvare og programvare",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "Software installation"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "installasjon og oppsett av maskinvare og programvare",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "Software setup"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "installasjon og oppsett av maskinvare og programvare",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "IT user support"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "brukerstøtte til ansatte",
+          "classification_context": "Typiske arbeidsoppgaver vil være:"
+        },
+        {
+          "skills": [
+            "ICT"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "interest_only",
+          "skill_evidence": "har interesse for IKT, teknologi og digitale løsninger",
+          "classification_context": null
+        }
+      ]
+    },
+    "b69f0bbd-082e-4d36-baae-456fb23ca32a": {
+      "approval": "approved_complete",
+      "input_sha256": "57f8290a68b083851d0bb227373017dbb8d4a5ed2354d0053bad55e2d1b2fa85",
+      "items": [
+        {
+          "skills": [
+            "Multiplayer platform development"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Delta i videreutvikling av vår flerspillerplattform.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "Software development"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "Software builds"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "Android"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "iOS"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "Windows"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "Mac"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "VR devices"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_duty",
+          "skill_evidence": "Utvikling og bygging av programfiler for Android, iOS, Windows, Mac og VR-enheter.",
+          "classification_context": "Arbeidsoppgaver"
+        },
+        {
+          "skills": [
+            "Game engines"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Har god forståelse for spillmotorer og arkitektur i spillutvikling.",
+          "classification_context": "Ønskede kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Game development architecture"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Har god forståelse for spillmotorer og arkitektur i spillutvikling.",
+          "classification_context": "Ønskede kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "XR solution development"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "interest_only",
+          "skill_evidence": "Ønsker å bidra til utvikling av innovative løsninger innen XR.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "User experience"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Har god forståelse for brukeropplevelse, ytelse og optimalisering.",
+          "classification_context": "Ønskede kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Software performance"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Har god forståelse for brukeropplevelse, ytelse og optimalisering.",
+          "classification_context": "Ønskede kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Software optimization"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Har god forståelse for brukeropplevelse, ytelse og optimalisering.",
+          "classification_context": "Ønskede kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Codebase comprehension"
+          ],
+          "relationship": "single",
+          "classification": "preferred",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Er komfortabel med å sette deg inn i eksisterende kode og forstå sammenhenger for å videreutvikle og forbedre.",
+          "classification_context": "Ønskede kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Unity",
+            "Other game engine"
+          ],
+          "relationship": "any_of",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med Unity eller annen spillmotor og sterkt ønske om å lære Unity.",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Unity"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "interest_only",
+          "skill_evidence": "Erfaring med Unity eller annen spillmotor og sterkt ønske om å lære Unity.",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Git"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kjennskap til Git og versjonskontroll.",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Version control"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "God kjennskap til Git og versjonskontroll.",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Agile development methodologies"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med smidige utviklingsmetodikker som Scrum.",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Scrum"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med smidige utviklingsmetodikker som Scrum.",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "VR optimization",
+            "Network code",
+            "Cross-disciplinary collaboration in development teams"
+          ],
+          "relationship": "any_of",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Erfaring med ett eller flere av følgende områder:\n\n- Optimalisering for VR\n\n- Nettverkskode\n\n- Tverrfaglig samarbeid i utviklingsteam",
+          "classification_context": "Kvalifikasjoner"
+        },
+        {
+          "skills": [
+            "Building scalable solutions"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Kreativ og løsningsorientert, som evner å se det store bildet og bygge løsninger som er skalerbare, enkle å vedlikeholde og teknisk solide.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Building maintainable solutions"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Kreativ og løsningsorientert, som evner å se det store bildet og bygge løsninger som er skalerbare, enkle å vedlikeholde og teknisk solide.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Technical concept communication"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Samarbeidsvillig og kommunikativ, som trives med å jobbe i tverrfaglige team og kan forklare tekniske konsepter på en forståelig måte til både utviklere og designere.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Technical architecture decision ownership"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Tar eierskap til arkitekturvalg og tekniske beslutninger, og følger opp leveranser med høy kvalitet.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Understanding UX effects of technical choices in VR/AR"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Har forståelse for sluttbrukerens behov og hvordan tekniske valg påvirker brukeropplevelsen – spesielt i VR/AR-miljøer.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "Working across platforms and devices"
+          ],
+          "relationship": "single",
+          "classification": "required",
+          "mention_type": "candidate_qualification",
+          "skill_evidence": "Kan jobbe med ulike plattformer og enheter, og tilpasse seg nye arbeidsflyter og kundekrav.",
+          "classification_context": null
+        },
+        {
+          "skills": [
+            "XR technology"
+          ],
+          "relationship": "single",
+          "classification": "unclear",
+          "mention_type": "work_context",
+          "skill_evidence": "Mulighet til å jobbe med banebrytende teknologi innen XR og teknologi som gjør en forskjell.",
+          "classification_context": null
+        }
+      ]
+    }
+  }
+}

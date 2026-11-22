@@ -1,0 +1,5 @@
+# First NAV evaluation attempt
+
+Commit `22da659` introduced `eval/score.py`, `eval/gold/gold.csv`, the labeling rules, and saved reports under `eval/results/`. The six original files are now together in this folder, with their contents unchanged: `score.py`, `gold.csv`, `labeling-rules.md`, `matches.csv`, `score.md`, and `score_reviewed.md`. The scorer reads the changing `out/current/` selection, uses word-overlap matching, and treats individual alternative names separately. Its five `checked=yes` advertisements record an earlier review, not approval of complete reference answers by Rami and Yehya. The saved scores are provisional and are not an approved accuracy measurement.
+
+The saved reports and script mention their original paths. Those references are historical text, not current commands. To rerun the original script in its original layout, use commit `22da659` in a separate checkout. The repeatable evaluator uses a fixed case manifest and separate run folders and does not overwrite these original files or scores.

@@ -1,0 +1,649 @@
+{
+  "mode": "offline-suite",
+  "generated_at_utc": "2026-11-22T16:50:02.752217+00:00",
+  "suite": "eval\\cases\\manifest.json",
+  "suite_sha256": "4cf7bca3519660128374c1f211f88ee6eca3c91642a74dcfe0985333f96419a8",
+  "model": "gpt-6-luna",
+  "prompt_sha256": "789bf663f2303ff46257cd22e85ea2fa08f8fff020fda401bc18aa572258543b",
+  "schema_sha256": "b84a98dfae5ddebe5d6c796e369d02537668f6bb0c151b4381144a45a30e048c",
+  "selected": 5,
+  "attempted": 5,
+  "validated": 5,
+  "failed": 0,
+  "not_run": 0,
+  "approved_selected": 5,
+  "approved_scored": 5,
+  "accuracy_score": {
+    "matched": 47,
+    "model_count": 83,
+    "reference_count": 90,
+    "precision": 0.5662650602409639,
+    "recall": 0.5222222222222223,
+    "f1": 0.5433526011560694,
+    "classification_errors": 5,
+    "mention_type_errors": 0,
+    "missing_alternative_groups": 2
+  },
+  "cases": [
+    {
+      "uuid": "2ed29047-97e4-4168-adb9-8da83e968c94",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/2ed29047-97e4-4168-adb9-8da83e968c94",
+      "attempted": true,
+      "validation_passed": true,
+      "validation_errors": [],
+      "model_item_count": 9,
+      "response_id": "resp_08d190e0ae36cca9016ae7baad270087d29fa74f123c4f3acc",
+      "usage": {
+        "input_tokens": 2435,
+        "input_tokens_details": {
+          "cache_write_tokens": 966,
+          "cached_tokens": 1466
+        },
+        "output_tokens": 3159,
+        "output_tokens_details": {
+          "reasoning_tokens": 2419
+        },
+        "total_tokens": 5594
+      },
+      "elapsed_seconds": 27.33676689999993,
+      "estimated_cost_usd": 0.001823,
+      "reference_status": "approved_complete",
+      "accuracy_score": {
+        "reference_count": 5,
+        "model_count": 9,
+        "matched": 2,
+        "unsupported_model_indexes": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8
+        ],
+        "omitted_reference_indexes": [
+          1,
+          2,
+          4
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [],
+        "precision": 0.2222222222222222,
+        "recall": 0.4,
+        "f1": 0.2857142857142857
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "Artificial intelligence development and use",
+          "Development and follow-up of information management procedures, systems, and tools",
+          "Implementation of information management tools",
+          "Data storage, traceability, and searchability",
+          "Decision support in the information management field",
+          "Information flow management",
+          "Assessment of technological solutions against organizational needs"
+        ],
+        "unmatched_reference_names": [
+          "AI development",
+          "AI use",
+          "Development of information management procedures"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": []
+      },
+      "artifact_hashes": {
+        "prepared_ad.txt": "5eddcccce84ce63b51473198c7d663c5fcfc275788c0842d3f02af51c86fa949",
+        "request.json": "e10461fbffc56e1b2ffd6ec4716ba381b81d63fd24f00ca4047118363bfcfbfa",
+        "response.json": "c7301c37f9997b1ebfce9981a08827cec637c33c3bd124d44c579c68970cdede",
+        "result.json": "23d722bf9440caff21ecca13de7bf6af97ae0633631ffd4ab6bd18399dbf8901",
+        "validation.json": "162475334409337e2398d9b78cb0dc967bb9ccf00c2c746fc756a89797b0710f"
+      }
+    },
+    {
+      "uuid": "2f62e300-c698-4f53-8510-db90b1692cb9",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/2f62e300-c698-4f53-8510-db90b1692cb9",
+      "attempted": true,
+      "validation_passed": true,
+      "validation_errors": [],
+      "model_item_count": 28,
+      "response_id": "resp_0b8a3b9b1f0beedc016ae7b99c14ec87d296beef2516868359",
+      "usage": {
+        "input_tokens": 1767,
+        "input_tokens_details": {
+          "cache_write_tokens": 1764,
+          "cached_tokens": 0
+        },
+        "output_tokens": 3303,
+        "output_tokens_details": {
+          "reasoning_tokens": 1781
+        },
+        "total_tokens": 5070
+      },
+      "elapsed_seconds": 28.00305010000011,
+      "estimated_cost_usd": 0.0018282,
+      "reference_status": "approved_complete",
+      "accuracy_score": {
+        "reference_count": 29,
+        "model_count": 28,
+        "matched": 20,
+        "unsupported_model_indexes": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          12,
+          20,
+          26
+        ],
+        "omitted_reference_indexes": [
+          1,
+          2,
+          6,
+          7,
+          8,
+          9,
+          13,
+          21,
+          27
+        ],
+        "classification_error_pairs": [
+          [
+            22,
+            21
+          ],
+          [
+            23,
+            22
+          ],
+          [
+            24,
+            23
+          ],
+          [
+            25,
+            24
+          ],
+          [
+            26,
+            25
+          ]
+        ],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [],
+        "precision": 0.7142857142857143,
+        "recall": 0.6896551724137931,
+        "f1": 0.7017543859649122
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "C# .NET",
+          "Azure Storage accounts",
+          "Azure App Services",
+          "Azure App Configuration",
+          "Azure Functions",
+          "Infrastructure as Code (IaC) resource management",
+          "Orchestration",
+          "NoSQL databases"
+        ],
+        "unmatched_reference_names": [
+          "C#",
+          ".NET",
+          "Storage accounts",
+          "App Services",
+          "App configuration",
+          "Azure functions",
+          "Infrastructure as Code",
+          "Container orchestration",
+          "NoSQL"
+        ],
+        "classification_differences": [
+          {
+            "name": "Docker",
+            "reference": "preferred",
+            "model": "unclear"
+          },
+          {
+            "name": "Kubernetes",
+            "reference": "preferred",
+            "model": "unclear"
+          },
+          {
+            "name": "Azure Container Apps",
+            "reference": "preferred",
+            "model": "unclear"
+          },
+          {
+            "name": "Azure Kubernetes Service",
+            "reference": "preferred",
+            "model": "unclear"
+          },
+          {
+            "name": "Helm",
+            "reference": "preferred",
+            "model": "unclear"
+          }
+        ],
+        "mention_type_differences": [],
+        "unmatched_or_groups": []
+      },
+      "artifact_hashes": {
+        "prepared_ad.txt": "e0a50ea251c5bdfeb15db43d14b22e2b8cd8c392abd83c7082b9bb44d3bd2b5b",
+        "request.json": "c386efd7db6bd5284564cd50eebc770bf34926b47f3db1017ce5c8a1143cd65e",
+        "response.json": "2f8d2cccb13be3b53579a078e5597f570888e7a99bcb70c53ba91d0d78459249",
+        "result.json": "f9c3f02743a7d46c8404dbeff383b1651c2c689f0a200fe0f9d21981645faa94",
+        "validation.json": "024da66434d5b50dbd0a37b37aab3a0addb2ed482a6deacc1b34db60e0417a92"
+      }
+    },
+    {
+      "uuid": "5ae61e99-0980-4eac-a120-8338820483cc",
+      "title": "Systemingeniør (IoT/energi), Rondekraft",
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/5ae61e99-0980-4eac-a120-8338820483cc",
+      "attempted": true,
+      "validation_passed": true,
+      "validation_errors": [],
+      "model_item_count": 14,
+      "response_id": "resp_0e3f3aa493e07245016aeb996a950087d2b9f93c2839c5896a",
+      "usage": {
+        "input_tokens": 2023,
+        "input_tokens_details": {
+          "cache_write_tokens": 554,
+          "cached_tokens": 1466
+        },
+        "output_tokens": 3227,
+        "output_tokens_details": {
+          "reasoning_tokens": 2416
+        },
+        "total_tokens": 5250
+      },
+      "elapsed_seconds": 31.92779449999216,
+      "estimated_cost_usd": 0.0018158,
+      "reference_status": "approved_complete",
+      "accuracy_score": {
+        "reference_count": 17,
+        "model_count": 14,
+        "matched": 7,
+        "unsupported_model_indexes": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          12,
+          13
+        ],
+        "omitted_reference_indexes": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          16
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [
+          7
+        ],
+        "precision": 0.5,
+        "recall": 0.4117647058823529,
+        "f1": 0.45161290322580644
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "Artificial intelligence (AI/KI)",
+          "VPN configuration and operation",
+          "Solar energy OR Battery systems OR Edge devices OR Electrical safety (NEK 400)",
+          "Technical platform and infrastructure development",
+          "Modbus-based configuration and integration of inverters, batteries, and sensors",
+          "Secure and encrypted data transmission",
+          "System operation and monitoring"
+        ],
+        "unmatched_reference_names": [
+          "Artificial intelligence (AI)",
+          "VPN setup",
+          "VPN operation",
+          "Solar energy OR Battery installations OR Edge devices OR Electrical safety (NEK 400)",
+          "Inverter configuration",
+          "Inverter integration",
+          "Battery configuration",
+          "Battery integration",
+          "Sensor configuration",
+          "Encrypted data transfer"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": [
+          "Solar energy OR Battery installations OR Edge devices OR Electrical safety (NEK 400)"
+        ]
+      },
+      "artifact_hashes": {
+        "prepared_ad.txt": "3445ebbf743f99245d2da8648692f914dddbf47e9d01d5c34d15aef66f83ac2c",
+        "request.json": "60f0964ecc9b4057233a66374e43785ef06e0b8361338c3f14a7fc58026c6eff",
+        "response.json": "4ab74e3ac0c4c889a9a1b942dd694c52e6fe05a4c6f2d68885e72179f9dfb8ea",
+        "result.json": "4996e90e95fa61842c9798a2c55e9bea19c62a4038a7d2bbcb7c33eca248e2f7",
+        "validation.json": "57ff694c458004896a5e4ddf6e25b648959d20a467304e84067053e8e34346c0"
+      }
+    },
+    {
+      "uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "attempted": true,
+      "validation_passed": true,
+      "validation_errors": [],
+      "model_item_count": 7,
+      "response_id": "resp_0b0de6bdc5a3f46a016ae7bb96aefc87d29a4f52e9d1e5af18",
+      "usage": {
+        "input_tokens": 2598,
+        "input_tokens_details": {
+          "cache_write_tokens": 1129,
+          "cached_tokens": 1466
+        },
+        "output_tokens": 1370,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 3968
+      },
+      "elapsed_seconds": 13.730762799998047,
+      "estimated_cost_usd": 0.0009448,
+      "reference_status": "approved_complete",
+      "accuracy_score": {
+        "reference_count": 10,
+        "model_count": 7,
+        "matched": 1,
+        "unsupported_model_indexes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "omitted_reference_indexes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [],
+        "precision": 0.14285714285714285,
+        "recall": 0.1,
+        "f1": 0.11764705882352941
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "IT systems and infrastructure operations",
+          "IT systems and infrastructure development",
+          "Hardware installation and setup",
+          "Software installation and setup",
+          "Information and communications technology (ICT)",
+          "Digital solutions"
+        ],
+        "unmatched_reference_names": [
+          "IT systems operation",
+          "IT systems development",
+          "IT infrastructure operation",
+          "IT infrastructure development",
+          "Hardware installation",
+          "Hardware setup",
+          "Software installation",
+          "Software setup",
+          "ICT"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": []
+      },
+      "artifact_hashes": {
+        "prepared_ad.txt": "ac0c51f955b143aa20919ead0e8ac29be2744481b5906e3e4ab255cc9be7f3b5",
+        "request.json": "39a359a1f2d8c2d6d3da033c06f2d61129f549028967306739236ad2e50ea1db",
+        "response.json": "9595ff701edcf7afd6d2c45c8e0b80831321184b157393677e4eaf081c82e861",
+        "result.json": "13cc96afba64aa89818868e75cb47287c0787132f8dcefa4403cf35a953bfb2d",
+        "validation.json": "74180585c88d9227e52873d7b523c8a4eeca1b2a5c02321e252f5d25ee802487"
+      }
+    },
+    {
+      "uuid": "b69f0bbd-082e-4d36-baae-456fb23ca32a",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/b69f0bbd-082e-4d36-baae-456fb23ca32a",
+      "attempted": true,
+      "validation_passed": true,
+      "validation_errors": [],
+      "model_item_count": 25,
+      "response_id": "resp_0432a290789b921f016ae8270331d887d28ebd100dcf3052bc",
+      "usage": {
+        "input_tokens": 2132,
+        "input_tokens_details": {
+          "cache_write_tokens": 663,
+          "cached_tokens": 1466
+        },
+        "output_tokens": 5294,
+        "output_tokens_details": {
+          "reasoning_tokens": 3894
+        },
+        "total_tokens": 7426
+      },
+      "elapsed_seconds": 60.31979769999816,
+      "estimated_cost_usd": 0.0028602,
+      "reference_status": "approved_complete",
+      "accuracy_score": {
+        "reference_count": 29,
+        "model_count": 25,
+        "matched": 17,
+        "unsupported_model_indexes": [
+          0,
+          9,
+          12,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "omitted_reference_indexes": [
+          1,
+          2,
+          11,
+          14,
+          16,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          28
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [
+          21
+        ],
+        "precision": 0.68,
+        "recall": 0.5862068965517241,
+        "f1": 0.6296296296296295
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "Software development and build generation",
+          "User experience in VR/AR environments",
+          "Codebase comprehension and improvement",
+          "VR optimization",
+          "Network code",
+          "Scalable and maintainable software design",
+          "Technical architecture decision-making",
+          "Technical communication"
+        ],
+        "unmatched_reference_names": [
+          "Software development",
+          "Software builds",
+          "User experience",
+          "Codebase comprehension",
+          "Unity",
+          "VR optimization OR Network code OR Cross-disciplinary collaboration in development teams",
+          "Building scalable solutions",
+          "Building maintainable solutions",
+          "Technical concept communication",
+          "Technical architecture decision ownership",
+          "Understanding UX effects of technical choices in VR/AR",
+          "XR technology"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": [
+          "VR optimization OR Network code OR Cross-disciplinary collaboration in development teams"
+        ]
+      },
+      "artifact_hashes": {
+        "prepared_ad.txt": "5da317535e9772bf07173eab7bbe46adfb1b9d9f26de9254faf1af5ba5f2adc7",
+        "request.json": "b8670dd8b413389f44f82caa794944cf591cef1218a64ea241d242b2f3c7a7f7",
+        "response.json": "27a00c841c851da047d4f0b9e206809fe1d7111d92e3e7123a7079d1a981cb5f",
+        "result.json": "dce1cbbd7bce41b15b73b3c22079e444b8927c3392e6ae2e292bb3eccef2a817",
+        "validation.json": "8fd85cb18efc4b3ed17b5197a31cef8f2917fd5d072ecd3afdc9a916d05692bb"
+      }
+    }
+  ],
+  "accuracy_note": "Accuracy covers only the named, approved and validated cases.",
+  "offline_case_catalog_sha256": "df01fe5397e9af531438bef376580f140796ae78d8c5df1659aa84c97af17687",
+  "real_case_roles": [
+    {
+      "id": "REAL-01",
+      "uuid": "2ed29047-97e4-4168-adb9-8da83e968c94",
+      "role": "typical wording pattern",
+      "reason": "The reviewed text mixes an explicitly desirable technical qualification with technical duties."
+    },
+    {
+      "id": "REAL-02",
+      "uuid": "2f62e300-c698-4f53-8510-db90b1692cb9",
+      "role": "boundary",
+      "reason": "Broad Azure competence and named parenthesized services require separate classification decisions."
+    },
+    {
+      "id": "REAL-03",
+      "uuid": "5ae61e99-0980-4eac-a120-8338820483cc",
+      "role": "typical wording pattern",
+      "reason": "The reviewed text contains explicit required qualifications, preferred qualifications and work duties."
+    },
+    {
+      "id": "REAL-04",
+      "uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "role": "boundary",
+      "reason": "Technical duties and an interest topic appear without an explicit existing technical-skill requirement."
+    },
+    {
+      "id": "REAL-05",
+      "uuid": "b69f0bbd-082e-4d36-baae-456fb23ca32a",
+      "role": "boundary",
+      "reason": "A three-way required alternative must remain one group rather than independent requirements."
+    }
+  ],
+  "synthetic_cases": [
+    {
+      "id": "SYN-OR-001",
+      "kind": "alternative_group",
+      "expected": {
+        "same_group_matches": 1,
+        "split_singles_match": 0,
+        "split_singles_extra": 2,
+        "split_singles_omitted": 1
+      },
+      "actual": {
+        "same_group_matches": 1,
+        "split_singles_match": 0,
+        "split_singles_extra": 2,
+        "split_singles_omitted": 1
+      },
+      "passed": true,
+      "reason": "expected outcome observed"
+    },
+    {
+      "id": "SYN-CONTEXT-001",
+      "kind": "heading_context",
+      "expected": {
+        "validation_passed": true,
+        "skill_quote": "exact",
+        "context_quote": "exact"
+      },
+      "actual": {
+        "validation_passed": true,
+        "skill_quote": "exact",
+        "context_quote": "exact"
+      },
+      "passed": true,
+      "reason": "expected outcome observed"
+    },
+    {
+      "id": "SYN-DUTY-001",
+      "kind": "duty_vs_qualification",
+      "expected": {
+        "name_matches": 1,
+        "classification_errors": 1,
+        "mention_type_errors": 1
+      },
+      "actual": {
+        "name_matches": 1,
+        "classification_errors": 1,
+        "mention_type_errors": 1
+      },
+      "passed": true,
+      "reason": "expected outcome observed"
+    },
+    {
+      "id": "SYN-QUOTE-001",
+      "kind": "quotation_boundary",
+      "expected": {
+        "exact_passes": true,
+        "changed_word_passes": false,
+        "changed_whitespace_passes": false
+      },
+      "actual": {
+        "exact_passes": true,
+        "changed_word_passes": false,
+        "changed_whitespace_passes": false
+      },
+      "passed": true,
+      "reason": "expected outcome observed"
+    },
+    {
+      "id": "SYN-REJECT-001",
+      "kind": "input_rejection",
+      "expected": {
+        "capture_outcome": "review_blocked",
+        "reason": "uncertain_mixed_contact_passage",
+        "model_calls": 0,
+        "published": 0,
+        "blocked_in_index": true,
+        "extraction_requests": 0
+      },
+      "actual": {
+        "capture_outcome": "review_blocked",
+        "reason": "uncertain_mixed_contact_passage",
+        "model_calls": 0,
+        "published": 0,
+        "blocked_in_index": true,
+        "extraction_requests": 0
+      },
+      "passed": true,
+      "reason": "expected outcome observed"
+    }
+  ],
+  "synthetic_passed": 5,
+  "synthetic_failed": 0,
+  "suite_passed": true
+}

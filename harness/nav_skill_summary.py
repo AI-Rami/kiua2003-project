@@ -31,6 +31,12 @@ class SummaryError(Exception):
     pass
 
 
+def review_digest(raw):
+    """Hash review text with stable line endings across Git checkouts."""
+    normalized = raw.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(normalized.replace(b"\n", b"\r\n")).hexdigest()
+
+
 def publication_date(value):
     """Use the calendar date in NAV's saved timestamp and its supplied offset."""
     if value is None or value == "":
@@ -347,7 +353,7 @@ def apply_selected_review(records, review_path=SELECTED_REVIEW):
         record["items"] = [item for number, original in enumerate(originals, 1)
                            for item in by_number.get(number, [original])]
     info = {"path": review_path.resolve().relative_to(ROOT).as_posix(),
-            "sha256": hashlib.sha256(raw).hexdigest(), "decision_count": applied,
+            "sha256": review_digest(raw), "decision_count": applied,
             "correction_count": applied,
             "unapplied_uuids": stale, "status": "provisional agent review; not approved ground truth"}
     return revised, info

@@ -364,3 +364,133 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 - Correction: The earlier documentation still described eleven selected results and an untested live button. The saved 2026-11-04 button update had thirteen selected results and completed after six feed pages, 1,479 detail requests and two published extractions; README and SPEC were updated to reflect that saved state.
 - Outcome: Added a checked shared baseline, restore/start command and model-free restore tests. A database audit found two unused capture rows and one old targeted row that triggered the current contact screen; these were excluded only from the shared copy. The working database was left unchanged. Automatic checks cannot establish that all personal information has been removed.
 - Checks: The 77 model-free tests passed with a workspace temporary directory; earlier attempts hit sandbox temporary-directory access errors and one intermittent Windows file-replacement error. Python syntax and `git diff --check` passed. A fresh copy exported from the committed Git contents restored thirteen ads; its local UI served HTTP 200 for the page and data, with thirteen ads, 132 applicant-skill names and fifteen OR groups. The copied checkpoint was in `done` phase with zero pending work. An offline injected discovery call returned `no_updates_found` with no model call. A direct `git clone` test failed while Git's helper process started in this desktop environment; the archive test used the committed Git contents instead. No NAV or model request was made for these checks.
+
+## 2026-11-21 - Frozen NAV evaluation groundwork
+
+- Requested improvement: Preserve the earlier evaluation attempt and create a repeatable fixed-case evaluator before prompt changes.
+- Correction: Isolated startup checks exposed a cross-platform review-file line-ending hash mismatch and a SQLite read-only URL failure when a temporary path contained `#`. Review hashing now normalizes line endings without ignoring content changes, and SQLite uses an encoded file URL.
+- Outcome: Added a pinned five-case offline replay, deterministic item-level scoring functions and synthetic checks. Replay validated all five saved responses structurally and checked their quotations. It did not calculate extraction accuracy because the complete references have not been jointly approved. No NAV or model request was made.
+- Checks: Ten evaluation tests, five shared-data tests, twelve summary tests and four v2 extractor tests passed. A 32-test update run had one intermittent Windows access-denied error replacing a temporary report; a repeat of the same suite passed. Isolated copies of the shared baseline started and replayed the five fixed cases with both LF and CRLF text files, and retained existing data on a second start. The working checkout's `start.py --check-only` reported thirteen existing selected advertisements. Syntax parsing of eight changed Python files and `git diff --check` passed.
+
+## 2026-11-21 - Move first evaluation attempt into history
+
+- Corrected output: The earlier explanation implied Yehya's first-attempt files were in `eval/history/`, but that folder held only an explanatory note.
+- Correction: Moved the original scorer, gold CSV, labeling rules and three saved result files into `eval/history/first-attempt/` without changing their contents. Moved the explanatory note into the same folder and updated active replay paths and documentation. Historical text inside the original files still names their old locations.
+- Checks: SHA-256 hashes of all seven moved files matched before and after the move. Ten model-free evaluation tests passed; fixed-case replay still validated five of five saved responses. `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-21 - Tighten approved-reference checks
+
+- Corrected output: An audit found that the new reference checker accepted extra item fields, non-qualification mentions labelled required or preferred, and duplicate reference items after an approved alias was applied. The replay command would also have said approved accuracy was unavailable after approved cases were scored.
+- Correction: Require exactly the six v2 item fields, enforce unclear classification for non-qualification mentions, apply approved aliases before checking reference duplicates, and report whether approved cases were scored. Clarified the evaluation task status. The five real references remain unapproved.
+- Checks: Thirteen model-free evaluation tests passed, including synthetic checks for the rejected reference cases and the approved-case CLI message. Offline replay validated five of five saved responses and reported no approved accuracy score. Syntax parsing of the three changed evaluation Python files and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-21 - Simplify the reference labeling guide
+
+- Requested improvement: The draft v2 labeling guide was difficult to understand and too long for joint advertisement review.
+- Correction: Rewrote it as a shorter five-step checklist covering technical scope, mention type, classification, alternatives, exact evidence and whole-advertisement approval. It remains a draft for Rami and Yehya and is not sent to the extraction model.
+- Checks: The revised file is 497 words, UTF-8 without a BOM or trailing whitespace. Its three local links resolve. `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-21 - Keep reference labeling independent of model output
+
+- Corrected output: The shortened guide told reviewers to compare their draft list with the model answer, which could bias the expected answer. The review index also left room to use the model response as a reference.
+- Correction: Both instructions now say to build and approve a complete reference from the prepared advertisement without inspecting the model answer. The evaluation program performs the comparison afterward; no manual row-by-row comparison is required. Historical first-attempt files were left unchanged.
+- Checks: The two links in the guide resolve, and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-21 - Record human NAV reference-review decisions
+
+- User clarification: Rami said Yehya agrees with his decisions and no separate wait for Yehya is needed. The earlier assistant replies had treated a separate Yehya reply as pending.
+- Outcome: Recorded the five agreed draft items and exclusions for the first frozen advertisement, plus the C#/.NET and Azure decisions for the second advertisement, in `eval/cases/review-progress.md`. The Azure note records that individually named services are `candidate_qualification` items with `unclear` requirement status, not optional skills. The second advertisement remains partially reviewed; no approved reference JSON or model comparison was created.
+- Checks: The recorded quotations were present in the respective frozen prepared texts, the note contained no email-like string or trailing whitespace, and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-21 - Refine Azure-advertisement reference draft
+
+- Corrected output: Rami replaced the assistant's proposed `Backend expertise` name with `Backend development` and chose one combined `Relational databases (SQL)` item rather than splitting that phrase.
+- Outcome: Recorded these choices and the other agreed required qualifications for advertisement `2f62e300-c698-4f53-8510-db90b1692cb9` in the partial review note. The note also retains an evidence check for the action word in `Backend development`; the reference JSON has not been frozen or scored.
+- Checks: All six newly recorded qualification quotations occurred in the frozen prepared text. No NAV or model request was made.
+
+## 2026-11-21 - Review preferred technologies in Azure advertisement
+
+- Corrected output: Rami changed the assistant's proposed `Orchestration` name to `Container orchestration` and changed the five parenthesized container tools from individually `unclear` to `preferred`.
+- Outcome: Recorded the agreed preferred-qualification items and the governing-heading reasoning in the partial review note. Clarified the draft labeling guide: a preferred heading may support preferred named tools in a desired-knowledge bullet without requiring every tool; a broad required qualification does not automatically require each named component. The Azure service decisions remain unchanged. No reference JSON was approved or scored.
+- Checks: The preferred heading and four quoted source passages were present in the frozen prepared text. The changed Markdown files had no trailing whitespace or UTF-8 BOM, and the review note had no email-like text. `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-21 - Finish the second advertisement's draft review
+
+- Corrected output: The assistant continued to describe the Azure advertisement review as incomplete after Rami had agreed to the qualification items. Rami then agreed to include XR as an unclear work-context mention and to use one continuous passage including the Backend Developer role and backend-experience qualification as evidence for `Backend development`.
+- Outcome: Recorded both decisions and marked the second advertisement's item decisions complete in the review note. Clarified the draft labeling rule so a title may explain an already stated qualification without creating a skill from the title alone. No machine-readable reference JSON was frozen or scored.
+- Checks: The continuous backend passage and XR quotation occurred exactly in the frozen prepared text. The review note had no email-like string or trailing whitespace, and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Record third advertisement reference decisions
+
+- Requested improvement: Complete the independent source review for the third frozen advertisement before comparing with a model answer.
+- Outcome: Rami chose to exclude the education/background route, keep `Modbus RTU (RS485)` together, retain `Modbus TCP` separately, and include five distinct inverter, battery and sensor configuration/integration duties as unclear work duties. The agreed preferred VPN items, four-alternative OR group, other technical duties and exclusions were recorded in `eval/cases/review-progress.md`. The required Sensor integration qualification was not duplicated as an unclear duty. No reference JSON was frozen or scored.
+- Checks: The frozen input byte hash matched the shared baseline manifest. All seven recorded evidence passages and the qualification heading occurred in the prepared text. The review note had no email-like text, trailing whitespace or UTF-8 BOM, and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Record fourth advertisement reference draft
+
+- Corrected output: Rami changed the assistant's proposed `Interest in ICT` label to `ICT`; `interest_only` records how it is mentioned. Rami also asked that the action–object splitting convention be made explicit.
+- Outcome: Recorded ten draft items for advertisement `a1613f9c-1757-4351-81ea-1d0e5246fbd3`: nine unclear work duties and one unclear ICT interest. The draft records the exclusions and explains that the eight action–object splits are an annotation choice. It remains pending Yehya's review; no approved reference JSON was frozen or scored.
+- Checks: The frozen input byte hash matched the shared baseline manifest. All four recorded evidence passages appeared in the prepared text, the draft table contained ten items, and the note had no email-like string. `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Refine fifth advertisement reference draft
+
+- Corrected output: Rami rejected a two-member technical OR group that omitted the nontechnical collaboration alternative, changed the platform duty from ten action–platform labels to seven activity/target items, chose `Network code` over `Network programming`, and identified overlap in the proposed codebase labels.
+- Outcome: Recorded the complete mixed three-way condition and its out-of-scope member in `eval/cases/review-progress.md`. The current reference format and scorer cannot mark one alternative out of scope, so the advertisement remains unapproved. Recorded the seven duty items and the unresolved codebase and technical-personality overlap decisions. Clarified the draft labeling rule against automatic action–target multiplication and reduced OR groups. No model output or reference JSON was changed.
+- Checks: The frozen input byte hash matched the shared baseline manifest; four table quotations and the complete OR passage occurred in the prepared text. The new review note had no email-like text or trailing whitespace. No NAV or model request was made.
+
+## 2026-11-22 - Select four approved NAV evaluation references
+
+- User clarification: Rami accepted the recommendation to score the four complete cases first, leave the fifth mixed OR case outside the accuracy score, and said Yehya agrees with his decisions. Yehya's concurrence is recorded as reported by Rami, not as an independent review observed by the agent.
+- Outcome: Created a versioned reference JSON with 61 items for the first four fixed cases, pinned its line-ending-stable hash in the case manifest, and kept the fifth case unapproved. The fifth-case note now keeps Codebase comprehension without separate overlapping development/improvement items and distinguishes the general UX and architecture statements from later specific technical abilities. Updated evaluation documentation. The saved model responses and application statistics were not changed.
+- Correction: The first evaluation test run failed because two tests assumed the suite had no approved cases. Updated their synthetic statuses and assertions to reflect four approved cases; the second run passed all 13 tests.
+- Checks: All four references passed the deterministic reference validator and matched their normalized frozen input hashes. Offline replay validated 5/5 saved outputs and scored 4/4 approved cases; 30 of 58 model items matched 61 reference items (item-name/group precision 0.517, recall 0.492, F1 0.504), with five classification errors among matches. `python harness/start.py --check-only` reported 13 existing selected advertisements. `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Keep all three required alternatives in fifth case
+
+- Corrected output: The assistant treated development-team collaboration as outside scope and said the existing format could not represent the advertisement's mixed OR condition. Rami clarified that the employer accepts any one of the three named experiences and wants all three shown as sought alternatives, without claiming an applicant needs all three.
+- Outcome: The draft guide now includes collaboration explicitly tied to technical development work while continuing to exclude generic teamwork. The fifth-case review note records one three-member `required` `any_of` qualification: VR optimization, Network code, or cross-disciplinary collaboration in development teams. The fifth advertisement remains unapproved because its full item list still needs review; the four-case replay score and model output were not changed. Updated the manifest note and documentation to remove the obsolete format-blocker claim.
+- Checks: A synthetic three-member reference item passed the existing checker, and its full quotation matched the frozen input. All 13 evaluation tests and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Prepare complete fifth-case reference draft
+
+- Requested improvement: Finish the source-based answer for advertisement `b69f0bbd-082e-4d36-baae-456fb23ca32a` while preserving the current model response as an evaluation baseline for later prompt improvements.
+- Outcome: Added a 29-item proposal covering the complete prepared advertisement in `eval/cases/review-progress.md`, including the agreed three-member required OR group, the seven platform-duty items, precise technical abilities from the personality section, and stated exclusions. The proposal remains pending Rami's whole-answer review; no approved reference, dashboard selection, model output or extraction prompt was changed.
+- Checks: The frozen input byte hash matched the shared baseline manifest. All 15 listed evidence passages and the complete three-way OR passage occurred exactly in the prepared text; the table contained 29 items and no email-like text. `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Approve fifth reference and replay frozen answers
+
+- User decision: Rami approved the complete 29-item source-based answer for advertisement `b69f0bbd-082e-4d36-baae-456fb23ca32a` and had previously reported Yehya's agreement. This did not authorize a prompt change or model request.
+- Outcome: Added the fifth case to the pinned approved reference and kept its saved model response unchanged. Offline replay scored all five fixed development cases. Recorded a separate fifth-case baseline comparison: the saved answer split the required three-way OR condition into two unclear singles and omitted the collaboration alternative. It also combined two software duties and changed a source-supported building action to design. Naming and granularity differences were separated from confirmed interpretation errors. The dashboard selection and statistics were not changed.
+- Checks: All five references passed preflight; the fifth has 29 items and two OR groups. Replay validated 5/5 saved outputs and exact item-name/group scoring matched 47 of 83 model items to 90 reference items (precision 0.566, recall 0.522, F1 0.543). The fifth case matched 17 of 25 model items to 29 reference items. All 13 evaluation tests passed, the reference hash matched the manifest, the reference had no email-like string, and `git diff --check` passed. No NAV or model request was made.
+
+## 2026-11-22 - Add bounded fresh-model evaluation command
+
+- Requested improvement: Add a repeatable fresh-model evaluation path for the five approved, frozen development cases, to use later when comparing prompt versions.
+- Outcome: Implemented `eval/run.py --mode model` with an explicit prompt hash, five-case request preflight, input/output/time/cost bounds, sequential requests without retries, per-case saved requests and responses, validation, deterministic scoring and partial-run records. Updated the evaluation guide, README and task status. The application result index and extraction prompt were not changed.
+- Checks: OpenAI's official Luna model page listed standard text pricing of $0.10 per million input tokens and $0.50 per million output tokens on this date. Seventeen model-free evaluation tests passed, including mocked five-request and API-failure runs. A syntax parse of the two changed Python files passed. The CLI rejected a four-request limit for five selected cases with exit code 1. No NAV or model request was made.
+
+## 2026-11-22 - Add one-command offline evaluation suite
+
+- Requested improvement: Make the exam test set explicit and runnable in one offline command, with typical wording examples, boundary cases and an input the workflow must reject.
+- Outcome: Added a pinned case catalog and `eval/run.py --mode offline-suite`. It replays five approved real-advertisement results and separately checks five synthetic cases for OR grouping, heading context, duty classification, quotation boundaries and rejection of a contact-uncertain raw input. The report records expected and actual synthetic outcomes without adding them to real-ad accuracy. Updated the README, evaluation guide and Task 005. No prompt, saved model response, selected dashboard result or statistics was changed.
+- Correction: The first expanded test run found that the run record reported a raw-byte catalog hash while the manifest used the line-ending-stable text hash. Changed the record to use the pinned text-hash rule; the next run passed.
+- Checks: The offline command exited 0 with 5/5 real responses validated and 5/5 synthetic checks passed. The real-ad item score remained 47 matches among 83 model items and 90 reference items. Twenty evaluation tests passed, including fresh-checkout LF and CRLF runs of the offline command; 32 update-workflow tests and four extractor-format tests passed. Syntax parsing passed. The selected index and statistics summary SHA-256 hashes were identical before and after the offline run. No NAV or model request was made.
+
+## 2026-11-22 - Improve evaluation report readability
+
+- Requested improvement: Create a new reporting task and make each evaluation run produce one dated, easy-to-read report covering all tested advertisements, with separate synthetic results and an index of runs. Rami approved the design and then clarified that the task brief should have been shown before implementation; he asked the agent to continue.
+- Outcome: Created Task 006 and a shared report renderer for replay, offline-suite and fresh-model records. New reports explain overall and per-ad item counts, classification and mention-type differences, unmatched OR groups, failures and limits in plain English. Added `out/evaluation/index.md` linking only run folders still present. Existing extraction prompts, references, scorer rules, dashboard selection and statistics were not changed. Word export remains optional and was not generated.
+- Correction: Three evaluation assertions initially failed because they expected wording from the previous report layout. Updated them to check the new wording; the next evaluation test run passed.
+- Checks: After Rami removed older local reports, the offline suite ran once and exited 0, validating 5/5 saved real responses and passing 5/5 synthetic checks. Its report recorded 47 matches among 83 model items and 90 reference items, with per-ad sections and a UTC generation time. The index linked the one remaining run. Twenty-two evaluation tests, 32 update-workflow tests and four extractor-format tests passed; syntax parsing and `git diff --check` passed. The selected index and statistics summary hashes were unchanged before and after the run. No NAV or model request was made.
+
+## 2026-11-22 - Complete five-case qualitative evaluation review
+
+- Requested improvement: Explain the saved model-versus-reference differences for all five approved development advertisements without changing the original generated evaluation run.
+- Outcome: Added `out/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md` and linked it from the evaluation run index. The review quotes the frozen prepared inputs, lists all 83 saved model items and 90 approved reference items, separates naming and grouping differences from interpretation errors, and explains the mixed technical/nontechnical three-way OR condition in the fifth advertisement. The original report, record, saved outputs, approved references, scorer and extraction prompt were not changed.
+- Checks: All five prepared-input and result-file byte hashes matched the original run record. The reviewed report has five case sections, five model inventories and five reference inventories containing 173 items in total; its local links and the index links resolve. The original report, record, reference and scorer hashes remained unchanged. No NAV or model request was made.
+
+## 2026-11-22 - Share the reviewed evaluation baseline
+
+- Corrected output: The assistant left the completed reviewed report only under Git-ignored `out/`, so a partner cloning the repository would not receive it. Rami said it should not be ignored.
+- Correction: Added a screened repository copy under `docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/`, including the reviewed report, the original generated report and its run record. Linked the reviewed copy from README. Kept runtime `out/` ignored and did not change the original run, scores, references, or scorer.
+- Checks: The three shared files contained no email-like string or detected credential/contact marker. The copied generated report and record matched the original byte hashes. Local links in the tracked reviewed report resolved. No NAV or model request was made.

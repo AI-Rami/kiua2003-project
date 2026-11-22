@@ -76,6 +76,19 @@ class SharedDataTests(unittest.TestCase):
             share_data.restore(self.root, self.baseline, validate=False)
         self.assertFalse((self.root / "out").exists())
 
+    def test_review_line_endings_are_portable_but_content_is_checked(self):
+        review_path = self.root / "reviews/current-v2.json"
+        review_path.write_bytes(b'{\n  "schema_version": 1\n}\n')
+        manifest_path = self.baseline / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest["review_sha256"] = share_data.statistics.review_digest(review_path.read_bytes())
+        manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+        review_path.write_bytes(b'{\r\n  "schema_version": 1\r\n}\r\n')
+        share_data.restore(self.root, self.baseline, validate=False)
+        review_path.write_bytes(b'{\r\n  "schema_version": 2\r\n}\r\n')
+        with self.assertRaisesRegex(share_data.ShareError, "review decisions differ"):
+            share_data.restore(self.root, self.baseline, validate=False)
+
 
 if __name__ == "__main__":
     unittest.main()

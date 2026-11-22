@@ -95,7 +95,7 @@ def current_files(root):
     summary = json.loads((root / "out/statistics/summary.json").read_text(encoding="utf-8"))
     if (summary.get("advertisement_count") != expected_count
             or summary.get("source_index_sha256") != digest(index_bytes)
-            or summary.get("review", {}).get("sha256") != digest(review_bytes)):
+            or summary.get("review", {}).get("sha256") != statistics.review_digest(review_bytes)):
         raise ShareError("baseline: saved statistics do not match current results")
     selected = [entry for entry in index["entries"] if entry["status"] == "current"]
     paths = [Path("out/current/index.json")]
@@ -108,7 +108,7 @@ def current_files(root):
     paths.extend(Path("out/statistics") / name for name in STATISTICS)
     if len(set(paths)) != len(paths):
         raise ShareError("baseline: duplicate selected path")
-    return sorted(paths), expected_count, digest(index_bytes), digest(review_bytes)
+    return sorted(paths), expected_count, digest(index_bytes), statistics.review_digest(review_bytes)
 
 
 def package(root=ROOT, baseline=BASELINE, db_target=DB_TARGET):
@@ -138,7 +138,7 @@ def package(root=ROOT, baseline=BASELINE, db_target=DB_TARGET):
 
         db_copy = staging / "db" / "state.sqlite3"
         db_copy.parent.mkdir(parents=True)
-        source = sqlite3.connect(f"file:{source_db.as_posix()}?mode=ro", uri=True)
+        source = sqlite3.connect(source_db.resolve().as_uri() + "?mode=ro", uri=True)
         try:
             version_before = source.execute("PRAGMA data_version").fetchone()[0]
             target = sqlite3.connect(db_copy)
@@ -217,7 +217,7 @@ def restore(root=ROOT, baseline=BASELINE, *, validate=True):
         raise ShareError("baseline: manifest is missing or invalid") from None
     if manifest.get("schema_version") != 1 or not isinstance(manifest.get("files"), list):
         raise ShareError("baseline: unsupported manifest")
-    if digest((root / "reviews/current-v2.json").read_bytes()) != manifest.get("review_sha256"):
+    if statistics.review_digest((root / "reviews/current-v2.json").read_bytes()) != manifest.get("review_sha256"):
         raise ShareError("baseline: review decisions differ from shared data")
     db_info = manifest.get("database")
     if not isinstance(db_info, dict) or db_info.get("archive") != "db/state.sqlite3.gz":
@@ -277,7 +277,7 @@ def restore(root=ROOT, baseline=BASELINE, *, validate=True):
         statistics.apply_selected_review(records)
         if state == "restored" and len(records) != manifest.get("selected_advertisements"):
             raise ShareError("baseline: restored advertisement count differs")
-        connection = sqlite3.connect(f"file:{target_db.as_posix()}?mode=ro", uri=True)
+        connection = sqlite3.connect(target_db.resolve().as_uri() + "?mode=ro", uri=True)
         try:
             if connection.execute("PRAGMA quick_check").fetchone()[0] != "ok":
                 raise ShareError("baseline: runtime database integrity check failed")

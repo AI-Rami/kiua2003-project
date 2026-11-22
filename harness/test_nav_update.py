@@ -245,6 +245,25 @@ class UpdateTests(unittest.TestCase):
         result = self.run_local()
         self.assertEqual((result["blocked"], result["extraction_requests"], self.calls), (1, 0, 0))
 
+    def test_raw_ambiguous_contact_passage_is_held_before_model(self):
+        self.queue_ad(outcome="review_blocked")
+        detail = {"uuid": self.ad_id, "status": "ACTIVE", "ad_content": {
+            "workLocations": [{"county": "INNLANDET", "municipal": "Hamar"}],
+            "occupationCategories": [{"level1": "IT", "level2": "Utvikling"}],
+            "description": "<p>Du må kunne Python og kontakt Kari Nord på kari@example.org for spørsmål.</p>",
+            "contactList": [], "sourceurl": self.source}}
+        db = discovery.connect(self.db_path)
+        discovery.save_detail_success(db, json.dumps(detail).encode("utf-8"), self.ad_id, 1,
+                                      backfill=False)
+        outcome = db.execute("SELECT outcome,reason FROM capture_state WHERE uuid=?",
+                             (self.ad_id,)).fetchone()
+        db.close()
+        self.assertEqual(tuple(outcome), ("review_blocked", "uncertain_mixed_contact_passage"))
+        result = self.run_local()
+        self.assertEqual((result["blocked"], result["extraction_requests"], self.calls), (1, 0, 0))
+        self.assertEqual(self.index()["entries"][0]["status"], "blocked")
+        self.assertEqual(json.loads((self.statistics / "summary.json").read_text(encoding="utf-8"))["advertisement_count"], 0)
+
     def test_held_capture_does_not_stop_next_ad(self):
         self.queue_ad("Du må kunne Python. Kontakt oss på test@example.org.")
         other = str(uuid.uuid4())

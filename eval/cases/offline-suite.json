@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "real_cases": [
+    {
+      "id": "REAL-01",
+      "uuid": "2ed29047-97e4-4168-adb9-8da83e968c94",
+      "role": "typical wording pattern",
+      "reason": "The reviewed text mixes an explicitly desirable technical qualification with technical duties."
+    },
+    {
+      "id": "REAL-02",
+      "uuid": "2f62e300-c698-4f53-8510-db90b1692cb9",
+      "role": "boundary",
+      "reason": "Broad Azure competence and named parenthesized services require separate classification decisions."
+    },
+    {
+      "id": "REAL-03",
+      "uuid": "5ae61e99-0980-4eac-a120-8338820483cc",
+      "role": "typical wording pattern",
+      "reason": "The reviewed text contains explicit required qualifications, preferred qualifications and work duties."
+    },
+    {
+      "id": "REAL-04",
+      "uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "role": "boundary",
+      "reason": "Technical duties and an interest topic appear without an explicit existing technical-skill requirement."
+    },
+    {
+      "id": "REAL-05",
+      "uuid": "b69f0bbd-082e-4d36-baae-456fb23ca32a",
+      "role": "boundary",
+      "reason": "A three-way required alternative must remain one group rather than independent requirements."
+    }
+  ],
+  "synthetic_cases": [
+    {
+      "id": "SYN-OR-001",
+      "kind": "alternative_group",
+      "input": "Du må kunne Python eller R.",
+      "expected": {"same_group_matches": 1, "split_singles_match": 0, "split_singles_extra": 2, "split_singles_omitted": 1}
+    },
+    {
+      "id": "SYN-CONTEXT-001",
+      "kind": "heading_context",
+      "input": "Ønskede kvalifikasjoner:\nGod kjennskap til Docker.",
+      "expected": {"validation_passed": true, "skill_quote": "exact", "context_quote": "exact"}
+    },
+    {
+      "id": "SYN-DUTY-001",
+      "kind": "duty_vs_qualification",
+      "input": "Arbeidsoppgaver:\nBruke PostgreSQL i teamets dataløsning.",
+      "expected": {"name_matches": 1, "classification_errors": 1, "mention_type_errors": 1}
+    },
+    {
+      "id": "SYN-QUOTE-001",
+      "kind": "quotation_boundary",
+      "input": "Kvalifikasjoner:\nDu må kunne Python.",
+      "expected": {"exact_passes": true, "changed_word_passes": false, "changed_whitespace_passes": false}
+    },
+    {
+      "id": "SYN-REJECT-001",
+      "kind": "input_rejection",
+      "input": "<p>Du må kunne Python og kontakt Kari Nord på kari@example.org for spørsmål.</p>",
+      "expected": {"capture_outcome": "review_blocked", "reason": "uncertain_mixed_contact_passage", "model_calls": 0, "published": 0}
+    }
+  ]
+}

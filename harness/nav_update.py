@@ -269,7 +269,7 @@ def statistics_need_refresh(index_path, statistics_root):
         return True
     try:
         summary = json.loads(path.read_text(encoding="utf-8"))
-        review_hash = hashlib.sha256(statistics.SELECTED_REVIEW.read_bytes()).hexdigest()
+        review_hash = statistics.review_digest(statistics.SELECTED_REVIEW.read_bytes())
         return (summary.get("source_index_sha256") != hashlib.sha256(index_path.read_bytes()).hexdigest()
                 or summary.get("review", {}).get("sha256") != review_hash)
     except (OSError, UnicodeError, ValueError):
