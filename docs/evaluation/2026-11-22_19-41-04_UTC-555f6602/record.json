@@ -1,0 +1,512 @@
+{
+  "mode": "model",
+  "generated_at_utc": "2026-11-22T19:41:04.557869+00:00",
+  "suite": "eval\\cases\\manifest.json",
+  "suite_sha256": "4cf7bca3519660128374c1f211f88ee6eca3c91642a74dcfe0985333f96419a8",
+  "model": "gpt-6-luna",
+  "prompt_sha256": "a9985b39a0301fa61627c31172d9c74a7b8e4c6ebb4265b5e93f91b7826904a3",
+  "baseline_prompt_sha256": "789bf663f2303ff46257cd22e85ea2fa08f8fff020fda401bc18aa572258543b",
+  "schema_sha256": "b84a98dfae5ddebe5d6c796e369d02537668f6bb0c151b4381144a45a30e048c",
+  "reasoning_effort": "medium",
+  "max_output_tokens": 8192,
+  "max_requests": 5,
+  "max_seconds": 900.0,
+  "max_cost_usd": 0.05,
+  "estimated_max_cost_usd": 0.030039,
+  "estimated_actual_cost_usd": 0.0100225,
+  "pricing_usd_per_million": {
+    "input": 0.1,
+    "output": 0.5
+  },
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "selected": 5,
+  "approved_selected": 5,
+  "cases": [
+    {
+      "uuid": "2ed29047-97e4-4168-adb9-8da83e968c94",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/2ed29047-97e4-4168-adb9-8da83e968c94",
+      "status": "validated",
+      "reference_status": "approved_complete",
+      "input_sha256": "9139ae297bf88116dbb05dafcec8172b28688c1ca8a4647c6c40beb661b08c88",
+      "request_sha256": "27d7598e76a0371f2a45ac1ff8e5b52ef36c06c99780080a4c153f87e6a698e2",
+      "elapsed_seconds": 32.482811900088564,
+      "response_sha256": "1d818418ede4c03882f4be1cf4e5e2ddbcbfd79d34f1927d1701bbf5425f9eb5",
+      "response_id": "resp_0a09fad98ffb4e07016b034552d45887d288a044f5d9277329",
+      "response_model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3018,
+        "input_tokens_details": {
+          "cache_write_tokens": 3015,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 3015
+          },
+          "cached_tokens": 0
+        },
+        "output_tokens": 3574,
+        "output_tokens_details": {
+          "reasoning_tokens": 2945
+        },
+        "total_tokens": 6592
+      },
+      "estimated_cost_usd": 0.0020888,
+      "validation_passed": true,
+      "validation_errors": [],
+      "accuracy_score": {
+        "reference_count": 5,
+        "model_count": 11,
+        "matched": 2,
+        "unsupported_model_indexes": [
+          0,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "omitted_reference_indexes": [
+          1,
+          2,
+          4
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [],
+        "precision": 0.18181818181818182,
+        "recall": 0.4,
+        "f1": 0.25000000000000006
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "Information management procedure development and follow-up",
+          "Artificial intelligence development",
+          "Artificial intelligence use",
+          "Information governance",
+          "Data and information storage",
+          "Data and information traceability",
+          "Data and information searchability",
+          "Intelligence",
+          "Artificial intelligence"
+        ],
+        "unmatched_reference_names": [
+          "AI development",
+          "AI use",
+          "Development of information management procedures"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": []
+      }
+    },
+    {
+      "uuid": "2f62e300-c698-4f53-8510-db90b1692cb9",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/2f62e300-c698-4f53-8510-db90b1692cb9",
+      "status": "validated",
+      "reference_status": "approved_complete",
+      "input_sha256": "907e17b44b349aa77aef78b7b0fd47ec2150abab6398e4e29b357ccc852b8b94",
+      "request_sha256": "cf431b6a38cfa2ee331c932df4c5bb3917b30a80669becb17c1d2bf7d810847a",
+      "elapsed_seconds": 31.26618769997731,
+      "response_sha256": "4a3d2185722c86304a7caacf57dd9df4642d0e7e6f9d27584f7006e8cb9049d8",
+      "response_id": "resp_04be13cf85aff5f2016b0345723b3487d2b97c49f6eb8201f3",
+      "response_model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2350,
+        "input_tokens_details": {
+          "cache_write_tokens": 298,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 298
+          },
+          "cached_tokens": 2049
+        },
+        "output_tokens": 3645,
+        "output_tokens_details": {
+          "reasoning_tokens": 1981
+        },
+        "total_tokens": 5995
+      },
+      "estimated_cost_usd": 0.0020575,
+      "validation_passed": true,
+      "validation_errors": [],
+      "accuracy_score": {
+        "reference_count": 29,
+        "model_count": 30,
+        "matched": 20,
+        "unsupported_model_indexes": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14
+        ],
+        "omitted_reference_indexes": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [],
+        "precision": 0.6666666666666666,
+        "recall": 0.6896551724137931,
+        "f1": 0.6779661016949153
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "Microsoft Entra",
+          "Azure Key Vault",
+          "Azure Storage accounts",
+          "Azure App Services",
+          "Azure App Configuration",
+          "Azure Functions",
+          "Azure Application Insights",
+          "Relational databases",
+          "SQL",
+          "Infrastructure as Code (IaC)"
+        ],
+        "unmatched_reference_names": [
+          "Entra",
+          "Key Vault",
+          "Storage accounts",
+          "App Services",
+          "App configuration",
+          "Azure functions",
+          "Application Insights",
+          "Relational databases (SQL)",
+          "Infrastructure as Code"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": []
+      }
+    },
+    {
+      "uuid": "5ae61e99-0980-4eac-a120-8338820483cc",
+      "title": "Systemingeniør (IoT/energi), Rondekraft",
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/5ae61e99-0980-4eac-a120-8338820483cc",
+      "status": "failed",
+      "reference_status": "approved_complete",
+      "input_sha256": "f00301a8ee964f077b9b77d63b47cfb4df9960b8d77d785fcf824204281091f6",
+      "request_sha256": "0dab7b3e8e88b017639f60138e6ceda651621d3aafef9af7d0dcc0bc74a1c5bd",
+      "elapsed_seconds": 31.251317400019616,
+      "response_sha256": "0655c35cfce270bde35a3166bba68ed680e12c97c59e2fb8db81813729c20add",
+      "response_id": "resp_09dd26451f508fcb016b034591b6f087d28f3b95c1b6461008",
+      "response_model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2606,
+        "input_tokens_details": {
+          "cache_write_tokens": 554,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 554
+          },
+          "cached_tokens": 2049
+        },
+        "output_tokens": 3645,
+        "output_tokens_details": {
+          "reasoning_tokens": 2350
+        },
+        "total_tokens": 6251
+      },
+      "estimated_cost_usd": 0.0020831,
+      "validation_passed": false,
+      "validation_errors": [
+        "item 9: skill quotation is not an exact continuous passage",
+        "item 10: skill quotation is not an exact continuous passage"
+      ],
+      "reason": "structural or quotation validation failed"
+    },
+    {
+      "uuid": "a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/a1613f9c-1757-4351-81ea-1d0e5246fbd3",
+      "status": "validated",
+      "reference_status": "approved_complete",
+      "input_sha256": "0adbea9416971ebc052cdafde4aba54fc0eef56ee0fab127cf990057fc90d08e",
+      "request_sha256": "9813e76fcd2a9a0dd6a4995f1ee41e6267f285f505ac86a998a2706555af9bd0",
+      "elapsed_seconds": 20.686879000044428,
+      "response_sha256": "07117613764e777667a3b04650e7f8d2202382bb59d30f4eb74082e71bce8cac",
+      "response_id": "resp_003aef23844eaa2c016b0345b0f52c87d280865f783b97108c",
+      "response_model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 3181,
+        "input_tokens_details": {
+          "cache_write_tokens": 1129,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 1129
+          },
+          "cached_tokens": 2049
+        },
+        "output_tokens": 2336,
+        "output_tokens_details": {
+          "reasoning_tokens": 1839
+        },
+        "total_tokens": 5517
+      },
+      "estimated_cost_usd": 0.0014861,
+      "validation_passed": true,
+      "validation_errors": [],
+      "accuracy_score": {
+        "reference_count": 10,
+        "model_count": 11,
+        "matched": 4,
+        "unsupported_model_indexes": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          10
+        ],
+        "omitted_reference_indexes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "classification_error_pairs": [],
+        "mention_type_error_pairs": [],
+        "missing_alternative_group_indexes": [],
+        "precision": 0.36363636363636365,
+        "recall": 0.4,
+        "f1": 0.380952380952381
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "ICT systems operations",
+          "ICT infrastructure operations",
+          "ICT systems development",
+          "ICT infrastructure development",
+          "Hardware configuration",
+          "Software configuration",
+          "Digital solutions"
+        ],
+        "unmatched_reference_names": [
+          "IT systems operation",
+          "IT systems development",
+          "IT infrastructure operation",
+          "IT infrastructure development",
+          "Hardware setup",
+          "Software setup"
+        ],
+        "classification_differences": [],
+        "mention_type_differences": [],
+        "unmatched_or_groups": []
+      }
+    },
+    {
+      "uuid": "b69f0bbd-082e-4d36-baae-456fb23ca32a",
+      "title": null,
+      "source_url": "https://arbeidsplassen.nav.no/stillinger/stilling/b69f0bbd-082e-4d36-baae-456fb23ca32a",
+      "status": "validated",
+      "reference_status": "approved_complete",
+      "input_sha256": "57f8290a68b083851d0bb227373017dbb8d4a5ed2354d0053bad55e2d1b2fa85",
+      "request_sha256": "7cb77cf636b9513635db9029927a43b7cd22dd08b0ad3ad11fbf4244a562319e",
+      "elapsed_seconds": 34.07039939996321,
+      "response_sha256": "29f34262377c7ef9cf08d32db1617525a6832b481fc09ded99aebccc2d76c0b2",
+      "response_id": "resp_0fa0596c67cb391b016b0345c5ba9c87d2b9f7bb279d85b915",
+      "response_model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 2715,
+        "input_tokens_details": {
+          "cache_write_tokens": 663,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 663
+          },
+          "cached_tokens": 2049
+        },
+        "output_tokens": 4071,
+        "output_tokens_details": {
+          "reasoning_tokens": 2508
+        },
+        "total_tokens": 6786
+      },
+      "estimated_cost_usd": 0.002307,
+      "validation_passed": true,
+      "validation_errors": [],
+      "accuracy_score": {
+        "reference_count": 29,
+        "model_count": 29,
+        "matched": 16,
+        "unsupported_model_indexes": [
+          1,
+          2,
+          8,
+          9,
+          13,
+          14,
+          15,
+          22,
+          23,
+          25,
+          26,
+          27,
+          28
+        ],
+        "omitted_reference_indexes": [
+          1,
+          2,
+          12,
+          13,
+          14,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "classification_error_pairs": [
+          [
+            8,
+            24
+          ]
+        ],
+        "mention_type_error_pairs": [
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            8,
+            24
+          ]
+        ],
+        "missing_alternative_group_indexes": [
+          21
+        ],
+        "precision": 0.5517241379310345,
+        "recall": 0.5517241379310345,
+        "f1": 0.5517241379310345
+      },
+      "comparison": {
+        "unmatched_model_names": [
+          "Application development",
+          "Application build generation",
+          "Agile development processes",
+          "Game engine knowledge",
+          "Performance",
+          "Optimization",
+          "Code comprehension",
+          "VR optimization OR Network programming OR Cross-disciplinary collaboration in development teams",
+          "Scalable, maintainable, technically sound solution design",
+          "Explaining technical concepts",
+          "Technical architecture decision-making",
+          "User experience in VR/AR environments",
+          "Working with multiple platforms and devices"
+        ],
+        "unmatched_reference_names": [
+          "Software development",
+          "Software builds",
+          "Software performance",
+          "Software optimization",
+          "Codebase comprehension",
+          "VR optimization OR Network code OR Cross-disciplinary collaboration in development teams",
+          "Building scalable solutions",
+          "Building maintainable solutions",
+          "Technical concept communication",
+          "Technical architecture decision ownership",
+          "Understanding UX effects of technical choices in VR/AR",
+          "Working across platforms and devices",
+          "XR technology"
+        ],
+        "classification_differences": [
+          {
+            "name": "Game engines",
+            "reference": "preferred",
+            "model": "unclear"
+          }
+        ],
+        "mention_type_differences": [
+          {
+            "name": "Android",
+            "reference": "work_duty",
+            "model": "work_context"
+          },
+          {
+            "name": "iOS",
+            "reference": "work_duty",
+            "model": "work_context"
+          },
+          {
+            "name": "Windows",
+            "reference": "work_duty",
+            "model": "work_context"
+          },
+          {
+            "name": "Mac",
+            "reference": "work_duty",
+            "model": "work_context"
+          },
+          {
+            "name": "VR devices",
+            "reference": "work_duty",
+            "model": "work_context"
+          },
+          {
+            "name": "Game engines",
+            "reference": "candidate_qualification",
+            "model": "interest_only"
+          }
+        ],
+        "unmatched_or_groups": [
+          "VR optimization OR Network code OR Cross-disciplinary collaboration in development teams"
+        ]
+      }
+    }
+  ],
+  "accuracy_score": {
+    "matched": 42,
+    "model_count": 81,
+    "reference_count": 73,
+    "precision": 0.5185185185185185,
+    "recall": 0.5753424657534246,
+    "f1": 0.5454545454545454
+  },
+  "approved_scored": 4,
+  "attempted": 5,
+  "validated": 4,
+  "failed": 1,
+  "not_run": 0,
+  "partial": false,
+  "stop_reason": "all selected cases attempted"
+}

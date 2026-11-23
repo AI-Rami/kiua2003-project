@@ -511,3 +511,9 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 
 - Packaged five screened original answer strings with the response metadata used by the validator. The first local check caught missing response ID and usage in the replay envelope. Added the original values and compared scorer index pairs in their JSON representation.
 - The documented offline check reproduced four validated responses, the original item 8 rejection, and 50 matches among 84 model items and 80 reference items. No new model or NAV requests were made.
+
+## 2026-11-22 - Final prompt test
+
+- Clarified the exclusion of education and equivalent-background routes and added a final count of names in each single item. All 22 local evaluator tests passed.
+- Five fresh requests produced four validated responses. ICT passed and the education list disappeared, but two energy-ad items quoted a passage with extra words. The Azure preferred labels and the complete game-ad OR condition were preserved. No case was retried.
+- The [final review](evaluation/2026-11-22_19-41-04_UTC-555f6602/reviewed-report.md) links the tested instructions, answers and original scores. On the same three validated ads, exact F1 moved from 0.578 to 0.571.

@@ -1,2 +1,3 @@
 shared/baseline/data/* -text -diff
 shared/baseline/db/* -text
+docs/evaluation/*/prompt.txt text eol=lf

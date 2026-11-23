@@ -43,6 +43,16 @@ This checks the shared data and restoration, not extraction accuracy.
 
 ## Evaluate the saved workflow
 
+Read the exact extraction instructions used in each test:
+
+- [Version 1 — prompt used to produce the answers replayed in the first test](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/prompt.txt)
+- [Version 2 — prompt sent in the second test](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/prompt.txt)
+- [Version 3 — final prompt, with education and single-skill checks](docs/evaluation/2026-11-22_19-41-04_UTC-555f6602/prompt.txt)
+
+The [final test review](docs/evaluation/2026-11-22_19-41-04_UTC-555f6602/reviewed-report.md) covers all five outcomes and compares the three ads validated in both fresh runs.
+
+The application reads its [current extraction prompt](harness/prompts/extract_skills.txt).
+
 To reproduce the **second test** from the five saved revised-prompt answers, run
 
 ```powershell
