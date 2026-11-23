@@ -56,12 +56,27 @@ On 23 November 2026, we ran the project's automated tests on a local computer. *
 | Could an uncertain contact passage reach the AI?           | A test ad mentioned a Python skill requirement and gave contact instructions in the same sentence. The program held the ad for review before extraction. The test counted zero AI calls and zero new results. The earlier evaluation log records the same case as `SYN-REJECT-001` in `docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/record.json`. |
 | Could two clicks start two updates?                        | The test started a simulated update and kept it running while requesting a second start. The dashboard refused the second start. The test counted exactly one update running.                                                                                                                                                                         |
 
-To repeat the checks, open PowerShell in the project folder and run:
+### Where to find the tests and their results
+
+To see how a check works, open the file in the middle column and search for the test name in the last column.
+
+| Example from this report | File in the project | Test name to search for |
+|---|---|---|
+| OpenAI asks the program to slow down | `harness/test_nav_update.py` | `test_model_rate_limit_stops_batch_and_keeps_other_work` |
+| NAV refuses access | `harness/test_nav_update.py` | `test_discovery_auth_failure_stops_processing` |
+| One ad waits after the request limit is reached | `harness/test_nav_update.py` | `test_extraction_limit_keeps_second_ad_pending` |
+| Collection reports that time ran out | `harness/test_nav_update.py` | `test_time_limit_without_events_is_not_no_updates` |
+| A sentence mixes a skill requirement with contact details | `harness/test_nav_update.py` | `test_raw_ambiguous_contact_passage_is_held_before_model` |
+| Someone starts a second update | `harness/test_nav_dashboard.py` | `test_no_updates_and_duplicate_start_guard` checks that only one update runs. `test_button_endpoint_starts_once` checks the replies sent to the browser. |
+
+**Saved example.** To see a result without running anything, open `docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/report.md` and search for `SYN-REJECT-001`. That entry gives the expected and observed outcomes for the contact case in the **22 November** evaluation. The test input is in `eval/cases/offline-suite.json`. The evaluation test that checks the reported outcomes is `test_pinned_catalog_and_separate_synthetic_results` in `eval/test_evaluation.py`.
+
+**The 23 November run.** The three commands below printed their results in PowerShell. The totals are recorded above. We did not save a separate terminal log for that run. To see each test name and its result on your own computer, run these commands from the project folder. The `-v` option prints one line per test.
 
 ```powershell
-python -m unittest discover -s harness -p test_nav_update.py
-python -m unittest discover -s harness -p test_nav_dashboard.py
-python -m unittest discover -s eval -p test_evaluation.py
+python -m unittest discover -v -s harness -p test_nav_update.py
+python -m unittest discover -v -s harness -p test_nav_dashboard.py
+python -m unittest discover -v -s eval -p test_evaluation.py
 ```
 
 To find the rules in the code, start with `harness/nav_update.py` for decisions and limits. NAV requests are handled in `harness/nav_collect.py` and `harness/nav_discover.py`, cleaning in `harness/nav_text.py`, and AI requests and answer checks in `harness/nav_skeleton.py`. The local dashboard is in `harness/nav_dashboard.py`, shared-data checks are in `harness/share_data.py`, and evaluation budgets are in `eval/run.py`.
