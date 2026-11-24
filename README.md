@@ -58,6 +58,8 @@ The five real advertisements also guided prompt revisions. Accuracy on unfamilia
 
 ## Optional live update
 
+Select **View cases** beside the update details to see saved failures and holds, their reasons and the affected advertisements. If a previous failure has used all allowed attempts, later updates identify it separately from new failures. Other eligible ads can still be processed.
+
 Set your own OpenAI key in the `KIUA2003_API` environment variable **before starting the server**, then select **Run update**. This contacts NAV and may incur model charges. Keep credentials out of Git.
 
 The program resumes the saved NAV feed position and checks new or changed advertisements for active IT jobs listing Innlandet. It screens contact details, sends eligible text to the model and checks the returned structure and quotations. It reuses unchanged results and refreshes statistics from selected results. A skill counts once per distinct advertisement in the total. Alternatives such as “Python or R” appear together. Automatic contact screening and quotation checks have limits, which the safe-operation and evaluation reports describe.

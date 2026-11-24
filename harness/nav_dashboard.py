@@ -4,6 +4,7 @@ The server binds only to loopback. Its update button calls nav_update.run_update
 """
 
 import argparse
+from contextlib import closing
 from datetime import date, datetime, timedelta, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -182,6 +183,55 @@ def quality_state(index_path=update.DEFAULT_INDEX, db_path=update.DEFAULT_DB):
     return result
 
 
+CASE_REASONS = {
+    "relevance_unknown:county_unknown_only": "The saved location does not establish whether the job is in Innlandet.",
+    "relevance_unknown:occupation_unknown_only": "The saved occupation does not establish whether this is an IT job.",
+    "relevance_unknown:both_conditions_unknown": "Both the county and the IT occupation are uncertain.",
+    "input_review_blocked": "The prepared text did not pass the input check for automatic extraction.",
+    "model_request_failed": "The request to the model failed.",
+    "validation_failed": "The model answer failed a validation check.",
+    "detail_unavailable": "NAV did not provide details for this version.",
+    "capture_invalid_or_unavailable": "A usable cleaned advertisement was unavailable.",
+}
+
+
+def review_cases(index_path, db_path):
+    entries = update.load_index(index_path)["entries"]
+    cases = []
+    for row in entries:
+        reason = row.get("blocked_reason") or row.get("processing_status") or row.get("reason")
+        held = row["status"] == "blocked" or bool(row.get("blocked_reason"))
+        if not held and row["status"] != "failed" and not (
+                row["status"] == "stale" and reason in ("model_request_failed", "validation_failed")):
+            continue
+        ad_id = row["uuid"]
+        message = CASE_REASONS.get(reason, "This version is held for review." if held else "Processing failed.")
+        cases.append({"uuid": ad_id, "title": evidence_for_display(row.get("display_title")),
+                      "status": "Held for review" if held else "Failed", "reason": message})
+        digest = row.get("pending_content_sha256") or ""
+        if not held and re.fullmatch(r"[0-9a-fA-F-]{36}", ad_id) and re.fullmatch(r"[0-9a-f]{64}", digest):
+            folder = db_path.parent / "processing" / ad_id / digest
+            attempts = [p for p in folder.glob("attempt-*") if p.name[8:].isdigit()]
+            if attempts:
+                latest = max(attempts, key=lambda p: int(p.name[8:]))
+                try:
+                    errors = json.loads((latest / "validation.json").read_text(encoding="utf-8"))["errors"]
+                    if isinstance(errors, list):
+                        cases[-1]["details"] = [msg for msg in errors if evidence_for_display(msg)]
+                        if errors:
+                            cases[-1]["reason"] = CASE_REASONS["validation_failed"]
+                except (OSError, ValueError, KeyError, TypeError):
+                    pass
+    if cases and db_path.is_file():
+        with closing(sqlite3.connect(db_path.resolve().as_uri() + "?mode=ro", uri=True)) as db:
+            for case in cases:
+                if not case["title"]:
+                    title = db.execute("SELECT title FROM ad_titles WHERE uuid=?", (case["uuid"],)).fetchone()
+                    if title:
+                        case["title"] = evidence_for_display(title[0])
+    return cases
+
+
 class UpdateManager:
     def __init__(self, *, run_fn=None, index_path=update.DEFAULT_INDEX,
                  current_root=update.DEFAULT_CURRENT, db_path=update.DEFAULT_DB,
@@ -254,7 +304,7 @@ class UpdateManager:
             status = report.get("status", "failed")
             safe = {key: report.get(key) for key in
                     ("pages", "details", "extraction_requests", "processed", "reused", "blocked",
-                     "failed", "pending", "feed_end_reached", "stop_reason", "statistics_ads")}
+                     "failed", "earlier_failures", "pending", "feed_end_reached", "stop_reason", "statistics_ads")}
             completed = {"status": status, "stage": "Finished", "report": safe}
         except Exception as exc:
             message = str(exc) if isinstance(exc, update.UpdateError) else type(exc).__name__
@@ -291,6 +341,14 @@ class DashboardHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         route = urlsplit(self.path)
+        if route.path == "/api/cases":
+            try:
+                cases = review_cases(self.manager.index_path, self.manager.db_path)
+            except (update.UpdateError, sqlite3.Error, OSError):
+                self.send_json(503, {"error": "Saved review cases are temporarily unavailable."})
+                return
+            self.send_json(200, {"cases": cases})
+            return
         if route.path == "/api/status":
             try:
                 quality = quality_state(self.manager.index_path, self.manager.db_path)

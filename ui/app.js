@@ -80,6 +80,7 @@ function renderTable(){
   $("table-wrap").hidden=rows.length===0;
 }
 function showSupport(row,focus){
+  $("drawer-label").textContent="Supporting advertisements";
   state.lastFocus=focus;
   const title=row.skill||row.skills.join(" OR ");
   $("drawer-title").textContent=title;
@@ -98,6 +99,31 @@ function showSupport(row,focus){
     if(ad.classification_context){card.append(elt("div","metric-label","CLASSIFICATION CONTEXT"));card.append(elt("blockquote","context",ad.classification_context));}
     const link=elt("a",null,"Open original NAV advertisement ↗");link.href=ad.source_url;link.target="_blank";link.rel="noopener noreferrer";card.append(link);list.append(card);
   }
+  openDrawer();
+}
+async function showCases(){
+  state.lastFocus=$("view-cases");
+  $("drawer-label").textContent="Update details";
+  $("drawer-title").textContent="Ads to review";
+  $("drawer-description").textContent="Failed extractions and advertisements held for review in the saved dataset.";
+  const list=$("drawer-list");clear(list);
+  const content=elt("div",null,"Loading cases…");list.append(content);
+  openDrawer();
+  try{
+    const {cases}=await jsonRequest("/api/cases");
+    clear(content);
+    if(!cases.length)content.append(elt("p",null,"There are no saved cases to review."));
+    for(const ad of cases){
+      const card=elt("article","support-card");
+      card.append(elt("span","pill",ad.status),elt("h3",null,ad.title||"Advertisement"),elt("p","uuid",ad.uuid),elt("p",null,ad.reason));
+      for(const detail of ad.details||[])card.append(elt("p",null,detail));
+      const link=elt("a",null,"View advertisement on NAV ↗");
+      link.href="https://arbeidsplassen.nav.no/stillinger/stilling/"+encodeURIComponent(ad.uuid);
+      link.target="_blank";link.rel="noopener noreferrer";card.append(link);content.append(card);
+    }
+  }catch(error){content.textContent=error.message;}
+}
+function openDrawer(){
   $("drawer-backdrop").hidden=false;$("drawer").hidden=false;document.body.style.overflow="hidden";$("close-drawer").focus();
 }
 function closeDrawer(){$("drawer").hidden=true;$("drawer-backdrop").hidden=true;document.body.style.overflow="";state.lastFocus?.focus();}
@@ -123,11 +149,16 @@ function updateStatus(status){
   if(status.running){$("update-status").textContent=`${last?.stage||"Working"} · ${last?.pages||0} pages · ${last?.details||0} details. Saved results remain visible.`;return;}
   if(!last){$("update-status").textContent="Saved results stay available while an update runs.";return;}
   const report=last.report||{};
-  const names={caught_up:"Update complete",no_updates_found:"No new updates",partial_pending:"Progress saved — work remains",discovery_failed:"Update failed — progress saved",processing_failed:"Update failed — progress saved",failed:"Update failed"};
+  const names={finished_with_cases:"Update finished",caught_up:"Update complete",no_updates_found:"No new updates",partial_pending:"Progress saved — work remains",discovery_failed:"Update failed — progress saved",processing_failed:"Update failed — progress saved",failed:"Update failed"};
   const completeWithoutNewResults=last.status==="caught_up"&&report.processed===0;
   const held=report.blocked>0?` · ${report.blocked} held for review`:"";
-  $("update-status").textContent=last.error?`${names[last.status]||"Update failed"}: ${last.error}`:(completeWithoutNewResults?"Update complete — no new skill results":names[last.status]||last.status)+held;
-  $("update-detail-text").textContent=last.error||`Feed pages: ${report.pages??0} · Detail requests: ${report.details??0} · Extraction requests: ${report.extraction_requests??0} · Published: ${report.processed??0} · Resolved without extraction: ${report.reused??0} · Blocked during run: ${report.blocked??0} · Failed: ${report.failed??0} · Remaining: ${report.pending??0}. ${report.stop_reason&&report.stop_reason!==last.status?`Stop reason: ${report.stop_reason}.`:""}`;
+  const earlier=report.earlier_failures||0;
+  const previous=earlier ? ` · ${earlier} earlier ${earlier===1?"failure needs":"failures need"} review` : "";
+  if(last.status==="processing_failed" && report.earlier_failures==null && report.extraction_requests===0){
+    names.processing_failed="Saved run reported a failure · no new AI request";
+  }
+  $("update-status").textContent=last.error?`${names[last.status]||"Update failed"}: ${last.error}`:(completeWithoutNewResults?"Update complete — no new skill results":names[last.status]||last.status)+held+previous;
+  $("update-detail-text").textContent=last.error||`Feed pages: ${report.pages??0} · Detail requests: ${report.details??0} · Extraction requests: ${report.extraction_requests??0} · Published: ${report.processed??0} · Resolved without extraction: ${report.reused??0} · Blocked during run: ${report.blocked??0} · ${report.earlier_failures==null?"Failed":"New failures"}: ${report.failed??0}${report.earlier_failures==null?"":` · Earlier failures: ${earlier}`} · Remaining: ${report.pending??0}. ${report.stop_reason&&report.stop_reason!==last.status?`Stop reason: ${report.stop_reason}.`:""}`;
 }
 async function pollStatus(){
   try{const status=await jsonRequest("/api/status");const wasRunning=!!state.wasRunning;state.wasRunning=status.running;updateStatus(status);if(wasRunning&&!status.running)await loadData();}
@@ -144,6 +175,7 @@ function init(){
   let searchTimer;$("skill-search").addEventListener("input",()=>{clearTimeout(searchTimer);searchTimer=setTimeout(loadData,220);});
   $("sort").addEventListener("change",()=>{state.sort=$("sort").value;renderTable();});
   document.querySelectorAll(".tab").forEach(button=>button.addEventListener("click",()=>{state.tab=button.dataset.tab;document.querySelectorAll(".tab").forEach(t=>{t.classList.toggle("active",t===button);t.setAttribute("aria-selected",String(t===button));});renderTable();}));
+  $("view-cases").addEventListener("click",showCases);
   $("run-update").addEventListener("click",runUpdate);$("close-drawer").addEventListener("click",closeDrawer);$("drawer-backdrop").addEventListener("click",closeDrawer);
   document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!$("drawer").hidden)closeDrawer();});
   loadData();pollStatus();state.timer=setInterval(pollStatus,2000);

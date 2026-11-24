@@ -419,6 +419,14 @@ class UpdateTests(unittest.TestCase):
         self.assertEqual(self.index()["entries"][0]["status"], "stale")
         self.assertEqual(json.loads((self.statistics / "summary.json").read_text(encoding="utf-8"))["advertisement_count"], 0)
         self.assertEqual(self.calls, 2)
+        retry = self.run_local(extract=invalid)
+        self.assertEqual((retry["failed"], retry["earlier_failures"]), (1, 0))
+        for _ in range(2):
+            later = self.run_local(discover=self.no_changes)
+            self.assertEqual((later["status"], later["failed"], later["earlier_failures"],
+                              later["pending"], later["extraction_requests"]),
+                             ("finished_with_cases", 0, 1, 1, 0))
+        self.assertEqual(self.calls, 3)
 
     def test_saved_response_is_reused_after_interruption(self):
         self.queue_ad()

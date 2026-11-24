@@ -300,7 +300,7 @@ def run_update(db_path=DEFAULT_DB, index_path=DEFAULT_INDEX, current_root=DEFAUL
     started = time.monotonic()
     deadline = started + max_seconds
     report = {"pages": 0, "details": 0, "extraction_requests": 0, "processed": 0,
-              "reused": 0, "blocked": 0, "failed": 0, "pending": 0,
+              "reused": 0, "blocked": 0, "failed": 0, "earlier_failures": 0, "pending": 0,
               "discovery_stop": None, "status": "running", "statistics_refreshed": False}
     emit = progress or (lambda event: None)
     db = discovery.connect(db_path)
@@ -417,7 +417,7 @@ def run_update(db_path=DEFAULT_DB, index_path=DEFAULT_INDEX, current_root=DEFAUL
                 record_queue(db, ad_id, "complete", digest=digest)
                 report["reused"] += 1
                 continue
-            if old is not None and old.get("status") == "stale" and old.get("pending_content_sha256") == digest:
+            if old is not None and old.get("status") in ("stale", "failed") and old.get("pending_content_sha256") == digest:
                 pass
             else:
                 replacement = proposed_stale(old, "pending_changed_version", pending_hash=digest,
@@ -468,12 +468,11 @@ def run_update(db_path=DEFAULT_DB, index_path=DEFAULT_INDEX, current_root=DEFAUL
                 emit({"stage": "published", "uuid": ad_id, "message": "recovered saved response"})
                 continue
             prior_stage = work_root / f"attempt-{attempts}"
-            response = (existing_response(prior_stage)
-                        if attempts > 0 and queue["error_kind"] != "validation_failed" else None)
+            rejected = queue["error_kind"] == "validation_failed" or (
+                queue["error_kind"] == "attempt_limit" and (prior_stage / "validation.json").is_file())
+            response = existing_response(prior_stage) if attempts > 0 and not rejected else None
             if attempts >= max_attempts and response is None:
-                record_queue(db, ad_id, "failed", digest=digest, error="attempt_limit")
-                report["failed"] += 1
-                emit({"stage": "failed", "uuid": ad_id, "reason": "attempt_limit"})
+                report["earlier_failures"] += 1
                 continue
             if response is None and report["extraction_requests"] >= max_extractions:
                 continue
@@ -553,8 +552,10 @@ def run_update(db_path=DEFAULT_DB, index_path=DEFAULT_INDEX, current_root=DEFAUL
             report["status"] = "discovery_failed"
         elif report["failed"]:
             report["status"] = "processing_failed"
-        elif report["pending"] or discovery.state(db, "phase") != "done":
+        elif report["pending"] > report["earlier_failures"] or discovery.state(db, "phase") != "done":
             report["status"] = "partial_pending"
+        elif report["earlier_failures"]:
+            report["status"] = "finished_with_cases"
         elif (report["new_feed_events"] == 0
                 and report["details"] == report["processed"] == report["reused"] == report["blocked"] == 0):
             report["status"] = "no_updates_found"

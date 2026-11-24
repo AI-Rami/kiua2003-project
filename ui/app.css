@@ -43,6 +43,7 @@ h1 em { color: #2769c7; font-style: normal; }
 .update-status { margin-top: 12px; color: #667d99; font-size: 12px; line-height: 1.45; }
 .update-details { margin-top: 10px; padding-top: 8px; border-top: 1px solid #e8eef5; color: #617993; font-size: 12px; }
 .update-details summary { cursor: pointer; color: #326cba; font-weight: 650; }
+#view-cases { margin-top: 6px; border: 1px solid #bfcee1; border-radius: 6px; background: white; padding: 5px 10px; color: #1c4f91; font-weight: 650; }
 .update-details p { margin: 8px 0 0; font-size: 12px; line-height: 1.5; }
 
 .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 76px; }
