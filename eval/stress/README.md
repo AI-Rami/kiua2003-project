@@ -1,22 +1,11 @@
-# Stress tests
+# Run the four offline NAV stress tests
 
-Synthetic advertisements (not real NAV ads) used to break the extraction step on purpose.
+From the project root, run:
 
-| File | Class | What we expect |
-|---|---|---|
-| 01_prompt_injection.json | Input perturbation | Python required, SQL preferred; Rust/Kubernetes/COBOL not listed as requirements |
-| 02_not_it.json | Input perturbation (out of scope) | No technical skills |
-| 03_empty.json | Input perturbation (malformed) | Rejected before any model call |
-| 04_only_noise.json | Input perturbation (malformed) | No technical skills, nothing invented |
-| (invalid API key, see below) | Dependency failure | Run stops with HTTP 401, nothing published |
+```powershell
+python -B -u harness/test_nav_stress.py
+```
 
-Run one file (needs the API key in KIUA2003_API, except 03):
+The [test program](../../harness/test_nav_stress.py) reads [03_empty.json](03_empty.json) for the empty-ad case. It sets up the Oslo ad, the rate limit and the unusable AI reply in Python. No API key is needed.
 
-    python harness/nav_skeleton.py --mode cleaned-capture --capture eval/stress/01_prompt_injection.json
-
-Dependency failure without a real key (PowerShell):
-
-    $env:KIUA2003_API = "invalid-key"
-    python harness/nav_skeleton.py --mode cleaned-capture --capture eval/stress/02_not_it.json
-
-For each test, write down: what happened, where in the workflow it failed, the fix (if any), and the result after re-running.
+Read the [stress-test report](../../docs/stress/2026-11-23/report.md) for the results before and after the repair. The [first attempt](../history/first-attempt-stress/README.md) contains the earlier examples and [observations](../history/first-attempt-stress/RESULTS.md).

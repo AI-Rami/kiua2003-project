@@ -22,4 +22,4 @@
 
 Write one dated report covering all four cases, with the exact commands a teacher can run and the location of the saved output. For each case, distinguish the expected and observed behaviour, explain which step stopped or passed on the fault, and show the before-and-after evidence for any repair. Mark unresolved failures and unrun cases explicitly.
 
-Use `eval/stress/RESULTS.md` and `docs/safe-operation.md` as pointers to earlier observations. Keep those observations separate from results collected for this task.
+For earlier observations, see the [first stress-test attempt](../eval/history/first-attempt-stress/RESULTS.md) and the [safe-operation report](../docs/safe-operation.md). The [current stress-test README](../eval/stress/README.md) gives the command for repeating this task.
