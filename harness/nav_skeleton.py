@@ -197,6 +197,10 @@ def extract(prepared, run_dir, *, cleaned_capture=False):
 def validate(response, prepared):
     errors = []
     quotation_matches = []
+    if not isinstance(response, dict):
+        return {"format_version": FORMAT_VERSION, "passed": False,
+                "errors": ["API response must be a JSON object"],
+                "quotation_matches": [], "checks": ["API response is a JSON object"]}, None
     if response.get("status") != "completed":
         errors.append("API response is not completed")
     if response.get("incomplete_details"):

@@ -1,0 +1,16 @@
+Failure: prepare: capture has no successfully saved, nonempty cleaned text; exit=1, calls=0, results=0
+test_01_empty_capture (__main__.StressTests.test_01_empty_capture) ... ok
+update=caught_up
+calls=0, queue=[('complete', 0, 'relevance_nonmatch')], selected=0, dashboard_ads=0
+test_02_oslo_it (__main__.StressTests.test_02_oslo_it) ... ok
+calls=1, queue=[('failed', 1, 'model_request_failed'), ('pending', 0, None)], selected=0, dashboard_ads=0
+test_03_rate_limit (__main__.StressTests.test_03_rate_limit) ... ok
+Pre-request planning cost estimate: $0.00531920 (request-byte proxy and full output allowance; not a billing cap)
+Pre-request planning cost estimate: $0.00531890 (request-byte proxy and full output allowance; not a billing cap)
+calls=2, queue=[('failed', 1, 'validation_failed'), ('complete', 1, None)], selected=1, dashboard_ads=1
+test_04_wrong_reply_then_valid (__main__.StressTests.test_04_wrong_reply_then_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.506s
+
+OK
