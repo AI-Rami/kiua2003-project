@@ -1,104 +1,74 @@
-#KIUA2003 NAV Skills Dashboard
+# KIUA2003 NAV Skills Dashboard
 
-This project helps students, jobseekers and career advisers explore
-technical skills mentioned in selected NAV IT advertisements listing
-Innlandet. The dashboard shows how many advertisements mention each
-skill and links the counts to saved quotations and source advertisements.
+Which technical skills do employers mention in IT advertisements for Innlandet? This dashboard lets students, jobseekers and career advisers select a skill, see which advertisements mention it, and read the employer's wording. The shared starting dataset contains **13 advertisements**, including historical ones. Its counts describe this sample.
 
-## How it works
+## 1. Open the dashboard
 
-When **Run update** starts, Python resumes the saved NAV feed position
-and checks new or changed advertisements. It processes new details that
-are active, list Innlandet as a work location and have an IT occupation
-category. It converts their descriptions to text and screens contact
-details before sending eligible text to the extraction model. Python
-checks the model's JSON and supporting quotations before publishing a
-result. Unchanged advertisements reuse their saved results. Python
-counts distinct advertisements per skill, and the dashboard displays
-the counts, classifications and evidence. Previously saved results
-remain available when an advertisement later becomes inactive.
+Use Python 3 (tested with Python 3.12). The dashboard and offline tests use Python's standard library. You can view the results and repeat the checks without an API key.
 
-## Start
-
-Requires Python 3. Run from the project root:
+In PowerShell, download the project and start it:
 
 ```powershell
-git clone --branch work/nav-skeleton https://github.com/AI-Rami/kiua2003-project.git
+git clone --branch main https://github.com/AI-Rami/kiua2003-project.git
 cd kiua2003-project
 python harness/start.py
 ```
 
-Open http://127.0.0.1:8765/. Stop with Ctrl+C.
+If you downloaded a ZIP from GitHub, extract it, open a terminal in the folder containing this README, and run just the last command. Open **http://127.0.0.1:8765/** in your browser. Select a skill to see its supporting advertisements and quotations. Press **Ctrl+C** in the terminal to stop the server.
 
-Startup restores the shared snapshot of 13 advertisements into
-`out/`. Viewing saved results needs no API key or additional packages.
+On first startup the program copies the shared results and saved collection position from `shared/baseline/` into `out/`. Later starts keep your local updates. To check the saved data without opening the dashboard, run `python harness/start.py --check-only`. On a fresh download, expect **13 selected advertisements**.
 
-## Check saved data
+## 2. Repeat the evaluation offline
 
-```powershell
-python harness/start.py --check-only
-```
-
-This checks the shared data and restoration, not extraction accuracy.
-
-## Evaluate the saved workflow
-
-Read the exact extraction instructions used in each test:
-
-- [Version 1 — prompt used to produce the answers replayed in the first test](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/prompt.txt)
-- [Version 2 — prompt sent in the second test](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/prompt.txt)
-- [Version 3 — final prompt, with education and single-skill checks](docs/evaluation/2026-11-22_19-41-04_UTC-555f6602/prompt.txt)
-
-The [final test review](docs/evaluation/2026-11-22_19-41-04_UTC-555f6602/reviewed-report.md) covers all five outcomes and compares the three ads validated in both fresh runs.
-
-The application reads its [current extraction prompt](harness/prompts/extract_skills.txt).
-
-To reproduce the **second test** from the five saved revised-prompt answers, run
-
-```powershell
-python harness/check_revised_evaluation.py
-```
-
-This offline check needs only Python. It validates the original answer text, compares each outcome and score with the saved record, and exits successfully when it reproduces all five outcomes. Expect four validated ads, one rejected answer (item 8), and 50 matches among 84 model items and 80 reference items. The [reviewed comparison](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/reviewed-report.md) explains these results. The screened answers are included beside the report in `answers.json`.
-
-To reproduce the **first test** and its synthetic checks, run from the project root:
+Run the following commands from the same project folder. The evaluation uses **five fixed advertisements** with answers approved by the project team. It checks the saved model answers against those references. It also runs **five short synthetic cases** covering boundary conditions and an input the program should block.
 
 ```powershell
 python eval/run.py --mode offline-suite --suite eval/cases/manifest.json
 ```
 
-The offline suite replays five fixed development advertisements against approved answers and checks five synthetic boundaries, including a contact-uncertain input that must be blocked before a model call. Each run creates one dated, readable `out/evaluation/<run>/report.md` covering all five ads and the separate synthetic results. Open `out/evaluation/index.md` to find current reports by run date; `record.json` holds the detailed numbers. It needs no API key or network access and does not change dashboard statistics. The five ads do not measure accuracy on unseen advertisements. See [eval/README.md](eval/README.md) for the case catalog, replay-only command and local regression tests, [task 005](tasks/005-nav-evaluation.md) for the evaluation scope and [task 006](tasks/006-evaluation-reporting.md) for reporting. The earlier scorer and saved scores are retained as provisional history.
+Open `out/evaluation/index.md` to find your new dated report. Each run has a readable `report.md` and a detailed `record.json`. In the recorded original run, all five real answers passed the format and quotation checks, and all five synthetic checks passed. The model still made interpretation mistakes, which are discussed in the reviewed reports below.
 
-The [reviewed five-ad baseline report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md), its [original generated report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/report.md), and its [run record](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/record.json) are shared under `docs/`. The [revised-prompt reviewed report and four-ad comparison](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/reviewed-report.md) records a fresh five-request run with four validated responses and one validation failure; its generated report and run record are copied beside it. Raw responses remain local under ignored `out/`.
+To reproduce the second prompt's results from its saved answers, run:
 
-For a bounded fresh-model evaluation, see the exact command, pricing preflight and prompt-hash requirement in [eval/README.md](eval/README.md). This mode needs your own `KIUA2003_API` key. It was exercised with five live model requests on 22 November 2026 and does not update the dashboard dataset.
+```powershell
+python harness/check_revised_evaluation.py
+```
 
-## Update
+Expect four answers to pass validation and one to be rejected. The check succeeds when it reproduces those recorded outcomes. For the case definitions, regression tests and optional paid evaluation with fresh model answers, see the [evaluation guide](eval/README.md).
 
-Provide your own OpenAI key through the `KIUA2003_API` environment
-variable before starting the server, then click **Run update**.
-Updates require internet access and may incur API costs.
-Never commit credentials.
+## 3. Repeat the stress tests offline
 
-## Project files
+```powershell
+python harness/test_nav_stress.py
+```
 
-- `harness/`: Python workflow and extraction prompts.
-- `ui/`: dashboard interface.
-- `shared/baseline/`: shared results and collection checkpoint.
-- `out/`: generated local data; Git-ignored.
-- `reviews/`: provisional corrections to displayed results.
-- `fixtures/`: saved inputs.
-- `tasks/`: development task briefs.
-- `docs/`: documentation, meeting reports and prompt log.
-- `eval/`: MET weather checker, historical NAV evaluation attempt, and fixed-case NAV replay/model evaluator.
+Expect **four tests** and **OK**. Two change the input (an empty description and an IT job outside Innlandet). Two simulate a service problem (a rate limit and an unusable reply). The tests check what the workflow skips, saves or publishes in each situation. Compare your result with the [stress-test report](docs/stress/2026-11-23/report.md), the [output before the repair](docs/stress/2026-11-23/before.txt) and the [output after the repair](docs/stress/2026-11-23/after.txt).
 
-See [SPEC.md](SPEC.md) for scope and [AGENTS.md](AGENTS.md)
-for coding-agent instructions.
+## 4. Read the reports
 
-## Limitations
+Start with the [evaluation report (Word)](docs/evaluation/NAV-evaluation-report.docx) for the method, scores and examples. The following records show exactly what was tested.
 
-Results cover a small selected dataset, including historical
-advertisements. Counts do not represent current vacancies or the
-complete regional IT market. Extraction accuracy remains under
-evaluation, and automatic contact cleaning cannot guarantee
-removal of all personal information.
+| Evaluation run | Extraction instructions | Results |
+| --- | --- | --- |
+| Original prompt, saved answers | [Prompt 1](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/prompt.txt) | [Generated report](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/report.md) · [Run record](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/record.json) · [Source review](docs/evaluation/2026-11-22_16-50-02_UTC-d36c2f63/reviewed-report.md) |
+| Revised prompt, fresh answers | [Prompt 2](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/prompt.txt) | [Results and comparison](docs/evaluation/2026-11-22_18-54-11_UTC-07c529af/reviewed-report.md) |
+| Final prompt, fresh answers | [Prompt 3](docs/evaluation/2026-11-22_19-41-04_UTC-555f6602/prompt.txt) | [Results and comparison](docs/evaluation/2026-11-22_19-41-04_UTC-555f6602/reviewed-report.md) |
+
+The five real advertisements also guided prompt revisions. Accuracy on unfamiliar advertisements remains an open question. The [safe-operation report](docs/safe-operation.md) explains permissions, costs, stop conditions and the tests behind those controls.
+
+## Optional live update
+
+Set your own OpenAI key in the `KIUA2003_API` environment variable **before starting the server**, then select **Run update**. This contacts NAV and may incur model charges. Keep credentials out of Git.
+
+The program resumes the saved NAV feed position and checks new or changed advertisements for active IT jobs listing Innlandet. It screens contact details, sends eligible text to the model and checks the returned structure and quotations. It reuses unchanged results and refreshes statistics from selected results. A skill counts once per distinct advertisement in the total. Alternatives such as “Python or R” appear together. Automatic contact screening and quotation checks have limits, which the safe-operation and evaluation reports describe.
+
+## Project map
+
+| Location | What you will find |
+| --- | --- |
+| [harness/](harness/) and [ui/](ui/) | Python workflow, extraction prompt and dashboard interface |
+| [shared/baseline/](shared/baseline/), [reviews/](reviews/) and [fixtures/](fixtures/) | Starting data and checkpoint, provisional review decisions and saved examples |
+| [eval/](eval/) and [tasks/](tasks/) | Fixed evaluation cases, checker and development task briefs |
+| [SPEC.md](SPEC.md) and [AGENTS.md](AGENTS.md) | Product scope and instructions for coding agents |
+| [Meeting reports](docs/meetings/) and [prompt log](docs/prompt-log.md) | Project decisions and development history |
+| [Archived weather exercise](history/met-weather/) and [earlier output-layout documents](docs/history/) | Earlier course work and records of how the local data was reorganized |

@@ -59,11 +59,7 @@ Numerical success thresholds have not yet been defined. Appropriate evaluation c
 
 ## Current implementation status
 
-The repository contains an earlier MET Norway weather exercise, separate from the planned NAV workflow. The task brief in `tasks/001-probe.md` describes retrieving a Hamar weather forecast, saving the response, and producing `out/probe.json`, with offline support. It explicitly excludes changes to the final project problem.
-
-Code inspection for this specification update confirmed that `harness/probe.py` contains MET forecast retrieval, caching, offline reading, transformation, and JSON output code. `harness/test_probe.py` contains synthetic tests for the weather exercise, and `eval/check_probe.py` checks weather output rather than NAV advertisements or extracted skills. The saved weather fixture and metadata are present, and `out/probe.json` exists.
-
-The earlier README statements that the MET downloader was unimplemented and its output missing were outdated; the README now identifies the earlier MET exercise separately. The weather code and tests described above were inspected but not executed for that specification update, and the existing weather output's correctness was not tested there. No new MET runtime claim is made here.
+The [archived MET Norway exercise](history/met-weather/README.md) retains the earlier Hamar weather task, its saved forecast, Python code, tests and checker.
 
 The NAV saved-input walking skeleton is implemented in `harness/nav_skeleton.py` with an edited advertisement fixture. It prepares the saved description, calls `gpt-6-luna`, validates output structure and exact quotations, and writes JSON and Markdown run artifacts. One saved-input run passed those structural checks; this does not establish extraction accuracy or completeness.
 
