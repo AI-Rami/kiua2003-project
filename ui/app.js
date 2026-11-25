@@ -116,6 +116,7 @@ async function showCases(){
     for(const ad of cases){
       const card=elt("article","support-card");
       card.append(elt("span","pill",ad.status),elt("h3",null,ad.title||"Advertisement"),elt("p","uuid",ad.uuid),elt("p",null,ad.reason));
+      if(ad.previous_validation_failed)card.append(elt("strong",null,"Earlier AI answer for this version failed validation"));
       for(const detail of ad.details||[])card.append(elt("p",null,detail));
       const link=elt("a",null,"View advertisement on NAV ↗");
       link.href="https://arbeidsplassen.nav.no/stillinger/stilling/"+encodeURIComponent(ad.uuid);

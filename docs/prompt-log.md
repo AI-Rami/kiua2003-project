@@ -521,3 +521,7 @@ Project secret-file protection remains unverified. The 2026-10-11 tests below co
 ## 2026-11-23 - Stress-test repair
 
 - A simulated successful service reply containing an empty JSON list exposed an unchecked assumption in the validator. The first ad stayed marked as extracting and the second was never attempted. Added a top-level object check. In the identical rerun, the first ad was recorded as failed and only the second ad entered the dashboard. See the [before-and-after report](stress/2026-11-23/report.md).
+
+## 2026-11-25 — Contact cleaning
+
+The team requested contact-value redaction after four eligible ads were held. The revised cleaner preserves names and ordinary contact wording and screens the complete prepared text. All four matching NAV versions passed an isolated preview. No extraction or publication was performed for those ads.

@@ -58,6 +58,8 @@ The five real advertisements also guided prompt revisions. Accuracy on unfamilia
 
 ## Optional live update
 
+The contact cleaner replaces recognizable email addresses and phone numbers with `[redacted]`. It keeps names and ordinary contact or referee instructions. It holds a passage for review if it combines qualification wording with an actual contact detail in the same passage. An older held version stays held until it is reassessed.
+
 Select **View cases** beside the update details to see saved failures and holds, their reasons and the affected advertisements. If a previous failure has used all allowed attempts, later updates identify it separately from new failures. Other eligible ads can still be processed.
 
 Set your own OpenAI key in the `KIUA2003_API` environment variable **before starting the server**, then select **Run update**. This contacts NAV and may incur model charges. Keep credentials out of Git.

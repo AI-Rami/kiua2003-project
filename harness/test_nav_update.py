@@ -287,7 +287,8 @@ class UpdateTests(unittest.TestCase):
         row = db.execute("SELECT cleaned_text,cleaning_version,review_state FROM captures WHERE uuid=?",
                          (self.ad_id,)).fetchone()
         self.assertEqual(outcome, "saved")
-        self.assertEqual(tuple(row), ("Du må kunne Python.", CLEANING_VERSION, "auto_contact_checked"))
+        expected = ("Du må kunne Python. Kontakt Kari Nord på [redacted].", CLEANING_VERSION, "auto_contact_checked")
+        self.assertEqual(tuple(row), expected)
         with db:
             db.execute("UPDATE captures SET cleaning_version='nav-contact-clean-v2',"
                        "review_state='pending_human_review' WHERE uuid=?", (self.ad_id,))
@@ -296,8 +297,7 @@ class UpdateTests(unittest.TestCase):
         refreshed = db.execute("SELECT cleaned_text,cleaning_version,review_state FROM captures WHERE uuid=?",
                                (self.ad_id,)).fetchone()
         self.assertEqual(repeated, "saved")
-        self.assertEqual(tuple(refreshed), ("Du må kunne Python.", CLEANING_VERSION,
-                                          "auto_contact_checked"))
+        self.assertEqual(tuple(refreshed), expected)
         self.assertEqual(db.execute("SELECT count(*) FROM captures WHERE uuid=?",
                                     (self.ad_id,)).fetchone()[0], 1)
         db.close()

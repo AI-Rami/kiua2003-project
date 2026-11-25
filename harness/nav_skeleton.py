@@ -160,9 +160,13 @@ def pre_request_cost_estimate(request_bytes):
     return (request_bytes * INPUT_RATE + MAX_OUTPUT_TOKENS * OUTPUT_RATE) / 1_000_000
 
 
+def encode_request(payload):
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+
+
 def extract(prepared, run_dir, *, cleaned_capture=False):
     payload = request_payload(prepared, cleaned_capture=cleaned_capture)
-    body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    body = encode_request(payload)
     if len(body) > MAX_BODY_BYTES:
         raise SkeletonError(f"extract: request body exceeds {MAX_BODY_BYTES} bytes")
     planning_cost = pre_request_cost_estimate(len(body))

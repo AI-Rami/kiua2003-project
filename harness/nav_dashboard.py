@@ -15,6 +15,7 @@ import threading
 from urllib.parse import parse_qs, urlsplit
 
 import nav_skill_summary as statistics
+import nav_skeleton as extraction
 import nav_update as update
 from nav_text import cleaned_input_issue
 
@@ -191,7 +192,8 @@ CASE_REASONS = {
     "model_request_failed": "The request to the model failed.",
     "validation_failed": "The model answer failed a validation check.",
     "detail_unavailable": "NAV did not provide details for this version.",
-    "capture_invalid_or_unavailable": "A usable cleaned advertisement was unavailable.",
+    "capture_invalid_or_unavailable": "At the last update, the program could not use the saved cleaned text.",
+    "request_size_limit": "The prepared request exceeded the size limit before it could be sent.",
 }
 
 
@@ -208,23 +210,36 @@ def review_cases(index_path, db_path):
         message = CASE_REASONS.get(reason, "This version is held for review." if held else "Processing failed.")
         cases.append({"uuid": ad_id, "title": evidence_for_display(row.get("display_title")),
                       "status": "Held for review" if held else "Failed", "reason": message})
-        digest = row.get("pending_content_sha256") or ""
-        if not held and re.fullmatch(r"[0-9a-fA-F-]{36}", ad_id) and re.fullmatch(r"[0-9a-f]{64}", digest):
+        digest = row.get("blocked_content_sha256" if held else "pending_content_sha256") or ""
+        if re.fullmatch(r"[0-9a-fA-F-]{36}", ad_id) and re.fullmatch(r"[0-9a-f]{64}", digest):
             folder = db_path.parent / "processing" / ad_id / digest
-            attempts = [p for p in folder.glob("attempt-*") if p.name[8:].isdigit()]
+            attempts = [p for p in folder.glob("attempt-*") if p.name[8:].isdigit()
+                        and (not held or (p / "validation.json").is_file())]
             if attempts:
                 latest = max(attempts, key=lambda p: int(p.name[8:]))
                 try:
                     errors = json.loads((latest / "validation.json").read_text(encoding="utf-8"))["errors"]
-                    if isinstance(errors, list):
+                    if isinstance(errors, list) and errors:
                         cases[-1]["details"] = [msg for msg in errors if evidence_for_display(msg)]
-                        if errors:
+                        if held:
+                            cases[-1]["previous_validation_failed"] = True
+                        else:
                             cases[-1]["reason"] = CASE_REASONS["validation_failed"]
                 except (OSError, ValueError, KeyError, TypeError):
                     pass
     if cases and db_path.is_file():
         with closing(sqlite3.connect(db_path.resolve().as_uri() + "?mode=ro", uri=True)) as db:
+            entries_by_id = {row["uuid"]: row for row in entries}
             for case in cases:
+                row = entries_by_id[case["uuid"]]
+                if row.get("blocked_reason") == "request_size_limit":
+                    capture = db.execute("SELECT cleaned_text FROM captures WHERE uuid=? AND content_hash=?",
+                                         (case["uuid"], row.get("blocked_content_sha256"))).fetchone()
+                    if capture and update.sha256_text(capture[0]) == row["blocked_content_sha256"]:
+                        payload = extraction.request_payload(capture[0], cleaned_capture=True)
+                        size = len(extraction.encode_request(payload))
+                        case["reason"] += (f" Size with current settings: {size:,} bytes. "
+                                           f"Limit: {extraction.MAX_BODY_BYTES:,} bytes.")
                 if not case["title"]:
                     title = db.execute("SELECT title FROM ad_titles WHERE uuid=?", (case["uuid"],)).fetchone()
                     if title:

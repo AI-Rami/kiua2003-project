@@ -115,13 +115,13 @@ def poll_or_resume(db, folder, max_pages, max_details, max_seconds, progress=Non
 def saved_capture(db, ad_id, order, digest):
     row = db.execute("SELECT cleaned_text,source_link,cleaning_version,review_state,published,updated,source_id "
                      "FROM captures WHERE uuid=? AND content_hash=?", (ad_id, digest)).fetchone()
-    if row is not None and row["cleaning_version"] == CLEANING_VERSION:
+    if row is not None and row["cleaning_version"] in ("nav-contact-clean-v3", CLEANING_VERSION):
         return row
     # The original nine-ad review used a separate version-2 table; do not read blocked entries here.
     row = db.execute("SELECT cleaned_text,source_link,cleaning_version,review_state,published,updated,source_id "
                      "FROM targeted_reprocess WHERE uuid=? AND content_hash=? AND outcome='saved'",
                      (ad_id, digest)).fetchone()
-    return row if row is not None and row["cleaning_version"] == CLEANING_VERSION else None
+    return row if row is not None and row["cleaning_version"] in ("nav-contact-clean-v3", CLEANING_VERSION) else None
 
 
 def saved_title(db, ad_id, order):
@@ -230,7 +230,7 @@ def publish_result(index, index_path, current_root, ad_id, digest, stage, prepar
     old = entry_for(index, ad_id)
     warning = "No human meaning review has been performed on this updated extraction."
     selected = {"uuid": ad_id, "status": "current", "source_url": result["source_url"],
-                "content_sha256": digest, "cleaning_version": CLEANING_VERSION,
+                "content_sha256": digest, "cleaning_version": prepared["capture_provenance"]["revised_version"],
                 "result_path": (destination / "result.json").relative_to(ROOT).as_posix(),
                 "original_run_id": result["run_id"],
                 "original_run_path": destination.relative_to(ROOT).as_posix(),
@@ -460,7 +460,8 @@ def run_update(db_path=DEFAULT_DB, index_path=DEFAULT_INDEX, current_root=DEFAUL
                         raise UpdateError("publish: saved version failed recovery validation")
                 except (OSError, UnicodeError, ValueError):
                     raise UpdateError("publish: saved version is unreadable") from None
-                prepared = {"capture_provenance": {"review_state": capture["review_state"]},
+                prepared = {"capture_provenance": {"review_state": capture["review_state"],
+                                                   "revised_version": capture["cleaning_version"]},
                             "title_checked_at_utc": title_row["checked_at"] if title_row else None}
                 publish_result(index, index_path, current_root, ad_id, digest, final_dir, prepared, saved_result)
                 record_queue(db, ad_id, "complete", digest=digest)
@@ -482,7 +483,7 @@ def run_update(db_path=DEFAULT_DB, index_path=DEFAULT_INDEX, current_root=DEFAUL
                         "title_checked_at_utc": title_row["checked_at"] if title_row else None,
                         "source_url": capture["source_link"],
                         "prepared": capture["cleaned_text"], "input_format": "cleaned-capture",
-                        "capture_provenance": {"revised_version": CLEANING_VERSION,
+                        "capture_provenance": {"revised_version": capture["cleaning_version"],
                                                "content_hash_sha256": digest,
                                                "review_state": capture["review_state"],
                                                "published": capture["published"],

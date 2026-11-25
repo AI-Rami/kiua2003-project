@@ -4,6 +4,7 @@ from datetime import date
 from http.client import HTTPConnection
 from http.server import ThreadingHTTPServer
 import json
+import sqlite3
 from pathlib import Path
 import tempfile
 import threading
@@ -70,6 +71,39 @@ class DashboardDataTests(unittest.TestCase):
 
 
 class UpdateManagerTests(unittest.TestCase):
+    def test_cases_show_size_and_version_specific_validation_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            text = "å" * 10000
+            digest = dashboard.update.sha256_text(text)
+            ids = [f"00000000-0000-4000-8000-{i:012d}" for i in (1, 2, 3)]
+            entries = [{"uuid": uid, "display_title": "Test ad", "status": "blocked",
+                        "blocked_reason": reason, "blocked_content_sha256": digest}
+                       for uid, reason in zip(ids, ("request_size_limit", "capture_invalid_or_unavailable",
+                                                    "capture_invalid_or_unavailable"))]
+            index = base / "index.json"
+            index.write_text(json.dumps({"schema_version": 1, "entries": entries}), encoding="utf-8")
+            db_path = base / "state.sqlite3"
+            db = sqlite3.connect(db_path)
+            db.execute("CREATE TABLE captures(uuid, content_hash, cleaned_text)")
+            db.execute("INSERT INTO captures VALUES(?,?,?)", (ids[0], digest, text))
+            db.commit()
+            db.close()
+            for uid, version in ((ids[1], digest), (ids[2], "0" * 64)):
+                attempt = base / "processing" / uid / version / "attempt-1"
+                attempt.mkdir(parents=True)
+                (attempt / "validation.json").write_text('{"errors":["item 4: invalid quotation"]}')
+            size_case, held, unrelated = dashboard.review_cases(index, db_path)
+            size = len(dashboard.extraction.encode_request(
+                dashboard.extraction.request_payload(text, cleaned_capture=True)))
+            self.assertIn(f"{size:,} bytes", size_case["reason"])
+            self.assertIn(f"{dashboard.extraction.MAX_BODY_BYTES:,} bytes", size_case["reason"])
+            self.assertEqual(held["status"], "Held for review")
+            self.assertEqual(held["reason"], dashboard.CASE_REASONS["capture_invalid_or_unavailable"])
+            self.assertTrue(held["previous_validation_failed"])
+            self.assertEqual(held["details"], ["item 4: invalid quotation"])
+            self.assertNotIn("details", unrelated)
+
     def test_no_updates_and_duplicate_start_guard(self):
         with tempfile.TemporaryDirectory(dir=dashboard.ROOT) as directory:
             base = Path(directory)
